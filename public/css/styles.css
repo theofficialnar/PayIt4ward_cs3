@@ -1,0 +1,22 @@
+main {
+	padding-top: 50px;
+}
+/*NAV*/
+nav {
+	background: #364156;
+}
+/*MAIN*/
+.banner {
+	height: 400px;
+	background: black;
+}
+
+.main_fill {
+	height: 700px;
+	background: salmon;
+}
+
+/*FOOTER*/
+footer {
+
+}
