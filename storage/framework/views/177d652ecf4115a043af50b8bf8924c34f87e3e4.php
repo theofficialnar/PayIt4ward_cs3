@@ -116,10 +116,9 @@ Users
 	</table>
 </div>
 
+<!-- modal displaying individual user info and edit option -->
 <div id="userPanel" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
-    <!-- Modal content-->
     <div class="modal-content">
 	    <div class="modal-header">
 	    	<button type="button" class="close" data-dismiss="modal" id="closeUserEdit">&times;</button>
@@ -132,7 +131,6 @@ Users
 	  		<button id="saveUserEdit" data-dismiss="modal">Save</button>
 	  	</div>
     </div>
-
   </div>
 </div>
 <?php $__env->stopSection(); ?>

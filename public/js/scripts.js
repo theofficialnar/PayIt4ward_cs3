@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
 //Opens an Ajax-powered modal that dynamically displays the user's data
-$('.openUserPanel').click(function(){
+$('#usersViewBody').on('click', '.openUserPanel', function(){
 	$('#userModalHead').html('User Info');
 	$('#saveUserEdit').hide();
 	$('#triggerUserEdit').show();
