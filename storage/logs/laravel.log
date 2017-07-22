@@ -1545,3 +1545,6 @@ Stack trace:
 [2017-07-22 00:18:04] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/UserController.php:108
 Stack trace:
 #0 {main}  
+[2017-07-22 01:57:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/UserController.php:198
+Stack trace:
+#0 {main}  

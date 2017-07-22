@@ -93,13 +93,13 @@ Users
 				<th>Position</th>
 				<th>Status</th>
 				<th>Actions</th>
+				<th><input type="hidden" value="{{csrf_token()}}" id="token"></th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="usersViewBody">
 		@foreach($users as $user)
 			<tr>
 				<td><a data-toggle="modal" data-target="#userPanel" data-uid="{{$user->id}}" class="openUserPanel"> {{$user->name}}</a></td>
-				<td><input type="hidden" value="{{csrf_token()}}" id="token"></td>
 				<td>{{$user->department}}</td>
 				<td>{{$user->position}}</td>
 				@if($user->status == 0)
@@ -131,7 +131,7 @@ Users
 	  	</div>
 	  	<div class="modal-footer">
 	  		<button id="triggerUserEdit">Edit</button>
-	  		<button id="saveUserEdit">Save</button>
+	  		<button id="saveUserEdit" data-dismiss="modal">Save</button>
 	  	</div>
     </div>
 

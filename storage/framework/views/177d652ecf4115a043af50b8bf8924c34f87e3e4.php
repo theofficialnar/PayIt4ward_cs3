@@ -91,13 +91,13 @@ Users
 				<th>Position</th>
 				<th>Status</th>
 				<th>Actions</th>
+				<th><input type="hidden" value="<?php echo e(csrf_token()); ?>" id="token"></th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="usersViewBody">
 		<?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<tr>
 				<td><a data-toggle="modal" data-target="#userPanel" data-uid="<?php echo e($user->id); ?>" class="openUserPanel"> <?php echo e($user->name); ?></a></td>
-				<td><input type="hidden" value="<?php echo e(csrf_token()); ?>" id="token"></td>
 				<td><?php echo e($user->department); ?></td>
 				<td><?php echo e($user->position); ?></td>
 				<?php if($user->status == 0): ?>
@@ -129,7 +129,7 @@ Users
 	  	</div>
 	  	<div class="modal-footer">
 	  		<button id="triggerUserEdit">Edit</button>
-	  		<button id="saveUserEdit">Save</button>
+	  		<button id="saveUserEdit" data-dismiss="modal">Save</button>
 	  	</div>
     </div>
 

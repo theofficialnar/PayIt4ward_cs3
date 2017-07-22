@@ -19,6 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@homePage');
 
+//Route to admin panel
 Route::get('/admin_panel', 'UserController@adminPanel');
+
+//Route to add new user
 Route::post('/admin_panel/add_user', 'UserController@addUser');
+
+//Ajax route to viewing user data via modal
 Route::post('/admin_panel/user/{id}', 'UserController@adminViewUser');
+
+//Ajax route to update user data
+Route::post('/admin/user/update/{id}', 'UserController@adminUpdateUser');

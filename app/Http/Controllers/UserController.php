@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\User;
 
 class UserController extends Controller
-{
+{   
+    //view the admin panel
     function adminPanel(){
     	$users = User::all();
     	return view('/pages/admin_panel', compact('users'));
     }
 
+    //add new user function
     function addUser(Request $request){
     	$new_user = new User;
     	$new_user->name = $request->name;
@@ -30,6 +32,7 @@ class UserController extends Controller
     	return back();
     }
 
+    //view user info and edit info via modal
     function adminViewUser($id){
     	$user = User::find($id);
     	echo '
@@ -60,7 +63,8 @@ class UserController extends Controller
       	</div>
 
       	<div id="userEdit" style="display: none">
-            <form method="post" action="">
+            <form id="userUpdate">
+                <input type="hidden" value="'.$user->id.'" id="userEditId">
                 <div class="form-group">
                     <label for="edit_usr">Name:</label>
           		    <input type="text" name="name" value="'.$user->name.'" id="edit_usr" class="form-control">
@@ -150,6 +154,52 @@ class UserController extends Controller
                     <label for="edit_email">Email:</label>
                     <input type="text" class="form-control" id="edit_email" name="email" value="'.$user->email.'">
                 </div>
+                <div class="form-group">
+                    <label for="edit_pw">Password:</label>
+                    <input type="password" class="form-control" id="edit_pw" name="password" value="'.$user->password.'">
+                </div>
+            </form>
         </div>';
+    }
+
+    //update user info via modal
+    function adminUpdateUser($id, Request $request){
+        $upd_user = User::find($id);
+        $upd_user->name = $request->name;
+        $upd_user->employee_number = $request->emp_num;
+        $upd_user->department = $request->dept;
+        $upd_user->position = $request->pos;
+        $upd_user->date_started = $request->hired;
+        $upd_user->address = $request->add;
+        $upd_user->birthday = $request->bday;
+        $upd_user->marital_status = $request->mar_stat;
+        $upd_user->status = $request->stat;
+        $upd_user->bank_info = $request->bank;
+        $upd_user->email = $request->email;
+        $upd_user->password = $request->pw;
+        $upd_user->save();
+
+        $users = User::all();
+        foreach($users as $user){
+            echo '
+            <tr>
+                <td><a data-toggle="modal" data-target="#userPanel" data-uid="'.$user->id.'" class="openUserPanel">'.$user->name.'</a></td>
+                <td>'.$user->department.'</td>
+                <td>'.$user->position.'</td>';
+                if($user->status == 0){
+                    echo '<td>Active</td>';
+                }
+                elseif($user->status == 1){
+                    echo '<td>On leave</td>';
+                }
+                elseif($user->status == 2){
+                    echo '<td>Retired</td>';
+                }
+                else{
+                    echo '<td>Terminated</td>';
+                }
+                echo '<td><button class="btn btn-xs btn-default">Update Payroll</button></td>
+            </tr>';
+        }
     }
 }
