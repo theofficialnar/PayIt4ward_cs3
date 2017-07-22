@@ -32,7 +32,7 @@
 					</div>
 					<div class="form-group">
 					  	<label for="add">Date Hired:</label>
-					  	<input type="date" class="form-control" id="add" name="hired">
+					  	<input type="date" class="form-control date-picker" id="add" name="hired">
 					</div>
 					<div class="form-group">
 					  	<label for="dept">Department:</label>
@@ -59,7 +59,7 @@
 					</div>
 					<div class="form-group">
 					  	<label for="bday">Birthday:</label>
-					  	<input type="date" class="form-control" id="bday" name="bday">
+					  	<input type="date" class="form-control date-picker" id="bday" name="bday">
 					</div>
 					<div class="form-group">
 						<label>Marital Status: &nbsp;</label>
@@ -124,13 +124,14 @@ Users
     <!-- Modal content-->
     <div class="modal-content">
 	    <div class="modal-header">
-	    	<button type="button" class="close" data-dismiss="modal">&times;</button>
-	   		<h4 class="modal-title">User Info</h4>
+	    	<button type="button" class="close" data-dismiss="modal" id="closeUserEdit">&times;</button>
+	   		<h4 class="modal-title" id="userModalHead">User Info</h4>
 	  	</div>
 	  	<div class="modal-body">
 	  	</div>
 	  	<div class="modal-footer">
 	  		<button id="triggerUserEdit">Edit</button>
+	  		<button id="saveUserEdit">Save</button>
 	  	</div>
     </div>
 

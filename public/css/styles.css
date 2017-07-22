@@ -20,3 +20,8 @@ nav {
 footer {
 
 }
+
+/*ADMIN PANEL*/
+.openUserPanel {
+	cursor: pointer;
+}

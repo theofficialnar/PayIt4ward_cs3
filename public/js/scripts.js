@@ -1,9 +1,14 @@
 $(document).ready(function(){
-	
+	// $('.date-picker').datetimepicker({
+	// 	dateFormat: 'YYYY-MM-DD'
+	// });
 });
 
 //Opens a modal that dynamically displays the user's data
 $('.openUserPanel').click(function(){
+	$('#userModalHead').html('User Info');
+	$('#saveUserEdit').hide();
+	$('#triggerUserEdit').show();
 	var uid = $(this).data('uid');
 	var token = $('#token').val();
 	// $('.modal-title').html($(this).data('uid'));
@@ -17,7 +22,7 @@ $('.openUserPanel').click(function(){
 			$('.modal-body').html(data)
 		},
 		error: function(){
-			alert('Error!')
+			alert('Error connecting to database!')
 		}
 	})
 });
@@ -26,5 +31,8 @@ $('.openUserPanel').click(function(){
 $('#triggerUserEdit').click(function(){
 	$('#userEdit').css('display', 'block');
 	$('#userInfo').css('display', 'none');
+	$(this).hide();
+	$('#userModalHead').html('Update User Info');
+	$('#saveUserEdit').show();
 	// alert('Triggered!');
 });
