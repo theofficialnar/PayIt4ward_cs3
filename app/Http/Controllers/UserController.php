@@ -205,7 +205,7 @@ class UserController extends Controller
                 else{
                     echo '<td>Terminated</td>';
                 }
-                echo '<td><button class="btn btn-xs btn-default">Update Payroll</button></td>
+                echo '<td><button class="btn btn-xs btn-default payrollModalTrigger">Update Payroll</button></td>
             </tr>';
         }
     }

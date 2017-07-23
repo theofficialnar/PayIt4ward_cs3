@@ -47,6 +47,7 @@ $('#saveUserEdit').click(function(){
 	var emp_num = $('#edit_emp').val();
 	var dept = $('#edit_dept').val();
 	var pos = $('#edit_pos').val();
+	var sal = $('#edit_sal').val();
 	var hired = $('#edit_hired').val();
 	var add = $('#edit_add').val();
 	var bday = $('#edit_bday').val();
@@ -65,6 +66,7 @@ $('#saveUserEdit').click(function(){
 			emp_num : emp_num,
 			dept : dept,
 			pos : pos,
+			sal : sal,
 			hired : hired,
 			add : add,
 			bday : bday,
@@ -105,7 +107,7 @@ $("#payrollModal").iziModal({
 	icon: 'glyphicon glyphicon-piggy-bank',
 	padding: '15'
 });
-$(document).on('click', '.payrollModalTrigger', function (event) {
+$('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 	event.preventDefault();
 	$('#payrollModal').iziModal('open');
 });
