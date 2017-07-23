@@ -20,6 +20,7 @@ class UserController extends Controller
     	$new_user->employee_number = $request->emp;
     	$new_user->department = $request->dept;
     	$new_user->position = $request->post;
+        $new_user->salary = $request->sal;
     	$new_user->date_started = $request->hired;
     	$new_user->address = $request->add;
     	$new_user->birthday = $request->bday;
@@ -41,6 +42,7 @@ class UserController extends Controller
         	<p>Employee Number: '.$user->employee_number.'</p>
         	<p>Department: '.$user->department.'</p>
         	<p>Position: '.$user->position.'</p>
+            <p>Salary: '.$user->salary.'</p>
         	<p>Date Hired: '.$user->date_started.'</p>
         	<p>Address: '.$user->address.'</p>
         	<p>Birthday: '.$user->birthday.'</p>';
@@ -82,7 +84,11 @@ class UserController extends Controller
                     <input type="text" class="form-control" id="edit_pos" name="pos" value="'.$user->position.'">
                 </div>
                 <div class="form-group">
-                    <label for="edit_hired">Position:</label>
+                    <label for="edit_sal">Salary:</label>
+                    <input type="text" class="form-control" id="edit_sal" name="sal" value="'.$user->salary.'">
+                </div>
+                <div class="form-group">
+                    <label for="edit_hired">Date Hired:</label>
                     <input type="date" class="form-control" id="edit_hired" name="hired" value="'.$user->date_started.'">
                 </div>
                 <div class="form-group">
@@ -169,6 +175,7 @@ class UserController extends Controller
         $upd_user->employee_number = $request->emp_num;
         $upd_user->department = $request->dept;
         $upd_user->position = $request->pos;
+        $upd_user->salary = $request->sal;
         $upd_user->date_started = $request->hired;
         $upd_user->address = $request->add;
         $upd_user->birthday = $request->bday;

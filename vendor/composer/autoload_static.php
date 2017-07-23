@@ -272,6 +272,7 @@ class ComposerStaticInit77cd27ce0dfb4195fedbc10167a497d3
     );
 
     public static $classMap = array (
+        'AddUsersTableSalary' => __DIR__ . '/../..' . '/database/migrations/2017_07_23_120023_add_users_table_salary.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

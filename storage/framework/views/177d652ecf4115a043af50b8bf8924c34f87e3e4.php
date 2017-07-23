@@ -41,6 +41,10 @@
 					  	<input type="text" class="form-control" id="pos" name="post">
 					</div>
 					<div class="form-group">
+					  	<label for="sal">Salary:</label>
+					  	<input type="number" class="form-control" id="sal" name="sal">
+					</div>
+					<div class="form-group">
 						<label>Status: &nbsp;</label>
 					  	<label class="radio-inline">
 					  	<input type="radio" name="stat" value="0">Active</label>
@@ -109,7 +113,7 @@ Users
 				<?php else: ?>
 					<td>Terminated</td>
 				<?php endif; ?>
-				<td><button class="btn btn-xs btn-default">Update Payroll</button></td>
+				<td><button class="btn btn-xs btn-default payrollModalTrigger">Update Payroll</button></td>
 			</tr>
 		<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</tbody>
@@ -132,6 +136,33 @@ Users
 	  	</div>
     </div>
   </div>
+</div>
+
+<!-- modal displaying the payroll form -->
+<div id="payrollModal">
+	<form>
+		<div class="form-group">
+			<label for="hrs_absent">Absences</label>
+			<input type="number" id="hrs_absent" name="hrs_absent" class="form-control" value="0" min="0">
+		</div>
+		<div class="form-group">
+			<label for="hrs_reg_ot">Regular Overtime</label>
+			<input type="number" id="hrs_reg_ot" name="hrs_reg_ot" class="form-control" value="0" min="0">
+		</div>
+		<div class="form-group">
+			<label for="hrs_rd_ot">Rest Day Overtime</label>
+			<input type="number" id="hrs_rd_ot" name="hrs_rd_ot" class="form-control" value="0" min="0">
+		</div>
+		<div class="form-group">
+			<label for="hrs_rd_hot">Rest Day Holiday Overtime</label>
+			<input type="number" id="hrs_rd_hot" name="hrs_rd_hot" class="form-control" value="0" min="0">
+		</div>
+		<div class="form-group">
+			<label for="hrs_reg_hot">Regular Holiday Overtime</label>
+			<input type="number" id="hrs_reg_hot" name="hrs_reg_hot" class="form-control" value="0" min="0">
+		</div>
+		<button>Submit</button>
+	</form>
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1558,3 +1558,21 @@ Stack trace:
 #5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #6 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #7 {main}  
+[2017-07-23 12:03:11] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/database/migrations/2017_07_23_120023_add_users_table_salary.php:19
+Stack trace:
+#0 {main}  
+[2017-07-23 12:03:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/database/migrations/2017_07_23_120023_add_users_table_salary.php:19
+Stack trace:
+#0 {main}  
+[2017-07-23 12:04:21] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/database/migrations/2017_07_23_120023_add_users_table_salary.php:19
+Stack trace:
+#0 {main}  
+[2017-07-23 12:04:47] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/database/migrations/2017_07_23_120023_add_users_table_salary.php:19
+Stack trace:
+#0 {main}  
+[2017-07-23 12:05:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/database/migrations/2017_07_23_120023_add_users_table_salary.php:19
+Stack trace:
+#0 {main}  
+[2017-07-23 12:07:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/database/migrations/2017_07_23_120023_add_users_table_salary.php:31
+Stack trace:
+#0 {main}  

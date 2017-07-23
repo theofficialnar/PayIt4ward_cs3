@@ -83,19 +83,29 @@ $('#saveUserEdit').click(function(){
 		}
 	})
 });
-$("#izimodal").iziModal();
-$(document).on('click', '.trigger', function (event) {
-	event.preventDefault();
-	$('#izimodal').iziModal('open');
+// $("#izimodal").iziModal();
+// $(document).on('click', '.trigger', function (event) {
+// 	event.preventDefault();
+// 	$('#izimodal').iziModal('open');
+// });
+
+// $('#trigger2').iziModal({
+// 		transitionIn: 'bounceInUp',
+// 		transitionOut: 'bounceOutDown'
+// 	});
+// $(document).on('click', '.trigger2', function (event) {
+// 	event.preventDefault();
+// 	$('#trigger2').iziModal('open');
+// 	$('#trigger2').iziModal('setBottom', 0);
+// });
+
+$("#payrollModal").iziModal({
+	title: 'Update Payroll',
+	subtitle: 'Update this employee\'s payroll for the current cut-off',
+	icon: 'glyphicon glyphicon-piggy-bank',
+	padding: '15'
 });
-
-$('#trigger2').iziModal({
-		transitionIn: 'bounceInUp',
-		transitionOut: 'bounceOutDown'
-	});
-$(document).on('click', '.trigger2', function (event) {
+$(document).on('click', '.payrollModalTrigger', function (event) {
 	event.preventDefault();
-	$('#trigger2').iziModal('open');
-	$('#trigger2').iziModal('setBottom', 0);
-
+	$('#payrollModal').iziModal('open');
 });
