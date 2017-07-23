@@ -1,0 +1,17 @@
+Deductions
+SSS
+Philhealth
+Pag-ibig
+
+Bonuses
+Regular OT
+RDOT
+RD Holiday OT
+Holiday OT
+
+
+Hours absent
+Hours regular OT
+Hours RDOT
+Houts RD Holiday OT
+Hours regular Holiday OT

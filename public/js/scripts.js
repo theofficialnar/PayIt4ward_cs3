@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	// $('.date-picker').datetimepicker({
-	// 	dateFormat: 'YYYY-MM-DD'
-	// });
 });
 
 //Opens an Ajax-powered modal that dynamically displays the user's data
@@ -85,22 +82,8 @@ $('#saveUserEdit').click(function(){
 		}
 	})
 });
-// $("#izimodal").iziModal();
-// $(document).on('click', '.trigger', function (event) {
-// 	event.preventDefault();
-// 	$('#izimodal').iziModal('open');
-// });
 
-// $('#trigger2').iziModal({
-// 		transitionIn: 'bounceInUp',
-// 		transitionOut: 'bounceOutDown'
-// 	});
-// $(document).on('click', '.trigger2', function (event) {
-// 	event.preventDefault();
-// 	$('#trigger2').iziModal('open');
-// 	$('#trigger2').iziModal('setBottom', 0);
-// });
-
+//Opens the update payroll modal
 $("#payrollModal").iziModal({
 	title: 'Update Payroll',
 	subtitle: 'Update this employee\'s payroll for the current cut-off',
