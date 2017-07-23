@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
         		'status' => $faker->numberBetween($min = 0, $max = 3),
         		'bank_info' => $faker->ean8,
         		'email' => $faker->unique()->email,
-        		'password' => '123456'
+        		'password' => bcrypt('123456')
         	]);
         }
     }

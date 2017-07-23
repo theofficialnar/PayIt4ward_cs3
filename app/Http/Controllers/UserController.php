@@ -27,7 +27,7 @@ class UserController extends Controller
     	$new_user->status = $request->stat;
     	$new_user->bank_info = $request->bank;
     	$new_user->email = $request->email;
-    	$new_user->password = '123456';
+    	$new_user->password = bcrypt('123456');
     	$new_user->save();
     	return back();
     }
@@ -176,7 +176,7 @@ class UserController extends Controller
         $upd_user->status = $request->stat;
         $upd_user->bank_info = $request->bank;
         $upd_user->email = $request->email;
-        $upd_user->password = $request->pw;
+        $upd_user->password = bcrypt($request->pw);
         $upd_user->save();
 
         $users = User::all();

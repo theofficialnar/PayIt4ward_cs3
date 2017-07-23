@@ -1548,3 +1548,13 @@ Stack trace:
 [2017-07-22 01:57:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/UserController.php:198
 Stack trace:
 #0 {main}  
+[2017-07-22 12:19:25] local.ERROR: exception 'Symfony\Component\Console\Exception\RuntimeException' with message 'Not enough arguments (missing: "name").' in /Users/nar/Documents/cs_3/vendor/symfony/console/Input/Input.php:84
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Command/Command.php(259): Symfony\Component\Console\Input\Input->validate()
+#1 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Console/Command.php(168): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#2 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(869): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(223): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Seeds\SeederMakeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 {main}  

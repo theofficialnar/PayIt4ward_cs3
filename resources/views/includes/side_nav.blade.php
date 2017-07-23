@@ -6,11 +6,16 @@
       <li><a href="#">My Account</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Welcome</span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Welcome, {{Auth::user()->name}}</span></a>
         <ul class="dropdown-menu">
-          <li><a href="admin_panel">Admin Panel</a></li>
-          <li><a href="#">Log Out</a></li>
+            <li><a href="admin_panel">Admin Panel</a></li>
+            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
         </ul>
       </li>
     </ul>

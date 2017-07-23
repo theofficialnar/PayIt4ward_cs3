@@ -83,3 +83,19 @@ $('#saveUserEdit').click(function(){
 		}
 	})
 });
+$("#izimodal").iziModal();
+$(document).on('click', '.trigger', function (event) {
+	event.preventDefault();
+	$('#izimodal').iziModal('open');
+});
+
+$('#trigger2').iziModal({
+		transitionIn: 'bounceInUp',
+		transitionOut: 'bounceOutDown'
+	});
+$(document).on('click', '.trigger2', function (event) {
+	event.preventDefault();
+	$('#trigger2').iziModal('open');
+	$('#trigger2').iziModal('setBottom', 0);
+
+});
