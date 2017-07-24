@@ -134,31 +134,24 @@ $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 	})
 });
 
-// $('#valTest').click(function(){
-// 	var sal = $('#userSal').val();
-// 	// alert(sal);
-// 	$.ajax({
-// 		type: 'POST',
-// 		url: '/admin/sss',
-// 		data: {
-// 			sal : sal
-// 		},
-// 		success: function(data){
-// 			$('#payrollForm').html(data);
-// 		}
-// 	})
-// })
-
-$('#valTest2').click(function(){
+$('#valTest').click(function(){
+	var token = $('#token').val();
+	// var val = $('#contribTestVal').val();
 	var sal = $('#userSal').val();
+	// alert(sal);
 	$.ajax({
 		type: 'POST',
-		url: 'admin/philhealth',
+		url: '/admin/contribCheck',
 		data: {
+			_token : token,
+			// val : val
 			sal : sal
 		},
 		success: function(data){
-			alert(data)
+			alert(data);
+		},
+		error: function(){
+			alert('An error was encountered during the database update!');
 		}
 	})
 })

@@ -13,13 +13,5 @@
 		Some other shit
 		</div>
 	</div>
-	<button class="trigger"></button>
-	<div id="izimodal">
-		test
-	</div>
-	<button class="trigger2">t2</button>
-	<div id="trigger2">
-		Trigger 2
-	</div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

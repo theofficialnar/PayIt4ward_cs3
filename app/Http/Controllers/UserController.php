@@ -256,7 +256,7 @@ class UserController extends Controller
     }
 
     function contribCheck(Request $request){
-        $philhealth = $sss = $request->sss;
+        $philhealth = $sss = $request->sal;
         $new_philhealth = new philhealth_contribs;
         $new_sss = new sss_contribs();
         $dataSss = $new_sss->sss($sss);

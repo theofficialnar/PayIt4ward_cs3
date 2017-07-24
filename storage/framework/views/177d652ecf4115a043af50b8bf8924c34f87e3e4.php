@@ -101,7 +101,7 @@ Users
 		<tbody id="usersViewBody">
 		<?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<tr>
-				<td><a data-toggle="modal" data-target="#userPanel" data-uid="<?php echo e($user->id); ?>" class="openUserPanel"> <?php echo e($user->name); ?></a></td>
+				<td><a data-uid="<?php echo e($user->id); ?>" class="openUserPanel" href="#tabUserInfo"> <?php echo e($user->name); ?></a></td>
 				<td><?php echo e($user->department); ?></td>
 				<td><?php echo e($user->position); ?></td>
 				<?php if($user->status == 0): ?>
@@ -113,7 +113,7 @@ Users
 				<?php else: ?>
 					<td>Terminated</td>
 				<?php endif; ?>
-				<td><button class="btn btn-xs btn-default payrollModalTrigger">Update Payroll</button></td>
+				<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="<?php echo e($user->id); ?>"">Update Payroll</button></td>
 			</tr>
 		<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</tbody>
@@ -121,48 +121,21 @@ Users
 </div>
 
 <!-- modal displaying individual user info and edit option -->
-<div id="userPanel" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-	    <div class="modal-header">
-	    	<button type="button" class="close" data-dismiss="modal" id="closeUserEdit">&times;</button>
-	   		<h4 class="modal-title" id="userModalHead">User Info</h4>
-	  	</div>
-	  	<div class="modal-body">
-	  	</div>
-	  	<div class="modal-footer">
-	  		<button id="triggerUserEdit">Edit</button>
-	  		<button id="saveUserEdit" data-dismiss="modal">Save</button>
-	  	</div>
-    </div>
-  </div>
+<div id="userPanel">
+	  	<ul class="nav nav-tabs">
+		  <li class="active"><a data-toggle="tab" href="#tabUserInfo">User Info</a></li>
+		  <li><a data-toggle="tab" href="#tabUserUpdate">Update Info</a></li>
+		  <li><a data-toggle="tab" href="#tabUserUpdatePw">Update Password</a></li>
+		</ul>
+		<div class="tab-content">	  
+		</div>
 </div>
 
 <!-- modal displaying the payroll form -->
 <div id="payrollModal">
-	<form>
-		<div class="form-group">
-			<label for="hrs_absent">Absences</label>
-			<input type="number" id="hrs_absent" name="hrs_absent" class="form-control" value="0" min="0">
-		</div>
-		<div class="form-group">
-			<label for="hrs_reg_ot">Regular Overtime</label>
-			<input type="number" id="hrs_reg_ot" name="hrs_reg_ot" class="form-control" value="0" min="0">
-		</div>
-		<div class="form-group">
-			<label for="hrs_rd_ot">Rest Day Overtime</label>
-			<input type="number" id="hrs_rd_ot" name="hrs_rd_ot" class="form-control" value="0" min="0">
-		</div>
-		<div class="form-group">
-			<label for="hrs_rd_hot">Rest Day Holiday Overtime</label>
-			<input type="number" id="hrs_rd_hot" name="hrs_rd_hot" class="form-control" value="0" min="0">
-		</div>
-		<div class="form-group">
-			<label for="hrs_reg_hot">Regular Holiday Overtime</label>
-			<input type="number" id="hrs_reg_hot" name="hrs_reg_hot" class="form-control" value="0" min="0">
-		</div>
-		<button>Submit</button>
+	<form id="payrollForm">
 	</form>
+	<button id="valTest">Contrib Check</button>
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
