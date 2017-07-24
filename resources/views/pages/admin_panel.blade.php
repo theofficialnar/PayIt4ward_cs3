@@ -115,7 +115,7 @@ Users
 				@else
 					<td>Terminated</td>
 				@endif
-				<td><button class="btn btn-xs btn-default payrollModalTrigger">Update Payroll</button></td>
+				<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="{{$user->id}}"">Update Payroll</button></td>
 			</tr>
 		@endforeach
 		</tbody>
@@ -135,28 +135,13 @@ Users
 
 <!-- modal displaying the payroll form -->
 <div id="payrollModal">
-	<form>
-		<div class="form-group">
-			<label for="hrs_absent">Absences</label>
-			<input type="number" id="hrs_absent" name="hrs_absent" class="form-control" value="0" min="0">
-		</div>
-		<div class="form-group">
-			<label for="hrs_reg_ot">Regular Overtime</label>
-			<input type="number" id="hrs_reg_ot" name="hrs_reg_ot" class="form-control" value="0" min="0">
-		</div>
-		<div class="form-group">
-			<label for="hrs_rd_ot">Rest Day Overtime</label>
-			<input type="number" id="hrs_rd_ot" name="hrs_rd_ot" class="form-control" value="0" min="0">
-		</div>
-		<div class="form-group">
-			<label for="hrs_rd_hot">Rest Day Holiday Overtime</label>
-			<input type="number" id="hrs_rd_hot" name="hrs_rd_hot" class="form-control" value="0" min="0">
-		</div>
-		<div class="form-group">
-			<label for="hrs_reg_hot">Regular Holiday Overtime</label>
-			<input type="number" id="hrs_reg_hot" name="hrs_reg_hot" class="form-control" value="0" min="0">
-		</div>
-		<button>Submit</button>
+	<form id="payrollForm">
 	</form>
+		<!-- test field -->
+		<form method="POST" action="/admin/contribCheck">
+		{{csrf_field()}}
+		<input type="number" name="sss">
+		<button id="valTest">Contrib Check</button>
+		</form>
 </div>
 @endsection

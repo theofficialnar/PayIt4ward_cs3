@@ -15,12 +15,4 @@
 		Some other shit
 		</div>
 	</div>
-	<button class="trigger"></button>
-	<div id="izimodal">
-		test
-	</div>
-	<button class="trigger2">t2</button>
-	<div id="trigger2">
-		Trigger 2
-	</div>
 @endsection

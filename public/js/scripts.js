@@ -116,4 +116,49 @@ $("#payrollModal").iziModal({
 $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 	event.preventDefault();
 	$('#payrollModal').iziModal('open');
+	var uid = $(this).data('uid');
+	var token = $('#token').val();
+	// alert(token);
+	$.ajax({
+		type: 'POST',
+		url: '/admin_panel/user/payroll/'+uid,
+		data: {
+			_token : token
+		},
+		success: function(data, status){
+			$('#payrollForm').html(data);
+		},
+		error: function(){
+			alert('An error was encountered during the database update!');
+		}
+	})
 });
+
+// $('#valTest').click(function(){
+// 	var sal = $('#userSal').val();
+// 	// alert(sal);
+// 	$.ajax({
+// 		type: 'POST',
+// 		url: '/admin/sss',
+// 		data: {
+// 			sal : sal
+// 		},
+// 		success: function(data){
+// 			$('#payrollForm').html(data);
+// 		}
+// 	})
+// })
+
+$('#valTest2').click(function(){
+	var sal = $('#userSal').val();
+	$.ajax({
+		type: 'POST',
+		url: 'admin/philhealth',
+		data: {
+			sal : sal
+		},
+		success: function(data){
+			alert(data)
+		}
+	})
+})

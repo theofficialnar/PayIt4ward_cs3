@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\sss_contribs;
+use App\philhealth_contribs;
 
 class UserController extends Controller
 {   
@@ -211,7 +213,7 @@ class UserController extends Controller
                 else{
                     echo '<td>Terminated</td>';
                 }
-                echo '<td><button class="btn btn-xs btn-default payrollModalTrigger">Update Payroll</button></td>
+                echo '<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="'.$user->id.'">Update Payroll</button></td>
             </tr>';
         }
     }
@@ -224,5 +226,42 @@ class UserController extends Controller
             $upd_user->password = bcrypt($request->pw);
         }
         $upd_user->save();
+    }
+
+    function getPayrollForm($id){
+        $pay_user = User::find($id);
+        echo '
+        <input type="hidden" id="userSal" value="'.$pay_user->salary.'"
+        <div class="form-group">
+            <label for="hrs_absent">Absences</label>
+            <input type="number" id="hrs_absent" name="hrs_absent" class="form-control" value="0" min="0">
+        </div>
+        <div class="form-group">
+            <label for="hrs_reg_ot">Regular Overtime</label>
+            <input type="number" id="hrs_reg_ot" name="hrs_reg_ot" class="form-control" value="0" min="0">
+        </div>
+        <div class="form-group">
+            <label for="hrs_rd_ot">Rest Day Overtime</label>
+            <input type="number" id="hrs_rd_ot" name="hrs_rd_ot" class="form-control" value="0" min="0">
+        </div>
+        <div class="form-group">
+            <label for="hrs_rd_hot">Rest Day Holiday Overtime</label>
+            <input type="number" id="hrs_rd_hot" name="hrs_rd_hot" class="form-control" value="0" min="0">
+        </div>
+        <div class="form-group">
+            <label for="hrs_reg_hot">Regular Holiday Overtime</label>
+            <input type="number" id="hrs_reg_hot" name="hrs_reg_hot" class="form-control" value="0" min="0">
+        </div>
+        <button>Submit</button>';
+    }
+
+    function contribCheck(Request $request){
+        $philhealth = $sss = $request->sss;
+        $new_philhealth = new philhealth_contribs;
+        $new_sss = new sss_contribs();
+        $dataSss = $new_sss->sss($sss);
+        $dataPhilhealth = $new_philhealth->philHealth($philhealth);
+        echo '<p>SSS Contrib: '.$dataSss->monthly_contribution.'</p>';
+        echo '<p>Phil Health Contrib: '.$dataPhilhealth->monthly_contribution.'</p>';
     }
 }

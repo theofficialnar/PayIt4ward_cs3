@@ -33,3 +33,7 @@ Route::post('/admin_panel/user/update/{id}', 'UserController@adminUpdateUser');
 
 // Ajax route to update user acct data
 Route::post('/admin_panel/user/updateacct/{id}', 'UserController@adminUpdateUserAcct');
+
+Route::post('/admin_panel/user/payroll/{id}', 'UserController@getPayrollForm');
+
+Route::post('/admin/contribCheck', 'UserController@contribCheck');
