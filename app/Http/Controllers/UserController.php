@@ -37,7 +37,7 @@ class UserController extends Controller
     function adminViewUser($id){
     	$user = User::find($id);
     	echo '
-      	<div id="userInfo">
+      	<div id="tabUserInfo" class="tab-pane fade in active">
         	<p>Name: '.$user->name.'</p>
         	<p>Employee Number: '.$user->employee_number.'</p>
         	<p>Department: '.$user->department.'</p>
@@ -64,7 +64,7 @@ class UserController extends Controller
         	<p>Email: '.$user->email.'</p>
       	</div>
 
-      	<div id="userEdit" style="display: none">
+      	<div id="tabUserUpdate" class="tab-pane fade">
             <form id="userUpdate">
                 <input type="hidden" value="'.$user->id.'" id="userEditId">
                 <div class="form-group">
@@ -152,19 +152,27 @@ class UserController extends Controller
                     <label class="radio-inline">
                     <input type="radio" name="stat" value="3" checked>Terminated</label>';
             }
-          	    echo'<div class="form-group">
+          	echo'</div>
+                <div class="form-group">
                     <label for="edit_bank">Bank Account Number:</label>
                     <input type="number" class="form-control" id="edit_bank" name="bank_info" value="'.$user->bank_info.'">
                 </div>
+            </form>
+            <button id="saveUserEdit" data-dismiss="modal">Save Changes</button>
+        </div>
+
+        <div id="tabUserUpdatePw" class="tab-pane fade">
+            <form id="acctUpdate">
                 <div class="form-group">
                     <label for="edit_email">Email:</label>
                     <input type="text" class="form-control" id="edit_email" name="email" value="'.$user->email.'">
                 </div>
                 <div class="form-group">
-                    <label for="edit_pw">Password:</label>
-                    <input type="password" class="form-control" id="edit_pw" name="password" value="'.$user->password.'">
+                    <label for="edit_pw">New Password:</label>
+                    <input type="password" class="form-control" id="edit_pw" name="pw">
                 </div>
             </form>
+            <button id="saveUserAcctEdit" data-dismiss="modal">Save Changes</button>
         </div>';
     }
 
@@ -182,15 +190,13 @@ class UserController extends Controller
         $upd_user->marital_status = $request->mar_stat;
         $upd_user->status = $request->stat;
         $upd_user->bank_info = $request->bank;
-        $upd_user->email = $request->email;
-        $upd_user->password = bcrypt($request->pw);
         $upd_user->save();
 
         $users = User::all();
         foreach($users as $user){
             echo '
             <tr>
-                <td><a data-toggle="modal" data-target="#userPanel" data-uid="'.$user->id.'" class="openUserPanel">'.$user->name.'</a></td>
+                <td><a data-uid="'.$user->id.'" class="openUserPanel" href="#tabUserInfo">'.$user->name.'</a></td>
                 <td>'.$user->department.'</td>
                 <td>'.$user->position.'</td>';
                 if($user->status == 0){
@@ -208,5 +214,15 @@ class UserController extends Controller
                 echo '<td><button class="btn btn-xs btn-default payrollModalTrigger">Update Payroll</button></td>
             </tr>';
         }
+    }
+
+    //Update user account info via modal
+    function adminUpdateUserAcct($id, Request $request){
+        $upd_user = User::find($id);
+        $upd_user->email = $request->email;
+        if(isset($request->pw)){
+            $upd_user->password = bcrypt($request->pw);
+        }
+        $upd_user->save();
     }
 }

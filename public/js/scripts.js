@@ -2,13 +2,21 @@ $(document).ready(function(){
 });
 
 //Opens an Ajax-powered modal that dynamically displays the user's data
-$('#usersViewBody').on('click', '.openUserPanel', function(){
-	$('#userModalHead').html('User Info');
-	$('#saveUserEdit').hide();
-	$('#triggerUserEdit').show();
+$('#userPanel').iziModal({
+	title: 'View User Data',
+	subtitle: 'View and update each employee\'s records in the database',
+	icon: 'glyphicon glyphicon-user',
+	padding: '15',
+	fullscreen: true
+});
+
+$('#usersViewBody').on('click', '.openUserPanel', function(event){
+	event.preventDefault();
+	$('#userPanel').iziModal('open');
+	var tab = event.target.hash;
+	$('li > a[href="' + tab + '"]').tab("show");
 	var uid = $(this).data('uid');
 	var token = $('#token').val();
-	// $('.modal-title').html($(this).data('uid'));
 	$.ajax({
 		type: 'POST',
 		url: 'admin_panel/user/'+uid,
@@ -16,7 +24,7 @@ $('#usersViewBody').on('click', '.openUserPanel', function(){
 			_token: token
 		},
 		success: function(data,status){
-			$('.modal-body').html(data)
+			$('.tab-content').html(data)
 		},
 		error: function(){
 			alert('Error connecting to database!')
@@ -24,20 +32,8 @@ $('#usersViewBody').on('click', '.openUserPanel', function(){
 	})
 });
 
-//Changes the modal's view from displaying user info the edit mode
-$('#triggerUserEdit').click(function(){
-	$('#userEdit').css('display', 'block');
-	$('#userInfo').css('display', 'none');
-	$(this).hide();
-	$('#userModalHead').html('Update User Info');
-	$('#saveUserEdit').show();
-	// alert('Triggered!');
-});
-
 //Saves any changes made on the user via Ajax
-$('#saveUserEdit').click(function(){
-	$('#userEdit').css('display', 'none');
-	$('#userInfo').css('display', 'block');
+$('.tab-content').on('click', '#saveUserEdit', function(event){
 	var token = $('#token').val();
 	var uid = $('#userEditId').val();
 	var name = $('#edit_usr').val();
@@ -51,12 +47,11 @@ $('#saveUserEdit').click(function(){
 	var mar_stat = $('input[name=mar_stat]:checked', '#userUpdate').val();
 	var stat = $('input[name=stat]:checked', '#userUpdate').val();
 	var bank = $('#edit_bank').val();
-	var email = $('#edit_email').val();
-	var pw = $('#edit_pw').val();
-	// alert(token);
+	// alert(uid);
+
 	$.ajax({
 		type: 'POST',
-		url: 'admin/user/update/'+uid,
+		url: 'admin_panel/user/update/'+uid,
 		data: {
 			_token : token,
 			name : name,
@@ -70,8 +65,6 @@ $('#saveUserEdit').click(function(){
 			mar_stat : mar_stat,
 			stat : stat,
 			bank : bank,
-			email : email,
-			pw : pw
 		},
 		success: function(data, status){
 			$('#usersViewBody').html(data);
@@ -80,8 +73,38 @@ $('#saveUserEdit').click(function(){
 		error: function(){
 			alert('An error was encountered during the database update!');
 		}
-	})
+	});
+
+	$('.iziModal-button-close').trigger('click');
 });
+
+//Saves any changes made on the user's acct info via Ajax
+$('.tab-content').on('click', '#saveUserAcctEdit', function(event){
+	var token = $('#token').val();
+	var uid = $('#userEditId').val();
+	var email = $('#edit_email').val();
+	var pw = $('#edit_pw').val();
+	// alert(uid);
+
+	$.ajax({
+		type: 'POST',
+		url: '/admin_panel/user/updateacct/'+uid,
+		data: {
+			_token : token,
+			email : email,
+			password : pw
+		},
+		success: function(data, status){
+			alert('User '+name+'\'s account information has been successfully updated!');
+		},
+		error: function(){
+			alert('An error was encountered during the database update!');
+		}
+	});
+
+	$('.iziModal-button-close').trigger('click');
+})
+	
 
 //Opens the update payroll modal
 $("#payrollModal").iziModal({

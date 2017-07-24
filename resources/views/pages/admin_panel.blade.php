@@ -103,7 +103,7 @@ Users
 		<tbody id="usersViewBody">
 		@foreach($users as $user)
 			<tr>
-				<td><a data-toggle="modal" data-target="#userPanel" data-uid="{{$user->id}}" class="openUserPanel"> {{$user->name}}</a></td>
+				<td><a data-uid="{{$user->id}}" class="openUserPanel" href="#tabUserInfo"> {{$user->name}}</a></td>
 				<td>{{$user->department}}</td>
 				<td>{{$user->position}}</td>
 				@if($user->status == 0)
@@ -123,21 +123,14 @@ Users
 </div>
 
 <!-- modal displaying individual user info and edit option -->
-<div id="userPanel" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-	    <div class="modal-header">
-	    	<button type="button" class="close" data-dismiss="modal" id="closeUserEdit">&times;</button>
-	   		<h4 class="modal-title" id="userModalHead">User Info</h4>
-	  	</div>
-	  	<div class="modal-body">
-	  	</div>
-	  	<div class="modal-footer">
-	  		<button id="triggerUserEdit">Edit</button>
-	  		<button id="saveUserEdit" data-dismiss="modal">Save</button>
-	  	</div>
-    </div>
-  </div>
+<div id="userPanel">
+	  	<ul class="nav nav-tabs">
+		  <li class="active"><a data-toggle="tab" href="#tabUserInfo">User Info</a></li>
+		  <li><a data-toggle="tab" href="#tabUserUpdate">Update Info</a></li>
+		  <li><a data-toggle="tab" href="#tabUserUpdatePw">Update Password</a></li>
+		</ul>
+		<div class="tab-content">	  
+		</div>
 </div>
 
 <!-- modal displaying the payroll form -->

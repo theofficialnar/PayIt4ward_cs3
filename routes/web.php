@@ -29,4 +29,7 @@ Route::post('/admin_panel/add_user', 'UserController@addUser');
 Route::post('/admin_panel/user/{id}', 'UserController@adminViewUser');
 
 //Ajax route to update user data
-Route::post('/admin/user/update/{id}', 'UserController@adminUpdateUser');
+Route::post('/admin_panel/user/update/{id}', 'UserController@adminUpdateUser');
+
+// Ajax route to update user acct data
+Route::post('/admin_panel/user/updateacct/{id}', 'UserController@adminUpdateUserAcct');
