@@ -21,11 +21,11 @@ class PaymentsController extends Controller
 	}
 
 	//function to calculate the employee's hourly rate
-	function hourlyRate($days, $salary){
+	function hourlyRate($days, $hours, $salary){
 		if($days == 5){
-    		$hourly_rate = round(($salary*12)/261, 2);
+    		$hourly_rate = round(($salary*12)/261/$hours, 2);
     	}else{
-    		$hourly_rate = round(($salary*12)/312, 2);
+    		$hourly_rate = round(($salary*12)/312/$hours, 2);
     	};
     	return $hourly_rate;
 	}
@@ -48,7 +48,8 @@ class PaymentsController extends Controller
     	$employee = User::find($uid);
     	$salary = $employee->salary;
     	$days = $employee->days_per_week;
-    	$data_hourly = $this->hourlyRate($days, $salary);
+    	$hours = $employee->hrs_per_day;
+    	$data_hourly = $this->hourlyRate($days, $hours, $salary);
 
     	$rd = new bonusesandots();
     	$rd_ot = $rd->calc_nd_rd($data_hourly,8);
