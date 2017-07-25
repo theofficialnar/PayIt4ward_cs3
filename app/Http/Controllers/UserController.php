@@ -324,11 +324,31 @@ class UserController extends Controller
         </div>
 
         <div class="panel panel-default">
-            <div class="panel-heading"><h4 class="text-center">Other Bonuses</h4></div>
+            <div class="panel-heading"><h4 class="text-center">Night Differentials</h4></div>
             <div class="panel-body">
-                <div class="form-group col-lg-4 col-lg-offset-4">
-                    <label for="hrs_night_diff">Night Differential</label>
-                    <input type="number" id="hrs_night_diff" name="hrs_night_diff" class="form-control" value="0" min="0">
+                <div class="form-group col-lg-4">
+                    <label for="hrs_nd">Regular Night Differential</label>
+                    <input type="number" id="hrs_nd" name="hrs_nd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_rd_nd">Rest Day Night Differential</label>
+                    <input type="number" id="hrs_rd_nd" name="hrs_rd_nd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_spec_holiday_nd">Special Holiday Night Differential</label>
+                    <input type="number" id="hrs_spec_holiday_nd" name="hrs_spec_holiday_nd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_spec_holiday_rd_nd">Rest Day AND Special Holiday Night Differential</label>
+                    <input type="number" id="hrs_spec_holiday_rd_nd" name="hrs_spec_holiday_rd_nd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_reg_holiday_nd">Regular Holiday Night Differential</label>
+                    <input type="number" id="hrs_reg_holiday_nd" name="hrs_reg_holiday_nd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_reg_holiday_rd_nd">Regular Holiday AND Rest Day Night Differential</label>
+                    <input type="number" id="hrs_reg_holiday_rd_nd" name="hrs_reg_holiday_rd_nd" class="form-control" value="0" min="0">
                 </div>
             </div>
         </div>';
