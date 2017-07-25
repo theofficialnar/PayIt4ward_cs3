@@ -250,28 +250,88 @@ class UserController extends Controller
     function getPayrollForm($id){
         $pay_user = User::find($id);
         echo '
-        <input type="hidden" id="userSal" value="'.$pay_user->salary.'"
-        <div class="form-group">
-            <label for="hrs_absent">Absences</label>
-            <input type="number" id="hrs_absent" name="hrs_absent" class="form-control" value="0" min="0">
+        <input type="hidden" id="payrollSal" value="'.$pay_user->salary.'" name="payrollSalary">
+        <input type="hidden" id="payrollUid" value="'.$pay_user->id.'" name="payrollUid">
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4 class="text-center">Deductions</h4></div>
+            <div class="panel-body">
+                <div class="form-group col-lg-6">
+                    <label for="hrs_absent">Absences</label>
+                    <input type="number" id="hrs_absent" name="hrs_absent" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="hrs_late">Lates</label>
+                    <input type="number" id="hrs_late" name="hrs_late" class="form-control" value="0" min="0">
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="hrs_reg_ot">Regular Overtime</label>
-            <input type="number" id="hrs_reg_ot" name="hrs_reg_ot" class="form-control" value="0" min="0">
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4 class="text-center">Holidays and Rest Days</h4></div>
+            <div class="panel-body">
+                <div class="form-group col-lg-4">
+                    <label for="hrs_rd">Rest Day</label>
+                    <input type="number" id="hrs_rd" name="hrs_rd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_spec_holiday">Special Holiday</label>
+                    <input type="number" id="hrs_spec_holiday" name="hrs_spec_holiday" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_spec_holiday+rd">Special Holiday AND Rest Day</label>
+                    <input type="number" id="hrs_spec_holiday+rd" name="hrs_spec_holiday+rd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4 col-lg-offset-2">
+                    <label for="hrs_reg_holiday">Regular Holiday</label>
+                    <input type="number" id="hrs_reg_holiday" name="hrs_reg_holiday" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_reg_holiday+rd">Regular Holiday AND Rest Day</label>
+                    <input type="number" id="hrs_reg_holiday+rd" name="hrs_reg_holiday+rd" class="form-control" value="0" min="0">
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="hrs_rd_ot">Rest Day Overtime</label>
-            <input type="number" id="hrs_rd_ot" name="hrs_rd_ot" class="form-control" value="0" min="0">
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4 class="text-center">Overtimes</h4></div>
+            <div class="panel-body">
+                <div class="form-group col-lg-4">
+                    <label for="hrs_ot_ord">Ordinary Overtime</label>
+                    <input type="number" id="hrs_ot_ord" name="hrs_ot_ord" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_ot_rd">Rest Day Overtime</label>
+                    <input type="number" id="hrs_ot_rd" name="hrs_ot_rd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_ot_spec_holiday">Special Holiday Overtime</label>
+                    <input type="number" id="hrs_ot_spec_holiday" name="hrs_ot_spec_holiday" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_ot_spec_holiday+rd">Special Holiday AND Rest Day Overtime</label>
+                    <input type="number" id="hrs_ot_spec_holiday+rd" name="hrs_ot_spec_holiday+rd" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_ot_reg_holiday">Regular Holiday Overtime</label>
+                    <input type="number" id="hrs_ot_reg_holiday" name="hrs_ot_reg_holiday" class="form-control" value="0" min="0">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="hrs_ot_reg_holiday+rd">Regular Holiday AND Rest Day Overtime</label>
+                    <input type="number" id="hrs_ot_reg_holiday+rd" name="hrs_ot_reg_holiday+rd" class="form-control" value="0" min="0">
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="hrs_rd_hot">Rest Day Holiday Overtime</label>
-            <input type="number" id="hrs_rd_hot" name="hrs_rd_hot" class="form-control" value="0" min="0">
-        </div>
-        <div class="form-group">
-            <label for="hrs_reg_hot">Regular Holiday Overtime</label>
-            <input type="number" id="hrs_reg_hot" name="hrs_reg_hot" class="form-control" value="0" min="0">
-        </div>
-        <button>Submit</button>';
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4 class="text-center">Other Bonuses</h4></div>
+            <div class="panel-body">
+                <div class="form-group col-lg-4 col-lg-offset-4">
+                    <label for="hrs_night_diff">Night Differential</label>
+                    <input type="number" id="hrs_night_diff" name="hrs_night_diff" class="form-control" value="0" min="0">
+                </div>
+            </div>
+        </div>';
     }
 
 

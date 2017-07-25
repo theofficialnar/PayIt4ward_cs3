@@ -34,6 +34,11 @@ Route::post('/admin_panel/user/update/{id}', 'UserController@adminUpdateUser');
 // Ajax route to update user acct data
 Route::post('/admin_panel/user/updateacct/{id}', 'UserController@adminUpdateUserAcct');
 
+//Ajax rout to pull up a dynamic payroll modal
 Route::post('/admin_panel/user/payroll/{id}', 'UserController@getPayrollForm');
 
+//Test Ajax
 Route::post('/admin/contribCheck', 'PaymentsController@contribCheck');
+
+//test route
+Route::post('/admin_panel/payroll_update', 'PaymentsController@payrollUpdate');

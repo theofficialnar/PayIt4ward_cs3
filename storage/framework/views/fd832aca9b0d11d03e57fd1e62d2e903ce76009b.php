@@ -145,8 +145,10 @@ Users
 
 <!-- modal displaying the payroll form -->
 <div id="payrollModal">
-	<form id="payrollForm">
+	<form>
+	<div id="payrollFormContent"></div>
 	</form>
+	<button id="payrollSubmit">Submit</button>
 	<button id="valTest">Contrib Check</button>
 </div>
 <?php $__env->stopSection(); ?>

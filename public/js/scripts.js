@@ -117,7 +117,8 @@ $("#payrollModal").iziModal({
 	title: 'Update Payroll',
 	subtitle: 'Update this employee\'s payroll for the current cut-off',
 	icon: 'glyphicon glyphicon-piggy-bank',
-	padding: '15'
+	padding: '15',
+	openFullscreen: true
 });
 $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 	event.preventDefault();
@@ -132,7 +133,7 @@ $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 			_token : token
 		},
 		success: function(data, status){
-			$('#payrollForm').html(data);
+			$('#payrollFormContent').html(data);
 		},
 		error: function(){
 			alert('An error was encountered during the database update!');
@@ -144,7 +145,7 @@ $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 $('#valTest').click(function(){
 	var token = $('#token').val();
 	// var val = $('#contribTestVal').val();
-	var sal = $('#userSal').val();
+	var sal = $('#payrollSal').val();
 	// alert(sal);
 	$.ajax({
 		type: 'POST',
@@ -160,6 +161,25 @@ $('#valTest').click(function(){
 		error: function(){
 			alert('An error was encountered during the database update!');
 			// $('#payrollForm').html(data);
+		}
+	})
+})
+
+//payroll submit
+$('#payrollSubmit').click(function(){
+	var token = $('#token').val();	
+	var uid = $('#payrollUid').val();
+	// alert(sal+','+uid+','+token);
+
+	$.ajax({
+		type: 'POST',
+		url: '/admin_panel/payroll_update',
+		data: {
+			_token : token,
+			uid : uid
+		},
+		success: function(data){
+			$('#payrollFormContent').html(data);
 		}
 	})
 })
