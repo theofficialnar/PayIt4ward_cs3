@@ -36,4 +36,4 @@ Route::post('/admin_panel/user/updateacct/{id}', 'UserController@adminUpdateUser
 
 Route::post('/admin_panel/user/payroll/{id}', 'UserController@getPayrollForm');
 
-Route::post('/admin/contribCheck', 'UserController@contribCheck');
+Route::post('/admin/contribCheck', 'PaymentsController@contribCheck');

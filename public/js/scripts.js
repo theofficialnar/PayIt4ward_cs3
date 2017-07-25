@@ -134,6 +134,7 @@ $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 	})
 });
 
+//contrib tester ajax
 $('#valTest').click(function(){
 	var token = $('#token').val();
 	// var val = $('#contribTestVal').val();
@@ -152,6 +153,7 @@ $('#valTest').click(function(){
 		},
 		error: function(){
 			alert('An error was encountered during the database update!');
+			// $('#payrollForm').html(data);
 		}
 	})
 })

@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\sss_contribs;
-use App\philhealth_contribs;
 
 class UserController extends Controller
 {   
@@ -255,13 +253,5 @@ class UserController extends Controller
         <button>Submit</button>';
     }
 
-    function contribCheck(Request $request){
-        $philhealth = $sss = $request->sal;
-        $new_philhealth = new philhealth_contribs;
-        $new_sss = new sss_contribs();
-        $dataSss = $new_sss->sss($sss);
-        $dataPhilhealth = $new_philhealth->philHealth($philhealth);
-        echo '<p>SSS Contrib: '.$dataSss->monthly_contribution.'</p>';
-        echo '<p>Phil Health Contrib: '.$dataPhilhealth->monthly_contribution.'</p>';
-    }
+
 }

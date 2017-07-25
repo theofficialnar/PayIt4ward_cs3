@@ -135,13 +135,7 @@ Users
 <div id="payrollModal">
 	<form id="payrollForm">
 	</form>
-		<!-- test field -->
-		<form method="POST" action="/admin/contribCheck">
-		<?php echo e(csrf_field()); ?>
-
-		<input type="number" name="sss">
-		<button id="valTest">Contrib Check</button>
-		</form>
+	<button id="valTest">Contrib Check</button>
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
