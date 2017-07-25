@@ -18,73 +18,72 @@
 			      	<?php echo e(csrf_field()); ?>	
 			      	<div class="form-group">
 						<label for="usr">Name:</label>
-					  	<input type="text" class="form-control" id="usr" name="name">
+					  	<input required type="text" class="form-control" id="usr" name="name" placeholder="Juan Tamad" pattern="[A-Za-z]{5,}" title="Name can only contain letters and a minimum of 5 characters.">
 					</div>
 					<div class="form-group">
 					  	<label for="email">Email:</label>
-					  	<input type="email" class="form-control" id="email" name="email">
+					  	<input required type="email" class="form-control" id="email" name="email" placeholder="juan_tamad@imba_gaming.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please input a valid email address.">
 					</div>
 					<div class="form-group">
 					  	<label for="emp">Employee Number:</label>
-					  	<input type="number" class="form-control" id="emp" name="emp">
+					  	<input required type="number" class="form-control" id="emp" name="emp" placeholder="1234" min="1000" max="9999">
 					</div>
 					<div class="form-group">
 					  	<label for="add">Date Hired:</label>
-					  	<input type="date" class="form-control date-picker" id="add" name="hired">
+					  	<input required type="date" class="form-control date-picker" id="add" name="hired">
 					</div>
 					<div class="form-group">
 					  	<label for="dept">Department:</label>
-					  	<input type="text" class="form-control" id="dept" name="dept">
+					  	<input required type="text" class="form-control" id="dept" name="dept" placeholder="Operations Department">
 					</div>
 					<div class="form-group">
 					  	<label for="pos">Position:</label>
-					  	<input type="text" class="form-control" id="pos" name="post">
+					  	<input required type="text" class="form-control" id="pos" name="post" placeholder="Caster">
 					</div>
 					<div class="form-group">
 					  	<label for="sal">Salary:</label>
-					  	<input type="number" class="form-control" id="sal" name="sal">
+					  	<input required type="number" class="form-control" id="sal" name="sal" placeholder="25000" min="0" max="999999">
 					</div>
 					<div class="form-group">
-					  	<label for="hrs_day">Hours per Day:</label>
-					  	<input type="number" class="form-control" id="hrs_day" name="hrs_day">
-					</div>
-					<div class="form-group">
-					  	<label for="days_week">Days per Week:</label>
-					  	<input type="number" class="form-control" id="days_week" name="days_week">
+					  	<label>Days per Week:</label>
+					  	<label class="radio-inline">
+					  	<input required type="radio" name="days_week" value="5">5 Days</label>
+					  	<label class="radio-inline">
+					  	<input required type="radio" name="days_week" value="6">6 Days</label>
 					</div>
 					<div class="form-group">
 						<label>Status: &nbsp;</label>
 					  	<label class="radio-inline">
-					  	<input type="radio" name="stat" value="0">Active</label>
+					  	<input required type="radio" name="stat" value="0">Active</label>
 					  	<label class="radio-inline">
-					  	<input type="radio" name="stat" value="1">On Leave</label>
+					  	<input required type="radio" name="stat" value="1">On Leave</label>
 					  	<label class="radio-inline">
-					  	<input type="radio" name="stat" value="2">Retired</label>
+					  	<input required type="radio" name="stat" value="2">Retired</label>
 					  	<label class="radio-inline">
-					  	<input type="radio" name="stat" value="3">Terminated</label>
+					  	<input required type="radio" name="stat" value="3">Terminated</label>
 					</div>
 					<div class="form-group">
 					  	<label for="add">Address:</label>
-					  	<input type="text" class="form-control" id="add" name="add">
+					  	<input required type="text" class="form-control" id="add" name="add" placeholder="Metro Manila">
 					</div>
 					<div class="form-group">
 					  	<label for="bday">Birthday:</label>
-					  	<input type="date" class="form-control date-picker" id="bday" name="bday">
+					  	<input required type="date" class="form-control date-picker" id="bday" name="bday">
 					</div>
 					<div class="form-group">
 						<label>Marital Status: &nbsp;</label>
 					  	<label class="radio-inline">
-					  	<input type="radio" name="mar_stat" value="0">Single</label>
+					  	<input required type="radio" name="mar_stat" value="0">Single</label>
 					  	<label class="radio-inline">
-					  	<input type="radio" name="mar_stat" value="1">Married</label>
+					  	<input required type="radio" name="mar_stat" value="1">Married</label>
 					</div>
 					<div class="form-group">
 					  	<label for="dependents">Number of Dependents:</label>
-					  	<input type="number" class="form-control" id="dependents" name="dependents">
+					  	<input required type="number" class="form-control" id="dependents" name="dependents" placeholder="5" min="0">
 					</div>
 					<div class="form-group">
 					  	<label for="bank">Bank Account Number:</label>
-					  	<input type="text" class="form-control" id="bank" name="bank">
+					  	<input required type="number" class="form-control" id="bank" name="bank" placeholder="12345678" min="10000000" max="99999999">
 					</div>
 		      </div>
 		      <div class="panel-footer">

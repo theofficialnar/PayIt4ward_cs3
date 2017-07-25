@@ -30,7 +30,7 @@ class UserController extends Controller
     	$new_user->email = $request->email;
     	$new_user->password = bcrypt('123456');
         $new_user->dependents = $request->dependents;
-        $new_user->hrs_per_day = $request->hrs_day;
+        $new_user->hrs_per_day = '8';
         $new_user->days_per_week = $request->days_week;
     	$new_user->save();
     	return back();
