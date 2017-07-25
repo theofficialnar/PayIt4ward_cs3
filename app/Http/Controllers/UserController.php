@@ -29,6 +29,9 @@ class UserController extends Controller
     	$new_user->bank_info = $request->bank;
     	$new_user->email = $request->email;
     	$new_user->password = bcrypt('123456');
+        $new_user->dependents = $request->dependents;
+        $new_user->hrs_per_day = $request->hrs_day;
+        $new_user->days_per_week = $request->days_week;
     	$new_user->save();
     	return back();
     }
@@ -44,6 +47,8 @@ class UserController extends Controller
         	<p>Position: '.$user->position.'</p>
             <p>Salary: '.$user->salary.'</p>
         	<p>Date Hired: '.$user->date_started.'</p>
+            <p>Hours per Day: '.$user->hrs_per_day.' hours</p>
+            <p>Days per Week: '.$user->days_per_week.' days</p>
         	<p>Address: '.$user->address.'</p>
         	<p>Birthday: '.$user->birthday.'</p>';
             if($user->marital_status == 0){
@@ -51,6 +56,7 @@ class UserController extends Controller
             }else{
                 echo '<p>Marital Status: Married</p>';
             }
+            echo '<p>Number of Dependents: '.$user->dependents.'</p>';
             if($user->status == 0){
             	echo'<p>Status: Active</p>';
             }elseif($user->status == 1){
@@ -85,7 +91,15 @@ class UserController extends Controller
                 </div>
                 <div class="form-group">
                     <label for="edit_sal">Salary:</label>
-                    <input type="text" class="form-control" id="edit_sal" name="sal" value="'.$user->salary.'">
+                    <input type="number" class="form-control" id="edit_sal" name="sal" value="'.$user->salary.'">
+                </div>
+                <div class="form-group">
+                    <label for="edit_hrs_day">Hours Per Day:</label>
+                    <input type="number" class="form-control" id="edit_hrs_day" name="hrs_day" value="'.$user->hrs_per_day.'">
+                </div>
+                <div class="form-group">
+                    <label for="edit_days_week">Days Per Week:</label>
+                    <input type="number" class="form-control" id="edit_days_week" name="days_week" value="'.$user->days_per_week.'">
                 </div>
                 <div class="form-group">
                     <label for="edit_hired">Date Hired:</label>
@@ -113,6 +127,10 @@ class UserController extends Controller
                     <input type="radio" name="mar_stat" value="1" checked>Married</label>';
             }
                 echo '</div>
+                <div class="form-group">
+                    <label for="edit_dependents">Dependents:</label>
+                    <input type="number" class="form-control" id="edit_dependents" name="dependents" value="'.$user->dependents.'">
+                </div>
                 <div class="form-group">
                     <label>Status: &nbsp;</label>';
             if($user->status == 0){
@@ -190,6 +208,9 @@ class UserController extends Controller
         $upd_user->marital_status = $request->mar_stat;
         $upd_user->status = $request->stat;
         $upd_user->bank_info = $request->bank;
+        $upd_user->hrs_per_day = $request->hrs_day;
+        $upd_user->days_per_week = $request->days_week;
+        $upd_user->dependents = $request->dependents;
         $upd_user->save();
 
         $users = User::all();

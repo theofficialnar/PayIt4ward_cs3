@@ -47,7 +47,10 @@ $('.tab-content').on('click', '#saveUserEdit', function(event){
 	var mar_stat = $('input[name=mar_stat]:checked', '#userUpdate').val();
 	var stat = $('input[name=stat]:checked', '#userUpdate').val();
 	var bank = $('#edit_bank').val();
-	// alert(uid);
+	var hrs_day = $('#edit_hrs_day').val();
+	var days_week = $('#edit_days_week').val();
+	var dependents = $('#edit_dependents').val();
+	// alert(token);
 
 	$.ajax({
 		type: 'POST',
@@ -65,12 +68,15 @@ $('.tab-content').on('click', '#saveUserEdit', function(event){
 			mar_stat : mar_stat,
 			stat : stat,
 			bank : bank,
+			hrs_day : hrs_day,
+			days_week : days_week,
+			dependents : dependents
 		},
 		success: function(data, status){
 			$('#usersViewBody').html(data);
 			alert('User '+name+'\'s has been successfully updated!');
 		},
-		error: function(){
+		error: function(error){
 			alert('An error was encountered during the database update!');
 		}
 	});

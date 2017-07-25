@@ -299,6 +299,7 @@ class ComposerStaticInit77cd27ce0dfb4195fedbc10167a497d3
     );
 
     public static $classMap = array (
+        'AddNewColUsers' => __DIR__ . '/../..' . '/database/migrations/2017_07_25_050630_add_new_col_users.php',
         'AddPhilhealthColumn' => __DIR__ . '/../..' . '/database/migrations/2017_07_24_054419_add_philhealth_column.php',
         'AddSssColumn' => __DIR__ . '/../..' . '/database/migrations/2017_07_24_054408_add_sss_column.php',
         'AddUsersTableSalary' => __DIR__ . '/../..' . '/database/migrations/2017_07_23_120023_add_users_table_salary.php',
@@ -331,6 +332,7 @@ class ComposerStaticInit77cd27ce0dfb4195fedbc10167a497d3
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+        'CreateBonusTables' => __DIR__ . '/../..' . '/database/migrations/2017_07_25_045125_create_bonus_tables.php',
         'CreateMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_21_055319_create_messages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePaymentsTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_21_055327_create_payments_table.php',

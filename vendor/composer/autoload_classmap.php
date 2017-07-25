@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddNewColUsers' => $baseDir . '/database/migrations/2017_07_25_050630_add_new_col_users.php',
     'AddPhilhealthColumn' => $baseDir . '/database/migrations/2017_07_24_054419_add_philhealth_column.php',
     'AddSssColumn' => $baseDir . '/database/migrations/2017_07_24_054408_add_sss_column.php',
     'AddUsersTableSalary' => $baseDir . '/database/migrations/2017_07_23_120023_add_users_table_salary.php',
@@ -38,6 +39,7 @@ return array(
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+    'CreateBonusTables' => $baseDir . '/database/migrations/2017_07_25_045125_create_bonus_tables.php',
     'CreateMessagesTable' => $baseDir . '/database/migrations/2017_07_21_055319_create_messages_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePaymentsTable' => $baseDir . '/database/migrations/2017_07_21_055327_create_payments_table.php',

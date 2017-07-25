@@ -45,6 +45,14 @@
 					  	<input type="number" class="form-control" id="sal" name="sal">
 					</div>
 					<div class="form-group">
+					  	<label for="hrs_day">Hours per Day:</label>
+					  	<input type="number" class="form-control" id="hrs_day" name="hrs_day">
+					</div>
+					<div class="form-group">
+					  	<label for="days_week">Days per Week:</label>
+					  	<input type="number" class="form-control" id="days_week" name="days_week">
+					</div>
+					<div class="form-group">
 						<label>Status: &nbsp;</label>
 					  	<label class="radio-inline">
 					  	<input type="radio" name="stat" value="0">Active</label>
@@ -69,6 +77,10 @@
 					  	<input type="radio" name="mar_stat" value="0">Single</label>
 					  	<label class="radio-inline">
 					  	<input type="radio" name="mar_stat" value="1">Married</label>
+					</div>
+					<div class="form-group">
+					  	<label for="dependents">Number of Dependents:</label>
+					  	<input type="number" class="form-control" id="dependents" name="dependents">
 					</div>
 					<div class="form-group">
 					  	<label for="bank">Bank Account Number:</label>
@@ -124,7 +136,7 @@ Users
 <div id="userPanel">
 	  	<ul class="nav nav-tabs">
 		  <li class="active"><a data-toggle="tab" href="#tabUserInfo">User Info</a></li>
-		  <li><a data-toggle="tab" href="#tabUserUpdate">Update Info</a></li>
+		  <li><a data-toggle="tab" href="#tabUserUpdate">Update Account Info</a></li>
 		  <li><a data-toggle="tab" href="#tabUserUpdatePw">Update Password</a></li>
 		</ul>
 		<div class="tab-content">	  
