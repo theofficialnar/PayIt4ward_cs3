@@ -23,9 +23,9 @@ class PaymentsController extends Controller
 	//function to calculate the employee's hourly rate
 	function hourlyRate($days, $hours, $salary){
 		if($days == 5){
-    		$hourly_rate = round(($salary*12)/261/$hours, 2);
+    		$hourly_rate = round((($salary*12)/261)/$hours, 2);
     	}else{
-    		$hourly_rate = round(($salary*12)/312/$hours, 2);
+    		$hourly_rate = round((($salary*12)/312)/$hours, 2);
     	};
     	return $hourly_rate;
 	}
@@ -51,13 +51,45 @@ class PaymentsController extends Controller
     	$hours = $employee->hrs_per_day;
     	$data_hourly = $this->hourlyRate($days, $hours, $salary);
 
-    	$rd = new bonusesandots();
-    	$rd_ot = $rd->calc_nd_rd($data_hourly,8);
-    	$s_holiday = $rd->s_holiday();
-    	$rd_s_holiday = $rd->rd_s_holiday();
+    	$bonus = new bonusesandots();
+        $rd = $bonus->calc_rd($data_hourly,1);
+        $s_holiday = $bonus->calc_s_holiday($data_hourly,1);
+        $rd_s_holiday = $bonus->calc_rd_s_holiday($data_hourly,1);
+        $reg_holiday = $bonus->calc_reg_holiday($data_hourly,1);
+        $rd_reg_holiday = $bonus->calc_rd_reg_holiday($data_hourly,1);
+        $ot_ord = $bonus->calc_ot_ord($data_hourly,1);
+        $ot_rd = $bonus->calc_ot_rd($data_hourly,1);
+        $ot_s_holiday = $bonus->calc_ot_s_holiday($data_hourly,1);
+        $ot_rd_s_holiday = $bonus->calc_ot_rd_s_holiday($data_hourly,1);
+        $ot_reg_holiday = $bonus->calc_ot_reg_holiday($data_hourly,1);
+        $ot_rd_reg_holiday = $bonus->calc_ot_rd_reg_holiday($data_hourly,1);
+        $nd_ord = $bonus->calc_nd_ord($data_hourly,1);
+        $nd_rd = $bonus->calc_nd_rd($data_hourly,1);
+        $nd_s_holiday = $bonus->calc_nd_s_holiday($data_hourly,1);
+        $nd_rd_s_holiday = $bonus->calc_nd_rd_s_holiday($data_hourly,1);
+        $nd_reg_holiday = $bonus->calc_nd_reg_holiday($data_hourly,1);
+    	$nd_rd_reg_holiday = $bonus->calc_nd_rd_reg_holiday($data_hourly,1);
 
-    	echo '<p>Hourly Rate: '.$data_hourly.'</p>
-    	<p>Rest Day: '.$rd_ot.'</p>';
+    	echo '
+        <p>Regular Hourly Rate: '.$data_hourly.'</p>
+        <h4> Added on top of Overall Salary</h4>
+        <p>Rest Day: '.$rd.'</p>
+        <p>Special Holiday: '.$s_holiday.'</p>
+        <p>Rest Day + Special Holiday: '.$rd_s_holiday.'</p>
+        <p>Regular Holiday: '.$reg_holiday.'</p>
+        <p>Rest Day + Regular Holiday: '.$rd_reg_holiday.'</p>
+        <p>Overtime Ordinary: '.$ot_ord.'</p>
+        <p>Overtime + Rest Day: '.$ot_rd.'</p>
+        <p>Overtime + Special Holiday: '.$ot_s_holiday.'</p>
+        <p>Overtime + Special Holiday + Rest Day: '.$ot_rd_s_holiday.'</p>
+        <p>Overtime + Regular Holiday: '.$ot_reg_holiday.'</p>
+        <p>Overtime + Regular Holiday + Rest Day: '.$ot_rd_reg_holiday.'</p>
+        <p>Night Diff Ordinary: '.$nd_ord.'</p>
+        <p>Night Diff + Rest Day: '.$nd_rd.'</p>
+        <p>Night Diff + Special Holiday: '.$nd_s_holiday.'</p>
+        <p>Night Diff + Special Holiday + Rest Day: '.$nd_rd_s_holiday.'</p>
+        <p>Night Diff + Regular Holiday: '.$nd_reg_holiday.'</p>
+    	<p>Night Diff + Regular Holiday + Rest Day: '.$nd_rd_reg_holiday.'</p>';
 
     }
 

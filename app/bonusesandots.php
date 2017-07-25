@@ -59,89 +59,89 @@ class bonusesandots extends Model
 
     //holiday pay calculations
     function calc_rd($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->rd()) * $hours;
+    	$amount = round(($hourly_rate * ($this->rd()-1)) * $hours, 2);
     	return $amount;
     }
 
     function calc_s_holiday($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->s_holiday()) * $hours;
+    	$amount = round(($hourly_rate * ($this->s_holiday()-1)) * $hours, 2);
     	return $amount;
     }
 
     function calc_rd_s_holiday($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->rd_s_holiday()) * $hours;
+    	$amount = round(($hourly_rate * ($this->rd_s_holiday()-1)) * $hours, 2);
     	return $amount;
     }
 
     function calc_reg_holiday($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->reg_holiday()) * $hours;
+    	$amount = round(($hourly_rate * ($this->reg_holiday()-1)) * $hours, 2);
     	return $amount;
     }
 
     function calc_rd_reg_holiday($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->rd_reg_holiday()) * $hours;
+    	$amount = round(($hourly_rate * ($this->rd_reg_holiday()-1)) * $hours, 2);
     	return $amount;
     }
 
     //Overtime calculations
     function calc_ot_ord($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->ot_ord()) * $hours;
+    	$amount = round(($hourly_rate * ($this->ot_ord()-1)) * $hours, 2);
     	return $amount;
     }
 
     function calc_ot_rd($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->ot_rd()) * $hours;
+    	$amount = round(($hourly_rate * ($this->ot_rd()-1)) * $hours, 2);
     	return $amount;
     }
 
     function calc_ot_s_holiday($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->ot_s_holiday()) * $hours;
+    	$amount = round(($hourly_rate * ($this->ot_s_holiday()-1)) * $hours, 2);
     	return $amount;
     }
 
-    function calc_ot_rd_spec_holiday($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->ot_rd_spec_holiday()) * $hours;
+    function calc_ot_rd_s_holiday($hourly_rate, $hours){
+    	$amount = round(($hourly_rate * ($this->ot_rd_spec_holiday()-1)) * $hours, 2);
     	return $amount;
     }
 
     function calc_ot_reg_holiday($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->ot_reg_holiday()) * $hours;
+    	$amount = round(($hourly_rate * ($this->ot_reg_holiday()-1)) * $hours, 2);
     	return $amount;
     }
 
     function calc_ot_rd_reg_holiday($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->ot_rd_reg_holiday()) * $hours;
+    	$amount = round(($hourly_rate * ($this->ot_rd_reg_holiday()-1)) * $hours, 2);
     	return $amount;
     }
 
     //night diff calculations
     function calc_nd_ord($hourly_rate, $hours){
-    	$amount = ($hourly_rate * $this->night_diff()) * $hours;
+    	$amount = round(($hourly_rate * $this->night_diff()) * $hours, 2);
     	return $amount;
     }
 
     function calc_nd_rd($hourly_rate, $hours){
-    	$amount = (($hourly_rate * $this->rd()) * $this->night_diff()) * $hours;
+    	$amount = round((($hourly_rate * $this->rd()) * $this->night_diff()) * $hours, 2);
     	return $amount;
     }
 
     function calc_nd_s_holiday($hourly_rate, $hours){
-    	$amount = (($hourly_rate * $this->s_holiday()) * $this->night_diff()) * $hours;
+    	$amount = round((($hourly_rate * $this->s_holiday()) * $this->night_diff()) * $hours, 2);
     	return $amount;
     }
 
     function calc_nd_rd_s_holiday($hourly_rate, $hours){
-    	$amount = (($hourly_rate * $this->rd_s_holiday()) * $this->night_diff()) * $hours;
+    	$amount = round((($hourly_rate * $this->rd_s_holiday()) * $this->night_diff()) * $hours, 2);
     	return $amount;
     }
 
     function calc_nd_reg_holiday($hourly_rate, $hours){
-    	$amount = (($hourly_rate * $this->reg_holiday()) * $this->night_diff()) * $hours;
+    	$amount = round((($hourly_rate * $this->reg_holiday()) * $this->night_diff()) * $hours, 2);
     	return $amount;
     }
 
     function calc_nd_rd_reg_holiday($hourly_rate, $hours){
-    	$amount = (($hourly_rate * $this->rd_reg_holiday()) * $this->night_diff()) * $hours;
+    	$amount = round((($hourly_rate * $this->rd_reg_holiday()) * $this->night_diff()) * $hours, 2);
     	return $amount;
     }
 }
