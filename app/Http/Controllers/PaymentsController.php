@@ -51,7 +51,7 @@ class PaymentsController extends Controller
     	$data_hourly = $this->hourlyRate($days, $salary);
 
     	$rd = new bonusesandots();
-    	$rd_ot = $rd->calc_rd($data_hourly,0);
+    	$rd_ot = $rd->calc_nd_rd($data_hourly,8);
     	$s_holiday = $rd->s_holiday();
     	$rd_s_holiday = $rd->rd_s_holiday();
 
