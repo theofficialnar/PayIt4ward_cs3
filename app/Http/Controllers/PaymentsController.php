@@ -46,9 +46,9 @@ class PaymentsController extends Controller
     }
 
     //computes the employee's salary
-    function computeSalary($salary, $overtime, $holiday, $night_diff, $lates, $absences, $deductions){
-        $monthly_salary = ((($salary + $overtime + $holiday + $night_diff) - $lates) - $absences) - $deductions;
-        return $monthly_salary;
+    function calcTaxableSalary($salary, $overtime, $holiday, $night_diff, $lates, $absences, $deductions){
+        $taxable_salary = ((($salary + $overtime + $holiday + $night_diff) - $lates) - $absences) - $deductions;
+        return $taxable_salary;
     }
 
     //handles and displays all related info regarding the employee's payroll
@@ -56,6 +56,7 @@ class PaymentsController extends Controller
     	$uid = $request->uid;
     	$employee = User::find($uid);
     	$salary = $employee->salary;
+        $dependents = $employee->dependents;
     	$days = $employee->days_per_week;
     	$hours = $employee->hrs_per_day;
     	$data_hourly = $this->hourlyRate($days, $hours, $salary);
@@ -115,7 +116,12 @@ class PaymentsController extends Controller
         $data_overtime = $tot_ot_ord + $tot_ot_rd + $tot_ot_shol + $tot_ot_shol_rd + $tot_ot_rhol + $tot_ot_rhol_rd;
         $data_holiday = $tot_rd + $tot_shol + $tot_shol_rd + $tot_rhol + $tot_rhol_rd;
         $data_night_diff = $tot_nd_ord + $tot_nd_rd + $tot_nd_shol + $tot_nd_shol_rd + $tot_nd_rhol + $tot_nd_rhol_rd;
-        $monthly_salary = $this->computeSalary($salary, $data_overtime, $data_holiday, $data_night_diff, $tot_lates, $tot_absences, $data_deduction);
+        $taxable_salary = $this->calcTaxableSalary($salary, $data_overtime, $data_holiday, $data_night_diff, $tot_lates, $tot_absences, $data_deduction);
+
+        //calculate tax
+        $init_tax = new taxes();
+        $tax = $init_tax->calcTax($taxable_salary, $dependents);
+        $monthly_salary = $taxable_salary - $tax;
 
     	echo '
         <p>Regular Hourly Rate: '.$data_hourly.'</p>
@@ -168,33 +174,36 @@ class PaymentsController extends Controller
         <p>SSS: '.$ded_sss.'</p>
         <p>Pagibig: '.$ded_pagibig.'</p>';
 
+        echo '<p> Taxable Salary: '.$taxable_salary.'</p>';
+        echo '<p> Tax: '.$tax.'</p>';
         echo '<p> Total Salary: '.$monthly_salary.'</p>';
 
     }
 
     function testTax(Request $request){
-        $dependents = $request->dependents;
-        $salary = $request->salary;
-        $input = 15250;
-       //  $smes = DB::table('taxes')
-       //          ->select('sme')
-       //          ->get();
-       //  // dd($smes);
-       // foreach ($smes as $sme) {
-       //     $number = $sme->sme;
-       //     $sub = $number - 200;
-       //     echo $sub.'<br>';
-       // }
-        // $result = DB::table('numbers')
-        //         ->select('*', DB::raw("(s/me - 200) AS column_to_be_order"))
-        //         ->orderBy('column_to_be_order', 'desc')
-        //         ->get();
+        $dependents = 0;
+        $input = 13286.20;
+        $init_tax = new taxes();
+        $tax = $init_tax->calcTax($input, $dependents);
+        // $result = DB::table('taxes')
+        //     ->select('*', DB::raw("ABS(sme - $input) AS difference"))
+        //     ->orderBy('difference')
+        //     ->where('sme', '<=', $input)
+        //     ->first();
         // dd($result);
-        $result = DB::table('taxes')
-            ->select('sme', DB::raw("ABS(sme - $input) AS difference"))  
-            ->orderBy('difference')
-            ->get();
-        dd($result);
+        // $bracket = $result->sme;
+        // $exemption = $result->exemption;
+        // $overhead = $result->status / 100;
+
+        // $excess = ($input - $bracket) * $overhead;
+        // $tax = $exemption + $excess;
+
+        
+        // echo 'Exemption: '.$exemption.'<br>';
+        // echo 'Bracket: '.$bracket.'<br>';
+        // echo 'Overhead: '.$overhead.'<br>';
+        // echo 'Tax: '.$tax.'<br>';
+        dd($tax);
     }
 
 }
