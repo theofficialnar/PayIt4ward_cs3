@@ -188,6 +188,7 @@ $('#payrollSubmit').click(function(){
 	var nd_r_hol = $('#hrs_reg_holiday_nd').val();
 	var nd_r_hol_rd = $('#hrs_reg_holiday_rd_nd').val();
 
+	//validates the overtime hours being input. Will block hours if less than 8 hours are logged on corresponding holiday
 	if(rd < 8 && ot_rd != 0){
 		alert('You can\'t input a Rest Day Overtime with less than 8 hours of time in.');
 		errorFlag = 1;
@@ -213,6 +214,7 @@ $('#payrollSubmit').click(function(){
 		errorFlag = 1;
 	}
 
+	//if no errors are found, will proceed on sending the data via ajax
 	if(errorFlag == 0){
 		$.ajax({
 			type: 'POST',

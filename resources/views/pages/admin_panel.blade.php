@@ -147,5 +147,11 @@ Users
 	</form>
 	<button id="payrollSubmit">Submit</button>
 	<button id="valTest">Contrib Check</button>
+	<form method="POST" action="/test">
+	{{csrf_field()}}
+		<input type="number" name="salary" placeholder="salary">
+		<input type="number" name="dependents" placeholder="dependents">
+		<button>Submit</button>
+	</form>
 </div>
 @endsection

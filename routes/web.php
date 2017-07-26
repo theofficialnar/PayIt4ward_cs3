@@ -42,3 +42,5 @@ Route::post('/admin/contribCheck', 'PaymentsController@contribCheck');
 
 //test route
 Route::post('/admin_panel/payroll_update', 'PaymentsController@payrollUpdate');
+
+Route::post('/test', 'PaymentsController@testTax');

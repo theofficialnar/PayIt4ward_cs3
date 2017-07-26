@@ -145,6 +145,13 @@ Users
 	</form>
 	<button id="payrollSubmit">Submit</button>
 	<button id="valTest">Contrib Check</button>
+	<form method="POST" action="/test">
+	<?php echo e(csrf_field()); ?>
+
+		<input type="number" name="salary" placeholder="salary">
+		<input type="number" name="dependents" placeholder="dependents">
+		<button>Submit</button>
+	</form>
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

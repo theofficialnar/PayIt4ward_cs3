@@ -7,6 +7,8 @@ use App\sss_contribs;
 use App\philhealth_contribs;
 use App\bonusesandots;
 use App\User;
+use App\taxes;
+use DB;
 
 class PaymentsController extends Controller
 {
@@ -168,6 +170,31 @@ class PaymentsController extends Controller
 
         echo '<p> Total Salary: '.$monthly_salary.'</p>';
 
+    }
+
+    function testTax(Request $request){
+        $dependents = $request->dependents;
+        $salary = $request->salary;
+        $input = 15250;
+       //  $smes = DB::table('taxes')
+       //          ->select('sme')
+       //          ->get();
+       //  // dd($smes);
+       // foreach ($smes as $sme) {
+       //     $number = $sme->sme;
+       //     $sub = $number - 200;
+       //     echo $sub.'<br>';
+       // }
+        // $result = DB::table('numbers')
+        //         ->select('*', DB::raw("(s/me - 200) AS column_to_be_order"))
+        //         ->orderBy('column_to_be_order', 'desc')
+        //         ->get();
+        // dd($result);
+        $result = DB::table('taxes')
+            ->select('sme', DB::raw("ABS(sme - $input) AS difference"))  
+            ->orderBy('difference')
+            ->get();
+        dd($result);
     }
 
 }

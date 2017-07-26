@@ -46,6 +46,7 @@ return array(
     'CreatePaymentsTable' => $baseDir . '/database/migrations/2017_07_21_055327_create_payments_table.php',
     'CreatePhilhealthTable' => $baseDir . '/database/migrations/2017_07_24_044837_create_philhealth_table.php',
     'CreateSssTable' => $baseDir . '/database/migrations/2017_07_24_044753_create_sss_table.php',
+    'CreateTaxTable' => $baseDir . '/database/migrations/2017_07_26_051455_create_tax_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
     'Cron\\CronExpression' => $vendorDir . '/mtdowling/cron-expression/src/Cron/CronExpression.php',

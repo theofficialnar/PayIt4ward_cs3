@@ -14322,3 +14322,937 @@ Stack trace:
 #47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
 #49 {main}  
+[2017-07-26 05:14:48] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "make:migrate" is not defined.
+
+Did you mean one of these?
+    make:auth
+    make:command
+    make:controller
+    make:event
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:policy
+    make:provider
+    make:request
+    make:seeder
+    make:test' in /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php:579
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(204): Symfony\Component\Console\Application->find('make:migrate')
+#1 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2017-07-26 05:40:02] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /Users/nar/Documents/cs_3/storage/framework/views/0d3319c390edb53e54207c9787cf19412531ca8f.php:11
+Stack trace:
+#0 /Users/nar/Documents/cs_3/storage/framework/views/0d3319c390edb53e54207c9787cf19412531ca8f.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/Users/nar/Docu...', 11, Array)
+#1 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/Users/nar/Docu...')
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#6 /Users/nar/Documents/cs_3/storage/framework/views/104d08940ba2d595a51902a0f8801348e0725fb5.php(10): Illuminate\View\View->render()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/Users/nar/Docu...')
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#12 /Users/nar/Documents/cs_3/storage/framework/views/177d652ecf4115a043af50b8bf8924c34f87e3e4.php(150): Illuminate\View\View->render()
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/Users/nar/Docu...')
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Http/Response.php(38): Illuminate\View\View->render()
+#19 /Users/nar/Documents/cs_3/vendor/symfony/http-foundation/Response.php(201): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(617): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(575): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#49 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#50 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#51 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#52 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#53 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#54 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#55 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#56 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#57 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#58 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#59 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#60 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#61 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#62 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#63 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#64 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /Users/nar/Documents/cs_3/resources/views/includes/side_nav.blade.php)' in /Users/nar/Documents/cs_3/storage/framework/views/0d3319c390edb53e54207c9787cf19412531ca8f.php:11
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(44): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 2)
+#1 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#5 /Users/nar/Documents/cs_3/storage/framework/views/104d08940ba2d595a51902a0f8801348e0725fb5.php(10): Illuminate\View\View->render()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/Users/nar/Docu...')
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#11 /Users/nar/Documents/cs_3/storage/framework/views/177d652ecf4115a043af50b8bf8924c34f87e3e4.php(150): Illuminate\View\View->render()
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/Users/nar/Docu...')
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Http/Response.php(38): Illuminate\View\View->render()
+#18 /Users/nar/Documents/cs_3/vendor/symfony/http-foundation/Response.php(201): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(617): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(575): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#48 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#49 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#50 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#51 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#52 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#53 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#54 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#55 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#56 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#57 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#58 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#59 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#60 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#61 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#62 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#63 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /Users/nar/Documents/cs_3/resources/views/includes/side_nav.blade.php) (View: /Users/nar/Documents/cs_3/resources/views/includes/side_nav.blade.php)' in /Users/nar/Documents/cs_3/storage/framework/views/0d3319c390edb53e54207c9787cf19412531ca8f.php:11
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(44): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#5 /Users/nar/Documents/cs_3/storage/framework/views/177d652ecf4115a043af50b8bf8924c34f87e3e4.php(150): Illuminate\View\View->render()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/Users/nar/Docu...')
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Http/Response.php(38): Illuminate\View\View->render()
+#12 /Users/nar/Documents/cs_3/vendor/symfony/http-foundation/Response.php(201): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(617): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(575): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#48 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#49 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#50 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#51 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#52 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#53 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#54 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#55 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#56 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#57 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /Users/nar/Documents/cs_3/resources/views/includes/side_nav.blade.php) (View: /Users/nar/Documents/cs_3/resources/views/includes/side_nav.blade.php) (View: /Users/nar/Documents/cs_3/resources/views/includes/side_nav.blade.php)' in /Users/nar/Documents/cs_3/storage/framework/views/0d3319c390edb53e54207c9787cf19412531ca8f.php:11
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(44): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 0)
+#1 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Users/nar/Docu...', Array)
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Users/nar/Docu...', Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Http/Response.php(38): Illuminate\View\View->render()
+#6 /Users/nar/Documents/cs_3/vendor/symfony/http-foundation/Response.php(201): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(617): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(575): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#48 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#49 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#50 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#51 {main}  
+[2017-07-26 05:40:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function App\Http\Controllers\taxes()' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 05:42:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\Controllers\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:119
+Stack trace:
+#0 {main}  
+[2017-07-26 05:42:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 05:43:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 05:46:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 05:46:27] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 05:46:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 05:47:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 05:48:55] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 05:51:57] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\Controllers\Users' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:120
+Stack trace:
+#0 {main}  
+[2017-07-26 06:01:09] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\DB' not found' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:178
+Stack trace:
+#0 {main}  
+[2017-07-26 06:02:06] local.ERROR: exception 'ErrorException' with message 'Missing argument 1 for Illuminate\Support\Collection::get(), called in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php on line 180 and defined' in /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Support/Collection.php:573
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Support/Collection.php(573): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'Missing argumen...', '/Users/nar/Docu...', 573, Array)
+#1 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(180): Illuminate\Support\Collection->get()
+#2 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#47 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#49 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#50 {main}  
+[2017-07-26 06:03:56] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:04:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:04:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:04:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:04:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:04:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:06:55] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:07:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:07:25] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:07:25] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:07:25] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:07:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:21:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:35:01] local.ERROR: exception 'ErrorException' with message 'Object of class stdClass could not be converted to string' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:182
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(182): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(4096, 'Object of class...', '/Users/nar/Docu...', 182, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:38:31] local.ERROR: exception 'ErrorException' with message 'Object of class stdClass could not be converted to string' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:182
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(182): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(4096, 'Object of class...', '/Users/nar/Docu...', 182, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:38:58] local.ERROR: exception 'ErrorException' with message 'Object of class stdClass could not be converted to string' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:182
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(182): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(4096, 'Object of class...', '/Users/nar/Docu...', 182, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:38:59] local.ERROR: exception 'ErrorException' with message 'Object of class stdClass could not be converted to string' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:182
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(182): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(4096, 'Object of class...', '/Users/nar/Docu...', 182, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:38:59] local.ERROR: exception 'ErrorException' with message 'Object of class stdClass could not be converted to string' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:182
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(182): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(4096, 'Object of class...', '/Users/nar/Docu...', 182, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:42:06] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:44:17] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:45:52] local.ERROR: exception 'ErrorException' with message 'Undefined variable: result' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:188
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(188): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/Users/nar/Docu...', 188, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:46:17] local.ERROR: exception 'ErrorException' with message 'Object of class stdClass could not be converted to string' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:182
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(182): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(4096, 'Object of class...', '/Users/nar/Docu...', 182, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:47:12] local.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$s' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:183
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(183): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined prope...', '/Users/nar/Docu...', 183, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:48:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:50:39] local.ERROR: exception 'ErrorException' with message 'Undefined variable: input' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:191
+Stack trace:
+#0 /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php(191): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/Users/nar/Docu...', 191, Array)
+#1 [internal function]: App\Http\Controllers\PaymentsController->testTax(Object(Illuminate\Http\Request))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('testTax', Array)
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\PaymentsController), 'testTax')
+#5 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#6 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#7 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#47 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#48 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
+#49 {main}  
+[2017-07-26 06:50:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:51:17] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 06:54:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error, expecting `','' or `';''' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:183
+Stack trace:
+#0 {main}  
+[2017-07-26 06:59:05] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:193
+Stack trace:
+#0 {main}  
+[2017-07-26 06:59:21] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:193
+Stack trace:
+#0 {main}  
+[2017-07-26 06:59:28] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:195
+Stack trace:
+#0 {main}  
+[2017-07-26 06:59:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:195
+Stack trace:
+#0 {main}  
+[2017-07-26 06:59:55] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:193
+Stack trace:
+#0 {main}  
+[2017-07-26 07:00:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/app/Http/Controllers/PaymentsController.php:193
+Stack trace:
+#0 {main}  
+[2017-07-26 07:00:30] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:11:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:13:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:13:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:14:50] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:14:56] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:15:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:16:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:16:37] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-26 07:17:09] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
