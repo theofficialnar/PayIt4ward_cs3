@@ -44,11 +44,12 @@ class PaymentsController extends Controller
     }
 
     //computes the employee's salary
-    function computeSalary($salary, $overtime, $holiday, $night_diff, $lates, $absences){
+    function computeSalary($salary, $overtime, $holiday, $night_diff, $lates, $absences, $deductions){
         $monthly_salary = ((($salary + $overtime + $holiday + $night_diff) - $lates) - $absences) - $deductions;
         return $monthly_salary;
     }
 
+    //handles and displays all related info regarding the employee's payroll
     function payrollUpdate(Request $request){
     	$uid = $request->uid;
     	$employee = User::find($uid);
@@ -57,7 +58,14 @@ class PaymentsController extends Controller
     	$hours = $employee->hrs_per_day;
     	$data_hourly = $this->hourlyRate($days, $hours, $salary);
 
-        //get's all the number of hours indicated on the form
+        //finds the corresponding deduction brackets for sss, pagibig and philhealth
+        $init_philhealth = new philhealth_contribs();
+        $init_sss = new sss_contribs();
+        $ded_philhealth = $init_philhealth->philHealth($salary)->monthly_contribution;
+        $ded_sss = $init_sss->sss($salary)->monthly_contribution;
+        $ded_pagibig = $this->pagibigContrib($salary);
+
+        //gets all the number of hours indicated on the form
         $hrs_absences = $request->hrs_absent;
         $hrs_lates = $request->hrs_late;
         $hrs_rd = $request->hrs_rd;
@@ -78,7 +86,7 @@ class PaymentsController extends Controller
         $hrs_nd_rhol = $request->hrs_nd_rhol;
         $hrs_nd_rhol_rd = $request->hrs_nd_rhol_rd;
 
-        //compute the total amount of deductions, holiday pay, ot and night diff
+        //computes the total amount of deductions, holiday pay, ot and night diff based off the hours submitted
         $tot_absences = $hrs_absences * $data_hourly;
         $tot_lates = $hrs_lates * $data_hourly;
     	$bonus = new bonusesandots();
@@ -99,6 +107,13 @@ class PaymentsController extends Controller
         $tot_nd_shol_rd = $bonus->calc_nd_rd_s_holiday($data_hourly, $hrs_nd_shol_rd);
         $tot_nd_rhol = $bonus->calc_nd_reg_holiday($data_hourly, $hrs_nd_rhol);
     	$tot_nd_rhol_rd = $bonus->calc_nd_rd_reg_holiday($data_hourly, $hrs_nd_rhol_rd);
+
+        //computes the overall salary
+        $data_deduction = $ded_philhealth + $ded_sss + $ded_pagibig;
+        $data_overtime = $tot_ot_ord + $tot_ot_rd + $tot_ot_shol + $tot_ot_shol_rd + $tot_ot_rhol + $tot_ot_rhol_rd;
+        $data_holiday = $tot_rd + $tot_shol + $tot_shol_rd + $tot_rhol + $tot_rhol_rd;
+        $data_night_diff = $tot_nd_ord + $tot_nd_rd + $tot_nd_shol + $tot_nd_shol_rd + $tot_nd_rhol + $tot_nd_rhol_rd;
+        $monthly_salary = $this->computeSalary($salary, $data_overtime, $data_holiday, $data_night_diff, $tot_lates, $tot_absences, $data_deduction);
 
     	echo '
         <p>Regular Hourly Rate: '.$data_hourly.'</p>
@@ -144,6 +159,14 @@ class PaymentsController extends Controller
         echo 'Night Diff Special Holiday + Rest Day: '.$hrs_nd_shol_rd.'<br>';
         echo 'Night Diff Regular Holiday: '.$hrs_nd_rhol.'<br>';
         echo 'Night Diff Regular Holiday + Rest Day: '.$hrs_nd_rhol_rd.'<br>';
+
+        echo '
+        <h4>Government Deductions </h4>
+        <p>Philhealth: '.$ded_philhealth.'</p>
+        <p>SSS: '.$ded_sss.'</p>
+        <p>Pagibig: '.$ded_pagibig.'</p>';
+
+        echo '<p> Total Salary: '.$monthly_salary.'</p>';
 
     }
 
