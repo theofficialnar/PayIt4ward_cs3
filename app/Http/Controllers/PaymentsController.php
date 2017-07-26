@@ -43,6 +43,12 @@ class PaymentsController extends Controller
         echo '<p>Pagibig Contrib: '.$dataPagibig.'</p>';
     }
 
+    //computes the employee's salary
+    function computeSalary($salary, $overtime, $holiday, $night_diff, $lates, $absences){
+        $monthly_salary = ((($salary + $overtime + $holiday + $night_diff) - $lates) - $absences) - $deductions;
+        return $monthly_salary;
+    }
+
     function payrollUpdate(Request $request){
     	$uid = $request->uid;
     	$employee = User::find($uid);
@@ -51,45 +57,93 @@ class PaymentsController extends Controller
     	$hours = $employee->hrs_per_day;
     	$data_hourly = $this->hourlyRate($days, $hours, $salary);
 
+        //get's all the number of hours indicated on the form
+        $hrs_absences = $request->hrs_absent;
+        $hrs_lates = $request->hrs_late;
+        $hrs_rd = $request->hrs_rd;
+        $hrs_shol = $request->hrs_shol;
+        $hrs_shol_rd = $request->hrs_shol_rd;
+        $hrs_hol = $request->hrs_hol;
+        $hrs_hol_rd = $request->hrs_hol_rd;
+        $hrs_ot_ord = $request->hrs_ot_ord;
+        $hrs_ot_rd = $request->hrs_ot_rd;
+        $hrs_ot_shol = $request->hrs_ot_shol;
+        $hrs_ot_shol_rd = $request->hrs_ot_shol_rd;
+        $hrs_ot_rhol = $request->hrs_ot_rhol;
+        $hrs_ot_rhol_rd = $request->hrs_ot_rhol_rd;
+        $hrs_nd_ord = $request->hrs_nd_ord;
+        $hrs_nd_rd = $request->hrs_nd_rd;
+        $hrs_nd_shol = $request->hrs_nd_shol;
+        $hrs_nd_shol_rd = $request->hrs_nd_shol_rd;
+        $hrs_nd_rhol = $request->hrs_nd_rhol;
+        $hrs_nd_rhol_rd = $request->hrs_nd_rhol_rd;
+
+        //compute the total amount of deductions, holiday pay, ot and night diff
+        $tot_absences = $hrs_absences * $data_hourly;
+        $tot_lates = $hrs_lates * $data_hourly;
     	$bonus = new bonusesandots();
-        $rd = $bonus->calc_rd($data_hourly,1);
-        $s_holiday = $bonus->calc_s_holiday($data_hourly,1);
-        $rd_s_holiday = $bonus->calc_rd_s_holiday($data_hourly,1);
-        $reg_holiday = $bonus->calc_reg_holiday($data_hourly,1);
-        $rd_reg_holiday = $bonus->calc_rd_reg_holiday($data_hourly,1);
-        $ot_ord = $bonus->calc_ot_ord($data_hourly,1);
-        $ot_rd = $bonus->calc_ot_rd($data_hourly,1);
-        $ot_s_holiday = $bonus->calc_ot_s_holiday($data_hourly,1);
-        $ot_rd_s_holiday = $bonus->calc_ot_rd_s_holiday($data_hourly,1);
-        $ot_reg_holiday = $bonus->calc_ot_reg_holiday($data_hourly,1);
-        $ot_rd_reg_holiday = $bonus->calc_ot_rd_reg_holiday($data_hourly,1);
-        $nd_ord = $bonus->calc_nd_ord($data_hourly,1);
-        $nd_rd = $bonus->calc_nd_rd($data_hourly,1);
-        $nd_s_holiday = $bonus->calc_nd_s_holiday($data_hourly,1);
-        $nd_rd_s_holiday = $bonus->calc_nd_rd_s_holiday($data_hourly,1);
-        $nd_reg_holiday = $bonus->calc_nd_reg_holiday($data_hourly,1);
-    	$nd_rd_reg_holiday = $bonus->calc_nd_rd_reg_holiday($data_hourly,1);
+        $tot_rd = $bonus->calc_rd($data_hourly, $hrs_rd);
+        $tot_shol = $bonus->calc_s_holiday($data_hourly, $hrs_shol);
+        $tot_shol_rd = $bonus->calc_rd_s_holiday($data_hourly, $hrs_shol_rd);
+        $tot_rhol = $bonus->calc_reg_holiday($data_hourly, $hrs_hol);
+        $tot_rhol_rd = $bonus->calc_rd_reg_holiday($data_hourly, $hrs_hol_rd);
+        $tot_ot_ord = $bonus->calc_ot_ord($data_hourly, $hrs_ot_ord);
+        $tot_ot_rd = $bonus->calc_ot_rd($data_hourly, $hrs_ot_rd);
+        $tot_ot_shol = $bonus->calc_ot_s_holiday($data_hourly, $hrs_ot_shol);
+        $tot_ot_shol_rd = $bonus->calc_ot_rd_s_holiday($data_hourly, $hrs_ot_shol_rd);
+        $tot_ot_rhol = $bonus->calc_ot_reg_holiday($data_hourly, $hrs_ot_rhol);
+        $tot_ot_rhol_rd = $bonus->calc_ot_rd_reg_holiday($data_hourly, $hrs_ot_rhol_rd);
+        $tot_nd_ord = $bonus->calc_nd_ord($data_hourly, $hrs_nd_ord);
+        $tot_nd_rd = $bonus->calc_nd_rd($data_hourly, $hrs_nd_rd);
+        $tot_nd_shol = $bonus->calc_nd_s_holiday($data_hourly, $hrs_nd_shol);
+        $tot_nd_shol_rd = $bonus->calc_nd_rd_s_holiday($data_hourly, $hrs_nd_shol_rd);
+        $tot_nd_rhol = $bonus->calc_nd_reg_holiday($data_hourly, $hrs_nd_rhol);
+    	$tot_nd_rhol_rd = $bonus->calc_nd_rd_reg_holiday($data_hourly, $hrs_nd_rhol_rd);
 
     	echo '
         <p>Regular Hourly Rate: '.$data_hourly.'</p>
+        <h4> Deductions </h4>
+        <p> Absences: '.$tot_absences.'</p>
+        <p> Lates: '.$tot_lates.'</p>
         <h4> Added on top of Overall Salary</h4>
-        <p>Rest Day: '.$rd.'</p>
-        <p>Special Holiday: '.$s_holiday.'</p>
-        <p>Rest Day + Special Holiday: '.$rd_s_holiday.'</p>
-        <p>Regular Holiday: '.$reg_holiday.'</p>
-        <p>Rest Day + Regular Holiday: '.$rd_reg_holiday.'</p>
-        <p>Overtime Ordinary: '.$ot_ord.'</p>
-        <p>Overtime + Rest Day: '.$ot_rd.'</p>
-        <p>Overtime + Special Holiday: '.$ot_s_holiday.'</p>
-        <p>Overtime + Special Holiday + Rest Day: '.$ot_rd_s_holiday.'</p>
-        <p>Overtime + Regular Holiday: '.$ot_reg_holiday.'</p>
-        <p>Overtime + Regular Holiday + Rest Day: '.$ot_rd_reg_holiday.'</p>
-        <p>Night Diff Ordinary: '.$nd_ord.'</p>
-        <p>Night Diff + Rest Day: '.$nd_rd.'</p>
-        <p>Night Diff + Special Holiday: '.$nd_s_holiday.'</p>
-        <p>Night Diff + Special Holiday + Rest Day: '.$nd_rd_s_holiday.'</p>
-        <p>Night Diff + Regular Holiday: '.$nd_reg_holiday.'</p>
-    	<p>Night Diff + Regular Holiday + Rest Day: '.$nd_rd_reg_holiday.'</p>';
+        <p>Rest Day: '.$tot_rd.'</p>
+        <p>Special Holiday: '.$tot_shol.'</p>
+        <p>Rest Day + Special Holiday: '.$tot_shol_rd.'</p>
+        <p>Regular Holiday: '.$tot_rhol.'</p>
+        <p>Rest Day + Regular Holiday: '.$tot_rhol_rd.'</p>
+        <p>Overtime Ordinary: '.$tot_ot_ord.'</p>
+        <p>Overtime + Rest Day: '.$tot_ot_rd.'</p>
+        <p>Overtime + Special Holiday: '.$tot_ot_shol.'</p>
+        <p>Overtime + Special Holiday + Rest Day: '.$tot_ot_shol_rd.'</p>
+        <p>Overtime + Regular Holiday: '.$tot_ot_rhol.'</p>
+        <p>Overtime + Regular Holiday + Rest Day: '.$tot_ot_rhol_rd.'</p>
+        <p>Night Diff Ordinary: '.$tot_nd_ord.'</p>
+        <p>Night Diff + Rest Day: '.$tot_nd_rd.'</p>
+        <p>Night Diff + Special Holiday: '.$tot_nd_shol.'</p>
+        <p>Night Diff + Special Holiday + Rest Day: '.$tot_nd_shol_rd.'</p>
+        <p>Night Diff + Regular Holiday: '.$tot_nd_rhol.'</p>
+    	<p>Night Diff + Regular Holiday + Rest Day: '.$tot_nd_rhol_rd.'</p>';
+
+        echo '<h4> Hours </h4>';
+        echo 'Absences: '.$hrs_absences.'<br>';
+        echo 'Lates: '.$hrs_lates.'<br>';
+        echo 'Rest Day: '.$hrs_rd.'<br>';
+        echo 'Special Holiday: '.$hrs_shol.'<br>';
+        echo 'Special Holiday + Rest Day: '.$hrs_shol_rd.'<br>';
+        echo 'Regular Holiday: '.$hrs_hol.'<br>';
+        echo 'Regular Holiday + Rest Day: '.$hrs_hol_rd.'<br>';
+        echo 'Overtime Ordinary: '.$hrs_ot_ord.'<br>';
+        echo 'Overtime Rest Day: '.$hrs_ot_rd.'<br>';
+        echo 'Overtime Special Holiday: '.$hrs_ot_shol.'<br>';
+        echo 'Overtime Special Holiday + Rest Day: '.$hrs_ot_shol_rd.'<br>';
+        echo 'Overtime Regular Holiday: '.$hrs_ot_rhol.'<br>';
+        echo 'Overtime Regular Holiday + Rest Day: '.$hrs_ot_rhol_rd.'<br>';
+        echo 'Night Diff Ordinary: '.$hrs_nd_ord.'<br>';
+        echo 'Night Diff Rest Day: '.$hrs_nd_rd.'<br>';
+        echo 'Night Diff Special Holiday: '.$hrs_nd_shol.'<br>';
+        echo 'Night Diff Special Holiday + Rest Day: '.$hrs_nd_shol_rd.'<br>';
+        echo 'Night Diff Regular Holiday: '.$hrs_nd_rhol.'<br>';
+        echo 'Night Diff Regular Holiday + Rest Day: '.$hrs_nd_rhol_rd.'<br>';
 
     }
 

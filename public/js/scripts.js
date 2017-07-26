@@ -163,21 +163,78 @@ $('#valTest').click(function(){
 	})
 })
 
-//payroll submit
+//payroll data submit via ajax
 $('#payrollSubmit').click(function(){
 	var token = $('#token').val();	
 	var uid = $('#payrollUid').val();
-	// alert(sal+','+uid+','+token);
+	var absences = $('#hrs_absent').val();
+	var lates = $('#hrs_late').val();
+	var rd = $('#hrs_rd').val();
+	var s_hol = $('#hrs_spec_holiday').val();
+	var s_hol_rd = $('#hrs_spec_holiday_rd').val();
+	var r_hol = $('#hrs_reg_holiday').val();
+	var r_hol_rd = $('#hrs_reg_holiday_rd').val();
+	var ot_ord = $('#hrs_ot_ord').val();
+	var ot_rd = $('#hrs_ot_rd').val();
+	var ot_s_hol = $('#hrs_ot_spec_holiday').val();
+	var ot_s_hol_rd = $('#hrs_ot_spec_holiday_rd').val();
+	var ot_r_hol = $('#hrs_ot_reg_holiday').val();
+	var ot_r_hol_rd = $('#hrs_ot_reg_holiday_rd').val();
+	var nd_ord = $('#hrs_nd').val();
+	var nd_rd = $('#hrs_rd_nd').val();
+	var nd_s_hol = $('#hrs_spec_holiday_nd').val();
+	var nd_s_hol_rd = $('#hrs_spec_holiday_rd_nd').val();
+	var nd_r_hol = $('#hrs_reg_holiday_nd').val();
+	var nd_r_hol_rd = $('#hrs_reg_holiday_rd_nd').val();
 
-	$.ajax({
-		type: 'POST',
-		url: '/admin_panel/payroll_update',
-		data: {
-			_token : token,
-			uid : uid
-		},
-		success: function(data){
-			$('#payrollFormContent').html(data);
-		}
-	})
+	if(rd < 8 && ot_rd != 0){
+		alert('You can\'t input a Rest Day Overtime with less than 8 hours of time in.');
+	}
+
+	if(s_hol < 8 && ot_s_hol != 0){
+		alert('You can\'t input a Special Holiday Overtime with less than 8 hours of time in.');
+	}
+
+	if(s_hol_rd < 8 && ot_s_hol_rd != 0){
+		alert('You can\'t input a Special Holiday and Rest Day Overtime with less than 8 hours of time in..');
+	}
+
+	if(r_hol < 8 && ot_r_hol != 0){
+		alert('You can\'t input a Regular Holiday Overtime with less than 8 hours of time in.');
+	}
+
+	if(r_hol_rd < 8 && ot_r_hol_rd != 0){
+		alert('You can\'t input a Regular Holiday and Rest Day Overtime with less than 8 hours of time in.');
+	}
+
+	// $.ajax({
+	// 	type: 'POST',
+	// 	url: '/admin_panel/payroll_update',
+	// 	data: {
+	// 		_token : token,
+	// 		uid : uid,
+	// 		hrs_absent : absences,
+	// 		hrs_late : lates,
+	// 		hrs_rd : rd,
+	// 		hrs_shol : s_hol,
+	// 		hrs_shol_rd : s_hol_rd,
+	// 		hrs_hol : r_hol,
+	// 		hrs_hol_rd : r_hol_rd,
+	// 		hrs_ot_ord : ot_ord,
+	// 		hrs_ot_rd : ot_rd,
+	// 		hrs_ot_shol : ot_s_hol,
+	// 		hrs_ot_shol_rd : ot_s_hol_rd,
+	// 		hrs_ot_rhol : ot_r_hol,
+	// 		hrs_ot_rhol_rd : ot_r_hol_rd,
+	// 		hrs_nd_ord : nd_ord,
+	// 		hrs_nd_rd : nd_rd,
+	// 		hrs_nd_shol : nd_s_hol,
+	// 		hrs_nd_shol_rd : nd_s_hol_rd,
+	// 		hrs_nd_rhol : nd_r_hol,
+	// 		hrs_nd_rhol_rd : nd_r_hol_rd
+	// 	},
+	// 	success: function(data){
+	// 		$('#payrollFormContent').html(data);
+	// 	}
+	// })
 })

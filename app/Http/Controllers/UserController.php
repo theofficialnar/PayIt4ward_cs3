@@ -273,16 +273,16 @@ class UserController extends Controller
                     <input type="number" id="hrs_spec_holiday" name="hrs_spec_holiday" class="form-control" value="0" min="0">
                 </div>
                 <div class="form-group col-lg-4">
-                    <label for="hrs_spec_holiday+rd">Special Holiday AND Rest Day</label>
-                    <input type="number" id="hrs_spec_holiday+rd" name="hrs_spec_holiday+rd" class="form-control" value="0" min="0">
+                    <label for="hrs_spec_holiday_rd">Special Holiday AND Rest Day</label>
+                    <input type="number" id="hrs_spec_holiday_rd" name="hrs_spec_holiday_rd" class="form-control" value="0" min="0">
                 </div>
                 <div class="form-group col-lg-4 col-lg-offset-2">
                     <label for="hrs_reg_holiday">Regular Holiday</label>
                     <input type="number" id="hrs_reg_holiday" name="hrs_reg_holiday" class="form-control" value="0" min="0">
                 </div>
                 <div class="form-group col-lg-4">
-                    <label for="hrs_reg_holiday+rd">Regular Holiday AND Rest Day</label>
-                    <input type="number" id="hrs_reg_holiday+rd" name="hrs_reg_holiday+rd" class="form-control" value="0" min="0">
+                    <label for="hrs_reg_holiday_rd">Regular Holiday AND Rest Day</label>
+                    <input type="number" id="hrs_reg_holiday_rd" name="hrs_reg_holiday_rd" class="form-control" value="0" min="0">
                 </div>
             </div>
         </div>
@@ -303,16 +303,16 @@ class UserController extends Controller
                     <input type="number" id="hrs_ot_spec_holiday" name="hrs_ot_spec_holiday" class="form-control" value="0" min="0">
                 </div>
                 <div class="form-group col-lg-4">
-                    <label for="hrs_ot_spec_holiday+rd">Special Holiday AND Rest Day Overtime</label>
-                    <input type="number" id="hrs_ot_spec_holiday+rd" name="hrs_ot_spec_holiday+rd" class="form-control" value="0" min="0">
+                    <label for="hrs_ot_spec_holiday_rd">Special Holiday AND Rest Day Overtime</label>
+                    <input type="number" id="hrs_ot_spec_holiday_rd" name="hrs_ot_spec_holiday_rd" class="form-control" value="0" min="0">
                 </div>
                 <div class="form-group col-lg-4">
                     <label for="hrs_ot_reg_holiday">Regular Holiday Overtime</label>
                     <input type="number" id="hrs_ot_reg_holiday" name="hrs_ot_reg_holiday" class="form-control" value="0" min="0">
                 </div>
                 <div class="form-group col-lg-4">
-                    <label for="hrs_ot_reg_holiday+rd">Regular Holiday AND Rest Day Overtime</label>
-                    <input type="number" id="hrs_ot_reg_holiday+rd" name="hrs_ot_reg_holiday+rd" class="form-control" value="0" min="0">
+                    <label for="hrs_ot_reg_holiday_rd">Regular Holiday AND Rest Day Overtime</label>
+                    <input type="number" id="hrs_ot_reg_holiday_rd" name="hrs_ot_reg_holiday_rd" class="form-control" value="0" min="0">
                 </div>
             </div>
         </div>
