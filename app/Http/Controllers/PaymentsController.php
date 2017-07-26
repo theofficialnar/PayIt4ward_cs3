@@ -118,7 +118,7 @@ class PaymentsController extends Controller
         $data_night_diff = $tot_nd_ord + $tot_nd_rd + $tot_nd_shol + $tot_nd_shol_rd + $tot_nd_rhol + $tot_nd_rhol_rd;
         $taxable_salary = $this->calcTaxableSalary($salary, $data_overtime, $data_holiday, $data_night_diff, $tot_lates, $tot_absences, $data_deduction);
 
-        //calculate tax
+        //calculates tax and monthly salary after deductions and tax
         $init_tax = new taxes();
         $tax = $init_tax->calcTax($taxable_salary, $dependents);
         $monthly_salary = $taxable_salary - $tax;
