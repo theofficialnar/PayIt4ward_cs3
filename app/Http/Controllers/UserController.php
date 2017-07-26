@@ -17,7 +17,6 @@ class UserController extends Controller
     function addUser(Request $request){
     	$new_user = new User;
     	$new_user->name = $request->name;
-    	$new_user->employee_number = $request->emp;
     	$new_user->department = $request->dept;
     	$new_user->position = $request->post;
         $new_user->salary = $request->sal;
@@ -42,7 +41,7 @@ class UserController extends Controller
     	echo '
       	<div id="tabUserInfo" class="tab-pane fade in active">
         	<p>Name: '.$user->name.'</p>
-        	<p>Employee Number: '.$user->employee_number.'</p>
+        	<p>ID Number: '.$user->id.'</p>
         	<p>Department: '.$user->department.'</p>
         	<p>Position: '.$user->position.'</p>
             <p>Salary: '.$user->salary.'</p>
@@ -76,10 +75,6 @@ class UserController extends Controller
                 <div class="form-group">
                     <label for="edit_usr">Name:</label>
           		    <input type="text" name="name" value="'.$user->name.'" id="edit_usr" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="edit_emp">Employee Number:</label>
-                    <input type="number" class="form-control" id="edit_emp" name="emp" value="'.$user->employee_number.'">
                 </div>
                  <div class="form-group">
                     <label for="edit_dept">Department:</label>
@@ -198,7 +193,6 @@ class UserController extends Controller
     function adminUpdateUser($id, Request $request){
         $upd_user = User::find($id);
         $upd_user->name = $request->name;
-        $upd_user->employee_number = $request->emp_num;
         $upd_user->department = $request->dept;
         $upd_user->position = $request->pos;
         $upd_user->salary = $request->sal;

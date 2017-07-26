@@ -25,10 +25,6 @@
 					  	<input required type="email" class="form-control" id="email" name="email" placeholder="juan_tamad@imba_gaming.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please input a valid email address.">
 					</div>
 					<div class="form-group">
-					  	<label for="emp">Employee Number:</label>
-					  	<input required type="number" class="form-control" id="emp" name="emp" placeholder="1234" min="1000" max="9999">
-					</div>
-					<div class="form-group">
 					  	<label for="add">Date Hired:</label>
 					  	<input required type="date" class="form-control date-picker" id="add" name="hired">
 					</div>
@@ -83,7 +79,7 @@
 					</div>
 					<div class="form-group">
 					  	<label for="bank">Bank Account Number:</label>
-					  	<input required type="number" class="form-control" id="bank" name="bank" placeholder="12345678" min="10000000" max="99999999">
+					  	<input required type="number" class="form-control" id="bank" name="bank" placeholder="12345678" min="0" maxlength="8" minlength="8">
 					</div>
 		      </div>
 		      <div class="panel-footer">

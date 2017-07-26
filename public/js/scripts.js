@@ -37,7 +37,6 @@ $('.tab-content').on('click', '#saveUserEdit', function(event){
 	var token = $('#token').val();
 	var uid = $('#userEditId').val();
 	var name = $('#edit_usr').val();
-	var emp_num = $('#edit_emp').val();
 	var dept = $('#edit_dept').val();
 	var pos = $('#edit_pos').val();
 	var sal = $('#edit_sal').val();
@@ -58,7 +57,6 @@ $('.tab-content').on('click', '#saveUserEdit', function(event){
 		data: {
 			_token : token,
 			name : name,
-			emp_num : emp_num,
 			dept : dept,
 			pos : pos,
 			sal : sal,
