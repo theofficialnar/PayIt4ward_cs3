@@ -11,6 +11,7 @@ use App\taxes;
 use DB;
 use App\payrolls;
 use Carbon\Carbon;
+use Auth;
 
 class PayrollsController extends Controller
 {
@@ -188,6 +189,16 @@ class PayrollsController extends Controller
         $new_payroll->ded_tax = $request->tax ;
         $new_payroll->date_paid = $date;
         $new_payroll->save();
+    }
+
+    function viewPayroll(){
+        $uid = Auth::id();
+        $payrolls = DB::table('payrolls')
+                ->where('user_id', $uid)
+                ->get();
+        // dd($payrolls);
+        // echo $dates;
+        return view('/pages/user_view_payroll', compact('payrolls'));
     }
 
 }

@@ -1,7 +1,5 @@
-$(document).ready(function(){
-});
-
 //Opens an Ajax-powered modal that dynamically displays the user's data
+
 $('#userPanel').iziModal({
 	title: 'View User Data',
 	subtitle: 'View and update each employee\'s records in the database',
@@ -9,8 +7,7 @@ $('#userPanel').iziModal({
 	padding: '15',
 	fullscreen: true
 });
-
-$('#usersViewBody').on('click', '.openUserPanel', function(event){
+$('#usersViewBody').on('click', '.openUserPanel', function (event) {
 	event.preventDefault();
 	$('#userPanel').iziModal('open');
 	var tab = event.target.hash;
@@ -19,21 +16,21 @@ $('#usersViewBody').on('click', '.openUserPanel', function(event){
 	var token = $('#token').val();
 	$.ajax({
 		type: 'POST',
-		url: 'admin_panel/user/'+uid,
+		url: 'admin_panel/user/' + uid,
 		data: {
 			_token: token
 		},
-		success: function(data,status){
+		success: function (data, status) {
 			$('.tab-content').html(data);
 		},
-		error: function(){
+		error: function () {
 			alert('Error connecting to database!');
 		}
 	});
 });
 
 //Saves any changes made on the user via Ajax
-$('.tab-content').on('click', '#saveUserEdit', function(event){
+$('.tab-content').on('click', '#saveUserEdit', function (event) {
 	var token = $('#token').val();
 	var uid = $('#userEditId').val();
 	var name = $('#edit_usr').val();
@@ -53,28 +50,28 @@ $('.tab-content').on('click', '#saveUserEdit', function(event){
 
 	$.ajax({
 		type: 'POST',
-		url: 'admin_panel/user/update/'+uid,
+		url: 'admin_panel/user/update/' + uid,
 		data: {
-			_token : token,
-			name : name,
-			dept : dept,
-			pos : pos,
-			sal : sal,
-			hired : hired,
-			add : add,
-			bday : bday,
-			mar_stat : mar_stat,
-			stat : stat,
-			bank : bank,
-			hrs_day : hrs_day,
-			days_week : days_week,
-			dependents : dependents
+			_token: token,
+			name: name,
+			dept: dept,
+			pos: pos,
+			sal: sal,
+			hired: hired,
+			add: add,
+			bday: bday,
+			mar_stat: mar_stat,
+			stat: stat,
+			bank: bank,
+			hrs_day: hrs_day,
+			days_week: days_week,
+			dependents: dependents
 		},
-		success: function(data, status){
+		success: function (data, status) {
 			$('#usersViewBody').html(data);
-			alert('User '+name+'\'s has been successfully updated!');
+			alert('User ' + name + '\'s has been successfully updated!');
 		},
-		error: function(error){
+		error: function (error) {
 			alert('An error was encountered during the database update!');
 		}
 	});
@@ -83,7 +80,7 @@ $('.tab-content').on('click', '#saveUserEdit', function(event){
 });
 
 //Saves any changes made on the user's acct info via Ajax
-$('.tab-content').on('click', '#saveUserAcctEdit', function(event){
+$('.tab-content').on('click', '#saveUserAcctEdit', function (event) {
 	var token = $('#token').val();
 	var uid = $('#userEditId').val();
 	var email = $('#edit_email').val();
@@ -92,23 +89,23 @@ $('.tab-content').on('click', '#saveUserAcctEdit', function(event){
 
 	$.ajax({
 		type: 'POST',
-		url: '/admin_panel/user/updateacct/'+uid,
+		url: '/admin_panel/user/updateacct/' + uid,
 		data: {
-			_token : token,
-			email : email,
-			password : pw
+			_token: token,
+			email: email,
+			password: pw
 		},
-		success: function(data, status){
-			alert('User '+name+'\'s account information has been successfully updated!');
+		success: function (data, status) {
+			alert('User ' + name + '\'s account information has been successfully updated!');
 		},
-		error: function(){
+		error: function () {
 			alert('An error was encountered during the database update!');
 		}
 	});
 
 	$('.iziModal-button-close').trigger('click');
 });
-	
+
 
 //Opens the update payroll modal
 $("#payrollModal").iziModal({
@@ -127,21 +124,21 @@ $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 	// alert(token);
 	$.ajax({
 		type: 'POST',
-		url: '/admin_panel/user/payroll/'+uid,
+		url: '/admin_panel/user/payroll/' + uid,
 		data: {
-			_token : token
+			_token: token
 		},
-		success: function(data, status){
+		success: function (data, status) {
 			$('#payrollFormContent').html(data);
 		},
-		error: function(){
+		error: function () {
 			alert('An error was encountered during the database update!');
 		}
 	});
 });
 
 //contrib tester ajax
-$('#valTest').click(function(){
+$('#valTest').click(function () {
 	var token = $('#token').val();
 	// var val = $('#contribTestVal').val();
 	var sal = $('#payrollSal').val();
@@ -150,14 +147,14 @@ $('#valTest').click(function(){
 		type: 'POST',
 		url: '/admin/contribCheck',
 		data: {
-			_token : token,
+			_token: token,
 			// val : val
-			sal : sal
+			sal: sal
 		},
-		success: function(data){
+		success: function (data) {
 			alert(data);
 		},
-		error: function(){
+		error: function () {
 			alert('An error was encountered during the database update!');
 			// $('#payrollForm').html(data);
 		}
@@ -165,9 +162,9 @@ $('#valTest').click(function(){
 });
 
 //submits payroll data to controller via ajax for processing and will return with a preview of the values prior to saving
-$('#payrollSubmit').click(function(){
+$('#payrollSubmit').click(function () {
 	var errorFlag = 0;
-	var token = $('#token').val();	
+	var token = $('#token').val();
 	var uid = $('#payrollUid').val();
 	var absences = $('#hrs_absent').val();
 	var lates = $('#hrs_late').val();
@@ -190,60 +187,60 @@ $('#payrollSubmit').click(function(){
 	var nd_r_hol_rd = $('#hrs_reg_holiday_rd_nd').val();
 
 	//validates the overtime hours being input. Will block hours if less than 8 hours are logged on corresponding holiday
-	if(rd < 8 && ot_rd != 0){
+	if (rd < 8 && ot_rd != 0) {
 		alert('You can\'t input a Rest Day Overtime with less than 8 hours of time in.');
 		errorFlag = 1;
 	}
 
-	if(s_hol < 8 && ot_s_hol != 0){
+	if (s_hol < 8 && ot_s_hol != 0) {
 		alert('You can\'t input a Special Holiday Overtime with less than 8 hours of time in.');
 		errorFlag = 1;
 	}
 
-	if(s_hol_rd < 8 && ot_s_hol_rd != 0){
+	if (s_hol_rd < 8 && ot_s_hol_rd != 0) {
 		alert('You can\'t input a Special Holiday and Rest Day Overtime with less than 8 hours of time in..');
 		errorFlag = 1;
 	}
 
-	if(r_hol < 8 && ot_r_hol != 0){
+	if (r_hol < 8 && ot_r_hol != 0) {
 		alert('You can\'t input a Regular Holiday Overtime with less than 8 hours of time in.');
 		errorFlag = 1;
 	}
 
-	if(r_hol_rd < 8 && ot_r_hol_rd != 0){
+	if (r_hol_rd < 8 && ot_r_hol_rd != 0) {
 		alert('You can\'t input a Regular Holiday and Rest Day Overtime with less than 8 hours of time in.');
 		errorFlag = 1;
 	}
 
 	//if no errors are found, will proceed on sending the data via ajax
-	if(errorFlag == 0){
+	if (errorFlag == 0) {
 		$.ajax({
 			type: 'POST',
 			url: '/admin_panel/payroll_update',
 			data: {
-				_token : token,
-				uid : uid,
-				hrs_absent : absences,
-				hrs_late : lates,
-				hrs_rd : rd,
-				hrs_shol : s_hol,
-				hrs_shol_rd : s_hol_rd,
-				hrs_hol : r_hol,
-				hrs_hol_rd : r_hol_rd,
-				hrs_ot_ord : ot_ord,
-				hrs_ot_rd : ot_rd,
-				hrs_ot_shol : ot_s_hol,
-				hrs_ot_shol_rd : ot_s_hol_rd,
-				hrs_ot_rhol : ot_r_hol,
-				hrs_ot_rhol_rd : ot_r_hol_rd,
-				hrs_nd_ord : nd_ord,
-				hrs_nd_rd : nd_rd,
-				hrs_nd_shol : nd_s_hol,
-				hrs_nd_shol_rd : nd_s_hol_rd,
-				hrs_nd_rhol : nd_r_hol,
-				hrs_nd_rhol_rd : nd_r_hol_rd
+				_token: token,
+				uid: uid,
+				hrs_absent: absences,
+				hrs_late: lates,
+				hrs_rd: rd,
+				hrs_shol: s_hol,
+				hrs_shol_rd: s_hol_rd,
+				hrs_hol: r_hol,
+				hrs_hol_rd: r_hol_rd,
+				hrs_ot_ord: ot_ord,
+				hrs_ot_rd: ot_rd,
+				hrs_ot_shol: ot_s_hol,
+				hrs_ot_shol_rd: ot_s_hol_rd,
+				hrs_ot_rhol: ot_r_hol,
+				hrs_ot_rhol_rd: ot_r_hol_rd,
+				hrs_nd_ord: nd_ord,
+				hrs_nd_rd: nd_rd,
+				hrs_nd_shol: nd_s_hol,
+				hrs_nd_shol_rd: nd_s_hol_rd,
+				hrs_nd_rhol: nd_r_hol,
+				hrs_nd_rhol_rd: nd_r_hol_rd
 			},
-			success: function(data){
+			success: function (data) {
 				$('#payrollFormContent').html(data);
 			}
 		});
@@ -252,7 +249,7 @@ $('#payrollSubmit').click(function(){
 });
 
 //saves all the data indicated in the preview to the payroll db
-$('#payrollFormContent').on('click', '#savePayroll', function(){
+$('#payrollFormContent').on('click', '#savePayroll', function () {
 	var token = $('#token').val();
 	var absences = $('#ded_absences').html();
 	var lates = $('#ded_lates').html();
@@ -267,27 +264,36 @@ $('#payrollFormContent').on('click', '#savePayroll', function(){
 	var id = $('#payID').val();
 
 	$.ajax({
-		type : 'POST',
-		url : '/admin_panel/save_payroll/'+id,
-		data : {
-			_token : token,
-			absences : absences,
-			lates : lates,
-			philhealth : philhealth,
-			sss : sss,
-			pagibig : pagibig,
-			tax : tax,
-			overtime : overtime,
-			holiday : holiday,
-			night_diff : night_diff,
-			salary : salary
+		type: 'POST',
+		url: '/admin_panel/save_payroll/' + id,
+		data: {
+			_token: token,
+			absences: absences,
+			lates: lates,
+			philhealth: philhealth,
+			sss: sss,
+			pagibig: pagibig,
+			tax: tax,
+			overtime: overtime,
+			holiday: holiday,
+			night_diff: night_diff,
+			salary: salary
 		},
-		success : function(){
+		success: function () {
 			alert('Posted');
-			setTimeout(function(){
-				window.location.reload(); },
+			setTimeout(function () {
+					window.location.reload();
+				},
 				0
 			);
 		}
 	});
+});
+
+//displays the selected payroll
+
+$('#showPayroll').iziModal();
+$(document).on('click', '#testsubmit', function (event) {
+	event.preventDefault();
+	$('#showPayroll').iziModal('open');
 });

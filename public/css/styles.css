@@ -2,34 +2,49 @@
 	display: flex;
 	align-items: center;
 }
+
 main {
 	padding-top: 50px;
 }
+
+
 /*NAV*/
+
 nav {
 	background: #364156;
 }
+
+
 /*MAIN*/
+
 .banner {
 	height: 400px;
 	background: black;
 }
+
 .main_fill {
 	height: 700px;
 	background: #B497FC;
 }
 
+
 /* PAYROLL */
+
 .payrollLabel {
 	font-weight: bold;
 }
 
+
 /*FOOTER*/
+
+
 /* footer {
 
 } */
 
+
 /*ADMIN PANEL*/
+
 .openUserPanel {
 	cursor: pointer;
 }

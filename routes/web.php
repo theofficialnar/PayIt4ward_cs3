@@ -45,3 +45,6 @@ Route::post('/admin_panel/payroll_update', 'PayrollsController@payrollUpdate');
 
 //Saves payroll data and uploads to db
 Route::post('/admin_panel/save_payroll/{id}', 'PayrollsController@payrollSave');
+
+//Route to view user's payroll
+Route::get('/payroll', 'PayrollsController@viewPayroll');

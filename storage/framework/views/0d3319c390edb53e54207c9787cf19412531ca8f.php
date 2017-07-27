@@ -2,7 +2,7 @@
   <div class="container">
     <ul class="nav navbar-nav">
       <li><a href="/home">Home</a></li>
-      <li><a href="#">My Payroll</a></li>
+      <li><a href="/payroll">My Payroll</a></li>
       <li><a href="#">My Account</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
