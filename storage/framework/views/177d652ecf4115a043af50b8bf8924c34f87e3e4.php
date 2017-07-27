@@ -120,7 +120,7 @@ Users
 				<?php else: ?>
 					<td>Terminated</td>
 				<?php endif; ?>
-				<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="<?php echo e($user->id); ?>"">Update Payroll</button></td>
+				<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="<?php echo e($user->id); ?>">Update Payroll</button></td>
 			</tr>
 		<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</tbody>
@@ -140,18 +140,9 @@ Users
 
 <!-- modal displaying the payroll form -->
 <div id="payrollModal">
-	<form>
 	<div id="payrollFormContent"></div>
-	</form>
 	<button id="payrollSubmit">Submit</button>
-	<button id="valTest">Contrib Check</button>
-	<form method="POST" action="/test">
-	<?php echo e(csrf_field()); ?>
-
-		<input type="number" name="salary" placeholder="salary">
-		<input type="number" name="dependents" placeholder="dependents">
-		<button>Submit</button>
-	</form>
+	
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -38,9 +38,10 @@ Route::post('/admin_panel/user/updateacct/{id}', 'UserController@adminUpdateUser
 Route::post('/admin_panel/user/payroll/{id}', 'UserController@getPayrollForm');
 
 //Test Ajax
-Route::post('/admin/contribCheck', 'PaymentsController@contribCheck');
+Route::post('/admin/contribCheck', 'PayrollsController@contribCheck');
 
-//test route
-Route::post('/admin_panel/payroll_update', 'PaymentsController@payrollUpdate');
+//Processes and calculates data submitted via ajax
+Route::post('/admin_panel/payroll_update', 'PayrollsController@payrollUpdate');
 
-Route::post('/test', 'PaymentsController@testTax');
+//Saves payroll data and uploads to db
+Route::post('/admin_panel/save_payroll/{id}', 'PayrollsController@payrollSave');

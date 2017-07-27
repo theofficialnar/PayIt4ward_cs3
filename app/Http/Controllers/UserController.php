@@ -246,7 +246,6 @@ class UserController extends Controller
         echo '
         <input type="hidden" id="payrollSal" value="'.$pay_user->salary.'" name="payrollSalary">
         <input type="hidden" id="payrollUid" value="'.$pay_user->id.'" name="payrollUid">
-
         <div class="panel panel-default">
             <div class="panel-heading"><h4 class="text-center">Deductions</h4></div>
             <div class="panel-body">

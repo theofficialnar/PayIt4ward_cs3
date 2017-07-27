@@ -24,12 +24,12 @@ $('#usersViewBody').on('click', '.openUserPanel', function(event){
 			_token: token
 		},
 		success: function(data,status){
-			$('.tab-content').html(data)
+			$('.tab-content').html(data);
 		},
 		error: function(){
-			alert('Error connecting to database!')
+			alert('Error connecting to database!');
 		}
-	})
+	});
 });
 
 //Saves any changes made on the user via Ajax
@@ -107,7 +107,7 @@ $('.tab-content').on('click', '#saveUserAcctEdit', function(event){
 	});
 
 	$('.iziModal-button-close').trigger('click');
-})
+});
 	
 
 //Opens the update payroll modal
@@ -119,6 +119,7 @@ $("#payrollModal").iziModal({
 	openFullscreen: true
 });
 $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
+	$('#payrollSubmit').show();
 	event.preventDefault();
 	$('#payrollModal').iziModal('open');
 	var uid = $(this).data('uid');
@@ -136,7 +137,7 @@ $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 		error: function(){
 			alert('An error was encountered during the database update!');
 		}
-	})
+	});
 });
 
 //contrib tester ajax
@@ -160,10 +161,10 @@ $('#valTest').click(function(){
 			alert('An error was encountered during the database update!');
 			// $('#payrollForm').html(data);
 		}
-	})
-})
+	});
+});
 
-//payroll data submit via ajax
+//submits payroll data to controller via ajax for processing and will return with a preview of the values prior to saving
 $('#payrollSubmit').click(function(){
 	var errorFlag = 0;
 	var token = $('#token').val();	
@@ -245,6 +246,48 @@ $('#payrollSubmit').click(function(){
 			success: function(data){
 				$('#payrollFormContent').html(data);
 			}
-		})
+		});
+		$(this).hide();
 	}
-})
+});
+
+//saves all the data indicated in the preview to the payroll db
+$('#payrollFormContent').on('click', '#savePayroll', function(){
+	var token = $('#token').val();
+	var absences = $('#ded_absences').html();
+	var lates = $('#ded_lates').html();
+	var philhealth = $('#ded_philhealth').html();
+	var sss = $('#ded_sss').html();
+	var pagibig = $('#ded_pagibig').html();
+	var tax = $('#ded_tax').html();
+	var overtime = $('#bon_overtime').html();
+	var holiday = $('#bon_holiday').html();
+	var night_diff = $('#bon_night_diff').html();
+	var salary = $('#month_salary').html();
+	var id = $('#payID').val();
+
+	$.ajax({
+		type : 'POST',
+		url : '/admin_panel/save_payroll/'+id,
+		data : {
+			_token : token,
+			absences : absences,
+			lates : lates,
+			philhealth : philhealth,
+			sss : sss,
+			pagibig : pagibig,
+			tax : tax,
+			overtime : overtime,
+			holiday : holiday,
+			night_diff : night_diff,
+			salary : salary
+		},
+		success : function(){
+			alert('Posted');
+			setTimeout(function(){
+				window.location.reload(); },
+				0
+			);
+		}
+	});
+});
