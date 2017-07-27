@@ -235,8 +235,8 @@ class UserController extends Controller
     function adminUpdateUserAcct($id, Request $request){
         $upd_user = User::find($id);
         $upd_user->email = $request->email;
-        if(isset($request->pw)){
-            $upd_user->password = bcrypt($request->pw);
+        if(isset($request->password)){
+            $upd_user->password = bcrypt($request->password);
         }
         $upd_user->save();
     }
