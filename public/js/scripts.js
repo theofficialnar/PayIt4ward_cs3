@@ -1,12 +1,13 @@
-//Opens an Ajax-powered modal that dynamically displays the user's data
-
-$('#userPanel').iziModal({
-	title: 'View User Data',
-	subtitle: 'View and update each employee\'s records in the database',
-	icon: 'glyphicon glyphicon-user',
-	padding: '15',
-	fullscreen: true
-});
+if($('#userPanel').length){
+	//Opens an Ajax-powered modal that dynamically displays the user's data
+	$('#userPanel').iziModal({
+		title: 'View User Data',
+		subtitle: 'View and update each employee\'s records in the database',
+		icon: 'glyphicon glyphicon-user',
+		padding: '15',
+		fullscreen: true
+	});
+}
 $('#usersViewBody').on('click', '.openUserPanel', function (event) {
 	event.preventDefault();
 	$('#userPanel').iziModal('open');
@@ -106,15 +107,16 @@ $('.tab-content').on('click', '#saveUserAcctEdit', function (event) {
 	$('.iziModal-button-close').trigger('click');
 });
 
-
-//Opens the update payroll modal
-$("#payrollModal").iziModal({
-	title: 'Update Payroll',
-	subtitle: 'Update this employee\'s payroll for the current cut-off',
-	icon: 'glyphicon glyphicon-piggy-bank',
-	padding: '15',
-	openFullscreen: true
-});
+if($('#payrollModal').length){
+	//Opens the update payroll modal
+	$("#payrollModal").iziModal({
+		title: 'Update Payroll',
+		subtitle: 'Update this employee\'s payroll for the current cut-off',
+		icon: 'glyphicon glyphicon-piggy-bank',
+		padding: '15',
+		openFullscreen: true
+	});
+}
 $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 	$('#payrollSubmit').show();
 	event.preventDefault();
