@@ -122,7 +122,7 @@ Users
 				@else
 					<td>Terminated</td>
 				@endif
-				<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="{{$user->id}}"">Update Payroll</button></td>
+				<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="{{$user->id}}">Update Payroll</button></td>
 			</tr>
 		@endforeach
 		</tbody>
