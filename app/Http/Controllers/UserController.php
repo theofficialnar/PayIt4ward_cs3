@@ -39,153 +39,155 @@ class UserController extends Controller
     function adminViewUser($id){
     	$user = User::find($id);
     	echo '
-      	<div id="tabUserInfo" class="tab-pane fade in active">
-        	<p>Name: '.$user->name.'</p>
-        	<p>ID Number: '.$user->id.'</p>
-        	<p>Department: '.$user->department.'</p>
-        	<p>Position: '.$user->position.'</p>
-            <p>Salary: '.$user->salary.'</p>
-        	<p>Date Hired: '.$user->date_started.'</p>
-            <p>Hours per Day: '.$user->hrs_per_day.' hours</p>
-            <p>Days per Week: '.$user->days_per_week.' days</p>
-        	<p>Address: '.$user->address.'</p>
-        	<p>Birthday: '.$user->birthday.'</p>';
-            if($user->marital_status == 0){
-            	echo '<p>Marital Status: Single</p>';
-            }else{
-                echo '<p>Marital Status: Married</p>';
-            }
-            echo '<p>Number of Dependents: '.$user->dependents.'</p>';
-            if($user->status == 0){
-            	echo'<p>Status: Active</p>';
-            }elseif($user->status == 1){
-                echo'<p>Status: On leave</p>';
-            }elseif($user->status == 2){
-                echo'<p>Status: Retired</p>';
-            }else{
-                echo'<p>Status: Terminated</p>';
-            }
-        	echo '<p>Bank Info: '.$user->bank_info.'</p>
-        	<p>Email: '.$user->email.'</p>
-      	</div>
+        <div class="tab-content">
+            <div id="tabUserInfo" class="tab-pane fade in active">
+                <p>Name: '.$user->name.'</p>
+                <p>ID Number: '.$user->id.'</p>
+                <p>Department: '.$user->department.'</p>
+                <p>Position: '.$user->position.'</p>
+                <p>Salary: '.$user->salary.'</p>
+                <p>Date Hired: '.$user->date_started.'</p>
+                <p>Hours per Day: '.$user->hrs_per_day.' hours</p>
+                <p>Days per Week: '.$user->days_per_week.' days</p>
+                <p>Address: '.$user->address.'</p>
+                <p>Birthday: '.$user->birthday.'</p>';
+                if($user->marital_status == 0){
+                    echo '<p>Marital Status: Single</p>';
+                }else{
+                    echo '<p>Marital Status: Married</p>';
+                }
+                echo '<p>Number of Dependents: '.$user->dependents.'</p>';
+                if($user->status == 0){
+                    echo'<p>Status: Active</p>';
+                }elseif($user->status == 1){
+                    echo'<p>Status: On leave</p>';
+                }elseif($user->status == 2){
+                    echo'<p>Status: Retired</p>';
+                }else{
+                    echo'<p>Status: Terminated</p>';
+                }
+                echo '<p>Bank Info: '.$user->bank_info.'</p>
+                <p>Email: '.$user->email.'</p>
+            </div>
 
-      	<div id="tabUserUpdate" class="tab-pane fade">
-            <form id="userUpdate">
-                <input type="hidden" value="'.$user->id.'" id="userEditId">
-                <div class="form-group">
-                    <label for="edit_usr">Name:</label>
-          		    <input type="text" name="name" value="'.$user->name.'" id="edit_usr" class="form-control">
-                </div>
-                 <div class="form-group">
-                    <label for="edit_dept">Department:</label>
-                    <input type="text" class="form-control" id="edit_dept" name="dept" value="'.$user->department.'">
-                </div>
-                <div class="form-group">
-                    <label for="edit_pos">Position:</label>
-                    <input type="text" class="form-control" id="edit_pos" name="pos" value="'.$user->position.'">
-                </div>
-                <div class="form-group">
-                    <label for="edit_sal">Salary:</label>
-                    <input type="number" class="form-control" id="edit_sal" name="sal" value="'.$user->salary.'">
-                </div>
-                <div class="form-group">
-                    <label for="edit_hrs_day">Hours Per Day:</label>
-                    <input type="number" class="form-control" id="edit_hrs_day" name="hrs_day" value="'.$user->hrs_per_day.'">
-                </div>
-                <div class="form-group">
-                    <label for="edit_days_week">Days Per Week:</label>
-                    <input type="number" class="form-control" id="edit_days_week" name="days_week" value="'.$user->days_per_week.'">
-                </div>
-                <div class="form-group">
-                    <label for="edit_hired">Date Hired:</label>
-                    <input type="date" class="form-control" id="edit_hired" name="hired" value="'.$user->date_started.'">
-                </div>
-                <div class="form-group">
-                    <label for="edit_add">Address:</label>
-                    <input type="text" class="form-control" id="edit_add" name="add" value="'.$user->address.'">
-                </div>
-                <div class="form-group">
-                    <label for="edit_bday">Birthday:</label>
-                    <input type="date" class="form-control" id="edit_bday" name="bday" value="'.$user->birthday.'">
-                </div>
-                <div class="form-group">
-                    <label>Marital Status: &nbsp;</label>';
-            if($user->marital_status == 0){
-                    echo '<label class="radio-inline">
-                    <input type="radio" name="mar_stat" value="0" checked>Single</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="mar_stat" value="1">Married</label>';
-            }else{
-                    echo '<label class="radio-inline">
-                    <input type="radio" name="mar_stat" value="0">Single</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="mar_stat" value="1" checked>Married</label>';
-            }
-                echo '</div>
-                <div class="form-group">
-                    <label for="edit_dependents">Dependents:</label>
-                    <input type="number" class="form-control" id="edit_dependents" name="dependents" value="'.$user->dependents.'">
-                </div>
-                <div class="form-group">
-                    <label>Status: &nbsp;</label>';
-            if($user->status == 0){
-                    echo'<label class="radio-inline">
-                    <input type="radio" name="stat" value="0" checked>Active</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="1">On Leave</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="2">Retired</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="3">Terminated</label>';
-            }elseif($user->status == 1){
-                    echo'<label class="radio-inline">
-                    <input type="radio" name="stat" value="0">Active</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="1" checked>On Leave</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="2">Retired</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="3">Terminated</label>';
-            }elseif($user->status == 2){
-                    echo'<label class="radio-inline">
-                    <input type="radio" name="stat" value="0">Active</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="1">On Leave</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="2" checked>Retired</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="3">Terminated</label>';
-            }else{
-                    echo'<label class="radio-inline">
-                    <input type="radio" name="stat" value="0">Active</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="1">On Leave</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="2">Retired</label>
-                    <label class="radio-inline">
-                    <input type="radio" name="stat" value="3" checked>Terminated</label>';
-            }
-          	echo'</div>
-                <div class="form-group">
-                    <label for="edit_bank">Bank Account Number:</label>
-                    <input type="number" class="form-control" id="edit_bank" name="bank_info" value="'.$user->bank_info.'">
-                </div>
-            </form>
-            <button id="saveUserEdit" data-dismiss="modal">Save Changes</button>
-        </div>
+            <div id="tabUserUpdate" class="tab-pane fade">
+                <form id="userUpdate">
+                    <input type="hidden" value="'.$user->id.'" id="userEditId">
+                    <div class="form-group">
+                        <label for="edit_usr">Name:</label>
+                        <input type="text" name="name" value="'.$user->name.'" id="edit_usr" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_dept">Department:</label>
+                        <input type="text" class="form-control" id="edit_dept" name="dept" value="'.$user->department.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_pos">Position:</label>
+                        <input type="text" class="form-control" id="edit_pos" name="pos" value="'.$user->position.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_sal">Salary:</label>
+                        <input type="number" class="form-control" id="edit_sal" name="sal" value="'.$user->salary.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_hrs_day">Hours Per Day:</label>
+                        <input type="number" class="form-control" id="edit_hrs_day" name="hrs_day" value="'.$user->hrs_per_day.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_days_week">Days Per Week:</label>
+                        <input type="number" class="form-control" id="edit_days_week" name="days_week" value="'.$user->days_per_week.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_hired">Date Hired:</label>
+                        <input type="date" class="form-control" id="edit_hired" name="hired" value="'.$user->date_started.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_add">Address:</label>
+                        <input type="text" class="form-control" id="edit_add" name="add" value="'.$user->address.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_bday">Birthday:</label>
+                        <input type="date" class="form-control" id="edit_bday" name="bday" value="'.$user->birthday.'">
+                    </div>
+                    <div class="form-group">
+                        <label>Marital Status: &nbsp;</label>';
+                if($user->marital_status == 0){
+                        echo '<label class="radio-inline">
+                        <input type="radio" name="mar_stat" value="0" checked>Single</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="mar_stat" value="1">Married</label>';
+                }else{
+                        echo '<label class="radio-inline">
+                        <input type="radio" name="mar_stat" value="0">Single</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="mar_stat" value="1" checked>Married</label>';
+                }
+                    echo '</div>
+                    <div class="form-group">
+                        <label for="edit_dependents">Dependents:</label>
+                        <input type="number" class="form-control" id="edit_dependents" name="dependents" value="'.$user->dependents.'">
+                    </div>
+                    <div class="form-group">
+                        <label>Status: &nbsp;</label>';
+                if($user->status == 0){
+                        echo'<label class="radio-inline">
+                        <input type="radio" name="stat" value="0" checked>Active</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="1">On Leave</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="2">Retired</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="3">Terminated</label>';
+                }elseif($user->status == 1){
+                        echo'<label class="radio-inline">
+                        <input type="radio" name="stat" value="0">Active</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="1" checked>On Leave</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="2">Retired</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="3">Terminated</label>';
+                }elseif($user->status == 2){
+                        echo'<label class="radio-inline">
+                        <input type="radio" name="stat" value="0">Active</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="1">On Leave</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="2" checked>Retired</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="3">Terminated</label>';
+                }else{
+                        echo'<label class="radio-inline">
+                        <input type="radio" name="stat" value="0">Active</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="1">On Leave</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="2">Retired</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="stat" value="3" checked>Terminated</label>';
+                }
+                echo'</div>
+                    <div class="form-group">
+                        <label for="edit_bank">Bank Account Number:</label>
+                        <input type="number" class="form-control" id="edit_bank" name="bank_info" value="'.$user->bank_info.'">
+                    </div>
+                </form>
+                <button id="saveUserEdit" data-dismiss="modal">Save Changes</button>
+            </div>
 
-        <div id="tabUserUpdatePw" class="tab-pane fade">
-            <form id="acctUpdate">
-                <div class="form-group">
-                    <label for="edit_email">Email:</label>
-                    <input type="text" class="form-control" id="edit_email" name="email" value="'.$user->email.'">
-                </div>
-                <div class="form-group">
-                    <label for="edit_pw">New Password:</label>
-                    <input type="password" class="form-control" id="edit_pw" name="pw">
-                </div>
-            </form>
-            <button id="saveUserAcctEdit" data-dismiss="modal">Save Changes</button>
+            <div id="tabUserUpdatePw" class="tab-pane fade">
+                <form id="acctUpdate">
+                    <div class="form-group">
+                        <label for="edit_email">Email:</label>
+                        <input type="text" class="form-control" id="edit_email" name="email" value="'.$user->email.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_pw">New Password:</label>
+                        <input type="password" class="form-control" id="edit_pw" name="pw">
+                    </div>
+                </form>
+                <button id="saveUserAcctEdit" data-dismiss="modal">Save Changes</button>
+            </div>
         </div>';
     }
 

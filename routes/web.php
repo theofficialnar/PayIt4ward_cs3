@@ -51,3 +51,6 @@ Route::get('/payroll', 'PayrollsController@payroll')->middleware('auth');
 
 //Retrive chosen payroll from database
 Route::post('/payroll/view', 'PayrollsController@viewPayroll')->middleware('auth');
+
+//Save message to database
+Route::post('/user/ticket', 'TicketsController@saveTicket');

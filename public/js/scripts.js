@@ -22,7 +22,7 @@ $('#usersViewBody').on('click', '.openUserPanel', function (event) {
 			_token: token
 		},
 		success: function (data, status) {
-			$('.tab-content').html(data);
+			$('#userPanelDetails').html(data);
 		},
 		error: function () {
 			alert('Error connecting to database!');
@@ -31,7 +31,7 @@ $('#usersViewBody').on('click', '.openUserPanel', function (event) {
 });
 
 //Saves any changes made on the user via Ajax
-$('.tab-content').on('click', '#saveUserEdit', function (event) {
+$('#userPanelDetails').on('click', '#saveUserEdit', function (event) {
 	var token = $('#token').val();
 	var uid = $('#userEditId').val();
 	var name = $('#edit_usr').val();
@@ -81,7 +81,7 @@ $('.tab-content').on('click', '#saveUserEdit', function (event) {
 });
 
 //Saves any changes made on the user's acct info via Ajax
-$('.tab-content').on('click', '#saveUserAcctEdit', function (event) {
+$('#userPanelDetails').on('click', '#saveUserAcctEdit', function (event) {
 	var token = $('#token').val();
 	var uid = $('#userEditId').val();
 	var email = $('#edit_email').val();
@@ -310,6 +310,34 @@ $('#testsubmit').click(function () {
 		},
 		error: function () {
 			alert('An error was encountered while pulling up the record.');
+		}
+	});
+});
+
+//trigger message modal to pop up
+$('#messageModal').iziModal({
+	padding: '15px'
+});
+$('.navbar').on('click', '#messageModalTrigger', function (event) {
+	event.preventDefault();
+	$('#messageModal').iziModal('open');
+});
+
+//uploads ticket to db
+$('#messageModal').on('click', '#sendTicket', function(){
+	var subject = $('#subject').val();
+	var message = $('#message').val();
+	var token = $('#msg_token').val();
+	$.ajax({
+		type: 'POST',
+		url: '/user/ticket',
+		data: {
+			_token: token,
+			subject: subject,
+			message: message
+		},
+		success: function(data){
+			alert('Ticket sent to Admin');
 		}
 	});
 });

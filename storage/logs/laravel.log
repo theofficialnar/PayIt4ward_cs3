@@ -19453,3 +19453,261 @@ Stack trace:
 #50 /Users/nar/Documents/cs_3/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #51 /Users/nar/Documents/cs_3/server.php(21): require_once('/Users/nar/Docu...')
 #52 {main}  
+[2017-07-28 02:40:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 02:42:53] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 02:43:43] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 02:45:04] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 02:55:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/nar/Documents/cs_3/routes/web.php:56
+Stack trace:
+#0 {main}  
+[2017-07-28 02:57:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 02:58:52] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:00:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:01:10] local.ERROR: exception 'Symfony\Component\Console\Exception\RuntimeException' with message 'The "--create-table" option does not exist.' in /Users/nar/Documents/cs_3/vendor/symfony/console/Input/ArgvInput.php:224
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Input/ArgvInput.php(158): Symfony\Component\Console\Input\ArgvInput->addLongOption('create-table', 'tickets_message...')
+#1 /Users/nar/Documents/cs_3/vendor/symfony/console/Input/ArgvInput.php(84): Symfony\Component\Console\Input\ArgvInput->parseLongOption('--create-table=...')
+#2 /Users/nar/Documents/cs_3/vendor/symfony/console/Input/Input.php(63): Symfony\Component\Console\Input\ArgvInput->parse()
+#3 /Users/nar/Documents/cs_3/vendor/symfony/console/Command/Command.php(222): Symfony\Component\Console\Input\Input->bind(Object(Symfony\Component\Console\Input\InputDefinition))
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Console/Command.php(168): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#5 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(869): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(223): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateMakeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 {main}  
+[2017-07-28 03:01:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:03:29] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:03:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:03:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:04:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:04:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:04:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:04:14] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:04:14] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:09] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:09] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:42] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:42] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:43] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:43] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:45] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:05:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:07:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:09:56] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "create_tix_messages_table" is not defined.' in /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php:579
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(204): Symfony\Component\Console\Application->find('create_tix_mess...')
+#1 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2017-07-28 03:10:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:10:56] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:12:09] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:37] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:37] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:37] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:13:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:18:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:18:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:19:02] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:19:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:24:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:24:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:29:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 03:30:05] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 05:29:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 05:30:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 05:55:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 05:56:06] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:03:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:04:57] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:06:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:06:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:08:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:10:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:13:12] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:13:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:28:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:31:31] local.ERROR: exception 'Symfony\Component\Console\Exception\RuntimeException' with message 'The "-m" option does not exist.' in /Users/nar/Documents/cs_3/vendor/symfony/console/Input/ArgvInput.php:207
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Input/ArgvInput.php(110): Symfony\Component\Console\Input\ArgvInput->addShortOption('m', NULL)
+#1 /Users/nar/Documents/cs_3/vendor/symfony/console/Input/ArgvInput.php(86): Symfony\Component\Console\Input\ArgvInput->parseShortOption('-m')
+#2 /Users/nar/Documents/cs_3/vendor/symfony/console/Input/Input.php(63): Symfony\Component\Console\Input\ArgvInput->parse()
+#3 /Users/nar/Documents/cs_3/vendor/symfony/console/Command/Command.php(222): Symfony\Component\Console\Input\Input->bind(Object(Symfony\Component\Console\Input\InputDefinition))
+#4 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Console/Command.php(168): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#5 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(869): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(223): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateMakeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 {main}  
+[2017-07-28 06:38:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:39:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-07-28 06:44:56] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  

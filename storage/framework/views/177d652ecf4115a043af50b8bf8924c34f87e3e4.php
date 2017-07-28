@@ -18,7 +18,7 @@
 			      	<?php echo e(csrf_field()); ?>	
 			      	<div class="form-group">
 						<label for="usr">Name:</label>
-					  	<input required type="text" class="form-control" id="usr" name="name" placeholder="Juan Tamad" pattern="[A-Za-z]{5,}" title="Name can only contain letters and a minimum of 5 characters.">
+					  	<input required type="text" class="form-control" id="usr" name="name" placeholder="Juan Tamad" pattern="[A-Za-z ]{5,}" title="Name can only contain letters and a minimum of 5 characters.">
 					</div>
 					<div class="form-group">
 					  	<label for="email">Email:</label>
@@ -134,8 +134,7 @@ Users
 		  <li><a data-toggle="tab" href="#tabUserUpdate">Update Account Info</a></li>
 		  <li><a data-toggle="tab" href="#tabUserUpdatePw">Update Password</a></li>
 		</ul>
-		<div class="tab-content">	  
-		</div>
+		<div id="userPanelDetails"></div>
 </div>
 
 <!-- modal displaying the payroll form -->
