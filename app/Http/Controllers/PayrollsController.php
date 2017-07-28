@@ -129,38 +129,38 @@ class PayrollsController extends Controller
 
     	echo '
         <div class="vcenter" style="height: 100vh">
-        <div class="well col-lg-6 col-lg-offset-3">
-            <input type="hidden" id="payID" value="'.$uid.'">
-            <div class="row text-center">
-                <div class="col-lg-6">
-                    <h3 class="text-center">Deductions</h3>
-                    <hr>
-                    <div>
-                        <p> <span class="payrollLabel">Absences:</span> Php <span id="ded_absences">'.$tot_absences.'</span></p>
-                        <p> <span class="payrollLabel">Lates:</span> Php <span id="ded_lates">'.$tot_lates.'</span></p>
-                        <p> <span class="payrollLabel">Philhealth:</span> Php <span id="ded_philhealth">'.$ded_philhealth.'</span></p>
-                        <p> <span class="payrollLabel">SSS:</span> Php <span id="ded_sss">'.$ded_sss.'</span></p>
-                        <p> <span class="payrollLabel">Pagibig:</span> Php <span id="ded_pagibig">'.$ded_pagibig.'</span></p>
-                        <p> <span class="payrollLabel">Tax:</span> Php <span id="ded_tax">'.$tax.'</span></p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                        <h3 class="text-center">Bonuses</h3>
+            <div class="well col-lg-6 col-lg-offset-3">
+                <input type="hidden" id="payID" value="'.$uid.'">
+                <div class="row text-center">
+                    <div class="col-lg-6">
+                        <h3 class="text-center">Deductions</h3>
                         <hr>
-                    <div>
-                        <p> <span class="payrollLabel">Overtime:</span> Php <span id="bon_overtime">'.$data_overtime.'</span></p>
-                        <p> <span class="payrollLabel">Holiday:</span> Php <span id="bon_holiday">'.$data_holiday.'</span></p>
-                        <p> <span class="payrollLabel">Night Differential:</span> Php <span id="bon_night_diff">'.$data_night_diff.'</span></p>
+                        <div>
+                            <p> <span class="payrollLabel">Absences:</span> Php <span id="ded_absences">'.$tot_absences.'</span></p>
+                            <p> <span class="payrollLabel">Lates:</span> Php <span id="ded_lates">'.$tot_lates.'</span></p>
+                            <p> <span class="payrollLabel">Philhealth:</span> Php <span id="ded_philhealth">'.$ded_philhealth.'</span></p>
+                            <p> <span class="payrollLabel">SSS:</span> Php <span id="ded_sss">'.$ded_sss.'</span></p>
+                            <p> <span class="payrollLabel">Pagibig:</span> Php <span id="ded_pagibig">'.$ded_pagibig.'</span></p>
+                            <p> <span class="payrollLabel">Tax:</span> Php <span id="ded_tax">'.$tax.'</span></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                            <h3 class="text-center">Bonuses</h3>
+                            <hr>
+                        <div>
+                            <p> <span class="payrollLabel">Overtime:</span> Php <span id="bon_overtime">'.$data_overtime.'</span></p>
+                            <p> <span class="payrollLabel">Holiday:</span> Php <span id="bon_holiday">'.$data_holiday.'</span></p>
+                            <p> <span class="payrollLabel">Night Differential:</span> Php <span id="bon_night_diff">'.$data_night_diff.'</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1 class="text-center"><span class="payrollLabel">Total Salary:</span> Php <span id="month_salary">'.$monthly_salary.'</span></h1>
+                        <button id="savePayroll">Save Changes</button>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h1 class="text-center"><span class="payrollLabel">Total Salary:</span> Php <span id="month_salary">'.$monthly_salary.'</span></h1>
-                    <button id="savePayroll">Save Changes</button>
-                </div>
-            </div>
-        </div>
         </div>';
     }
 
@@ -191,7 +191,7 @@ class PayrollsController extends Controller
         $new_payroll->save();
     }
 
-    function viewPayroll(){
+    function payroll(){
         $uid = Auth::id();
         $payrolls = DB::table('payrolls')
                 ->where('user_id', $uid)
@@ -199,6 +199,47 @@ class PayrollsController extends Controller
         // dd($payrolls);
         // echo $dates;
         return view('/pages/user_view_payroll', compact('payrolls'));
+    }
+
+    function viewPayroll(Request $request){
+        $uid = Auth::id();
+        $view_payroll = $request->payroll;
+        $payroll = DB::table('payrolls')
+                ->where('user_id', $uid)
+                ->where('date_paid', $view_payroll)
+                ->first();
+        // dd($payroll);
+        echo '
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="row text-center">
+                <div class="col-lg-6">
+                    <h3 class="text-center">Deductions</h3>
+                    <hr>
+                    <div>
+                        <p> <span class="payrollLabel">Absences:</span> Php <span id="ded_absences">'.$payroll->ded_absences.'</span></p>
+                        <p> <span class="payrollLabel">Lates:</span> Php <span id="ded_lates">'.$payroll->ded_lates.'</span></p>
+                        <p> <span class="payrollLabel">Philhealth:</span> Php <span id="ded_philhealth">'.$payroll->ded_philhealth.'</span></p>
+                        <p> <span class="payrollLabel">SSS:</span> Php <span id="ded_sss">'.$payroll->ded_sss.'</span></p>
+                        <p> <span class="payrollLabel">Pagibig:</span> Php <span id="ded_pagibig">'.$payroll->ded_pagibig.'</span></p>
+                        <p> <span class="payrollLabel">Tax:</span> Php <span id="ded_tax">'.$payroll->ded_tax.'</span></p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                        <h3 class="text-center">Bonuses</h3>
+                        <hr>
+                    <div>
+                        <p> <span class="payrollLabel">Overtime:</span> Php <span id="bon_overtime">'.$payroll->bon_overtime.'</span></p>
+                        <p> <span class="payrollLabel">Holiday:</span> Php <span id="bon_holiday">'.$payroll->bon_holiday.'</span></p>
+                        <p> <span class="payrollLabel">Night Differential:</span> Php <span id="bon_night_diff">'.$payroll->bon_night_diff.'</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="text-center"><span class="payrollLabel">Total Salary:</span> Php <span id="month_salary">'.$payroll->salary.'</span></h1>
+                </div>
+            </div>
+        </div>';
     }
 
 }

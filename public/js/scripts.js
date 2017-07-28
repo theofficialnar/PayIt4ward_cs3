@@ -1,4 +1,4 @@
-if($('#userPanel').length){
+if ($('#userPanel').length) {
 	//Opens an Ajax-powered modal that dynamically displays the user's data
 	$('#userPanel').iziModal({
 		title: 'View User Data',
@@ -107,7 +107,7 @@ $('.tab-content').on('click', '#saveUserAcctEdit', function (event) {
 	$('.iziModal-button-close').trigger('click');
 });
 
-if($('#payrollModal').length){
+if ($('#payrollModal').length) {
 	//Opens the update payroll modal
 	$("#payrollModal").iziModal({
 		title: 'Update Payroll',
@@ -293,9 +293,23 @@ $('#payrollFormContent').on('click', '#savePayroll', function () {
 });
 
 //displays the selected payroll
+$('#testsubmit').click(function () {
+	var payroll = $('#payrollSelect').find(':selected').val();
+	var token = $('#token').val();
+	// alert(payroll);
 
-$('#showPayroll').iziModal();
-$(document).on('click', '#testsubmit', function (event) {
-	event.preventDefault();
-	$('#showPayroll').iziModal('open');
+	$.ajax({
+		type: 'POST',
+		url: '/payroll/view',
+		data: {
+			_token: token,
+			payroll: payroll
+		},
+		success: function (data) {
+			$('#showPayroll').html(data);
+		},
+		error: function () {
+			alert('An error was encountered while pulling up the record.');
+		}
+	});
 });
