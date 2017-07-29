@@ -1,5 +1,5 @@
+//Opens an Ajax-powered modal that dynamically displays the user's data
 if ($('#userPanel').length) {
-	//Opens an Ajax-powered modal that dynamically displays the user's data
 	$('#userPanel').iziModal({
 		title: 'View User Data',
 		subtitle: 'View and update each employee\'s records in the database',
@@ -107,8 +107,8 @@ $('#userPanelDetails').on('click', '#saveUserAcctEdit', function (event) {
 	$('.iziModal-button-close').trigger('click');
 });
 
+//Opens the update payroll modal
 if ($('#payrollModal').length) {
-	//Opens the update payroll modal
 	$("#payrollModal").iziModal({
 		title: 'Update Payroll',
 		subtitle: 'Update this employee\'s payroll for the current cut-off',
@@ -314,13 +314,24 @@ $('#testsubmit').click(function () {
 	});
 });
 
-//trigger message modal to pop up
+//trigger message modal to pop up and pull up any new messages
 $('#messageModal').iziModal({
 	padding: '15px'
 });
 $('.navbar').on('click', '#messageModalTrigger', function (event) {
 	event.preventDefault();
 	$('#messageModal').iziModal('open');
+	var token = $('#msg_token').val();
+	$.ajax({
+		type: 'POST',
+		url: 'user/messages',
+		data: {
+			_token: token,
+		},
+		success: function(data){
+			$('#inboxArea').html(data);
+		}
+	});
 });
 
 //uploads ticket to db
@@ -338,6 +349,58 @@ $('#messageModal').on('click', '#sendTicket', function(){
 		},
 		success: function(data){
 			alert('Ticket sent to Admin');
+		}
+	});
+	$('#subject').val('');
+	$('#message').val('');
+});
+
+//displays message from inbox
+$('#inboxArea').on('click', '.readMessage', function(){
+	var tix_id = $(this).data('id');
+	var tix_sub = $(this).data('sub');
+	var tix_date = $(this).data('date');
+
+	$.ajax({
+		type: 'GET',
+		url: 'user/messages/'+tix_id+'/'+tix_sub+'/'+tix_date,
+		success: function(data){
+			$('#inboxArea').html(data);
+		}
+	});
+});
+
+//sends user back to the inbox after opening a message
+$('#inboxArea').on('click', '#msgBack', function(){
+	var token = $('#msg_token').val();
+	$.ajax({
+		type: 'POST',
+		url: 'user/messages',
+		data: {
+			_token: token,
+		},
+		success: function(data){
+			$('#inboxArea').html(data);
+		}
+	});
+});
+
+//sends a reply to the current message via ajax'
+$('#inboxArea').on('click', '#msgSendReply', function(){
+	var message = $('#msgReply').val();
+	var token = $('#msg_token').val();
+	var tix_id = $(this).data('tid');
+
+	$.ajax({
+		type: 'POST',
+		url: 'user/messages/reply',
+		data: {
+			_token: token,
+			message: message,
+			ticket_id: tix_id
+		},
+		success: function(data){
+			$('#msgBody').append(data);
 		}
 	});
 });

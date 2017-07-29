@@ -34,17 +34,16 @@
 
 	<div class="tab-content">
 		<div id="inbox" class="tab-pane fade in active">
-			<h3>HOME</h3>
-			<p>Some content.</p>
+			<div id="inboxArea"></div>
 		</div>
 		<div id="ticket" class="tab-pane fade">
 			<h3>File a ticket</h3>
 			<input type="hidden" id="msg_token" value="<?php echo e(csrf_token()); ?>">
 			<div class="form-group">
-				<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+				<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject" required>
 			</div>
 			<div class="form-group">
-				<textarea class="form-control" rows="5" id="message" placeholder="Message" name="message"></textarea>
+				<textarea class="form-control" rows="5" id="message" placeholder="Message" name="message" required></textarea>
 			</div>
 			<button id="sendTicket">Send</button>
 		</div>

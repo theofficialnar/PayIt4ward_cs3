@@ -54,3 +54,12 @@ Route::post('/payroll/view', 'PayrollsController@viewPayroll')->middleware('auth
 
 //Save message to database
 Route::post('/user/ticket', 'TicketsController@saveTicket');
+
+//Scans for new messages
+Route::post('user/messages', 'TicketsController@messages');
+
+//Opens the selected message from the inbox
+Route::get('user/messages/{id}/{sub}/{date}', 'TicketsController@viewMessage');
+
+//Sends reply to an opened message
+Route::post('user/messages/reply', 'TicketsController@replyMessage');
