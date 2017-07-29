@@ -6,7 +6,7 @@
       <li><a href="#">My Account</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#" id="messageModalTrigger"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
+      <li><a href="#" id="messageModalTrigger" data-toggle="tooltip" data-placement="bottom" title="Messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Auth::user()->name}} <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -44,7 +44,7 @@
 			<div class="form-group">
 				<textarea class="form-control" rows="5" id="message" placeholder="Message" name="message" required></textarea>
 			</div>
-			<button id="sendTicket">Send</button>
+			<button id="sendTicket" class="btn btn-primary" style="width: 100%"><b>Send</b></button>
 		</div>
 	</div>
 </div>  

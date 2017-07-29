@@ -16,11 +16,35 @@ main {
 	padding-top: 50px;
 }
 
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -95px;
+	padding: 0 0 95px;
+}
+
 
 /*NAV*/
 
 nav {
 	background: #364156;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: white;
+	transition: 0.3s ease-in-out;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	background-color: #212d40;
+	color: #9d9d9d;
+	font-weight: bolder;
 }
 
 
@@ -51,14 +75,34 @@ nav {
 
 /*FOOTER*/
 
+footer {
+	padding-bottom: 10px;
+}
 
-/* footer {
-
-} */
+.footer_text {
+	font-size: 13px;
+	color: #787878;
+}
 
 
 /*ADMIN PANEL*/
 
 .openUserPanel {
 	cursor: pointer;
+}
+
+/*TICKET*/
+#msgBack {
+	cursor: pointer;
+	font-size: 26px;
+	display: inline-block;
+}
+
+#msgBack:hover {
+	color: #787878;
+}
+
+.msg_date {
+	font-size: 13px;
+	font-style: italic;
 }

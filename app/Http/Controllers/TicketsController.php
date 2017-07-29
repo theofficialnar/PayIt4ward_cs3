@@ -53,12 +53,12 @@ class TicketsController extends Controller
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-lg-9">'.$ticket->subject.'</div>
-                        <div class="col-lg-3">'.date('F d, Y',strtotime($ticket->created_at)).'</div>
+                        <div class="col-lg-9"><b>'.ucfirst($ticket->subject).'</b></div>
+                        <div class="col-lg-3"><em>'.date('F d, Y',strtotime($ticket->created_at)).'</em></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                <p>From: '.$ticket->name.'</p>
+                <p>From: <b>'.$ticket->name.'</b></p>
                 <p><a href="#" data-id="'.$ticket->id.'" data-sub="'.$ticket->subject.'" data-date="'.date('F d, Y',strtotime($ticket->created_at)).'" class="readMessage">Read now</a></p>
                 </div>
             </div>';
@@ -76,23 +76,23 @@ class TicketsController extends Controller
                 ->get();
         // dd($messages);
         echo '
-        <button id="msgBack">Back</button>
-        <h3>Inbox</h3>
+        <h3 id="msgBack"><span class="glyphicon glyphicon-menu-left"></span>Back</h3>
         <div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-lg-9">'.$sub.'</div>
-                        <div class="col-lg-3">'.$date.'</div>
+                        <div class="col-lg-9"><b>'.ucfirst($sub).'</b></div>
                     </div>
                 </div>
                 <div class="panel-body scroll" id="msgScroll">
                     <div id="msgBody">';
         foreach($messages as $message){
                     echo '
-                        <p>From: '.$message->name.'</p>
-                        <p>Date: '.$message->created_at.'</p>
-                        <p>Message: '.$message->message.'</p>
+                        <p>From: <b>'.$message->name.'</b></p>
+                        <p class="msg_date">'.$message->created_at.'</p>
+                        <div class="well">
+                        <span>'.$message->message.'</span>
+                        </div>
                         <hr>';
         }
                 echo'
@@ -104,7 +104,12 @@ class TicketsController extends Controller
         <div class="form-group">
             <textarea class="form-control" rows="4" id="msgReply" placeholder="Reply..." name="message" required></textarea>
         </div>
-        <button id="msgSendReply" data-tid="'.$id.'">Send Reply</button>
+        <div class="col-lg-6">
+        <button id="msgSendReply" data-tid="'.$id.'" class="btn btn-primary" style="width: 100%"><b>Send Reply</b></button>
+        </div>
+        <div class="col-lg-6">
+        <button class="btn btn-success" style="width: 100%"><b>Close Ticket</b></button>
+        </div>
         ';
         
     }
@@ -118,8 +123,11 @@ class TicketsController extends Controller
         $new_reply->save();
 
         echo '
-        <p>From: '.$user_name.'</p>
-        <p>Message: '.$new_reply->message.'</p>
+        <p>From: <b>'.$user_name.'</b></p>
+        <p class="msg_date">'.$new_reply->created_at.'</p>
+        <div class="well">
+        <span>'.$new_reply->message.'</span>
+        </div>
         <hr>';
     }
 }

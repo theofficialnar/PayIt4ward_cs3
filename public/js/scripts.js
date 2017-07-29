@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+
 //Opens an Ajax-powered modal that dynamically displays the user's data
 if ($('#userPanel').length) {
 	$('#userPanel').iziModal({
@@ -412,4 +416,11 @@ $('#inboxArea').on('click', '#msgSendReply', function(){
 	});
 	$('#msgReply').val('');
 	$('#msgScroll').animate({ scrollTop: $('#msgScroll')[0].scrollHeight}, 500);
+});
+
+//activates navbar dropdown on hover
+$('ul.nav li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
+}, function() {
+  $(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
 });
