@@ -125,6 +125,8 @@ Users
 		<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</tbody>
 	</table>
+	<?php echo e($users->links()); ?>
+
 </div>
 
 <!-- modal displaying individual user info and edit option -->

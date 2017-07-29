@@ -69,8 +69,12 @@ $('#userPanelDetails').on('click', '#saveUserEdit', function (event) {
 			dependents: dependents
 		},
 		success: function (data, status) {
-			$('#usersViewBody').html(data);
 			alert('User ' + name + '\'s has been successfully updated!');
+			setTimeout(function () {
+					window.location.reload();
+				},
+				0
+			);
 		},
 		error: function (error) {
 			alert('An error was encountered during the database update!');

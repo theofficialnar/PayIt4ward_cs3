@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use App\User;
 use App\messages;
 use App\tickets;
@@ -39,7 +40,7 @@ class TicketsController extends Controller
                 // dd($messages);
 
         echo '<h3>Inbox</h3>
-        <div class="panel-group">';
+        <div class="panel-group scroll">';
         foreach($tickets as $ticket){
             echo '
             <div class="panel panel-default">
@@ -78,7 +79,7 @@ class TicketsController extends Controller
                         <div class="col-lg-3">'.$date.'</div>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body scroll">
                     <div id="msgBody">';
         foreach($messages as $message){
                     echo '
@@ -86,7 +87,8 @@ class TicketsController extends Controller
                         <p>Message: '.$message->message.'</p>
                         <hr>';
         }
-                echo '</div>
+                echo'
+                    </div>
                 </div>
             </div>
         </div>

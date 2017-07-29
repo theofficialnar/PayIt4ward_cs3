@@ -3,6 +3,11 @@
 	align-items: center;
 }
 
+.scroll {
+	overflow: scroll;
+	height: 300px;
+}
+
 main {
 	padding-top: 50px;
 }

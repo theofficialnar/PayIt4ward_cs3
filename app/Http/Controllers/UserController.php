@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use DB;
 
 class UserController extends Controller
 {   
     //view the admin panel
     function adminPanel(){
-    	$users = User::all();
+    	$users = DB::table('users')->paginate(15);
     	return view('/pages/admin_panel', compact('users'));
     }
 

@@ -127,6 +127,7 @@ Users
 		@endforeach
 		</tbody>
 	</table>
+	{{ $users->links() }}
 </div>
 
 <!-- modal displaying individual user info and edit option -->
