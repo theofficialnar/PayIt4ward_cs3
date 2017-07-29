@@ -32,12 +32,19 @@ class TicketsController extends Controller
     //Displays received messages
     function messages(){
         $uid = Auth::id();
-        $tickets = DB::table('tickets')
+        if(Auth::user()->role == 'admin'){
+            $tickets = DB::table('tickets')
                 ->join('users', 'tickets.user_id', '=', 'users.id')
                 ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id')
-                ->where('tickets.user_id', '=', $uid)
+                ->where('tickets.status', '=', '0')
                 ->get();
-                // dd($messages);
+        }else{
+            $tickets = DB::table('tickets')
+                    ->join('users', 'tickets.user_id', '=', 'users.id')
+                    ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id')
+                    ->where('tickets.user_id', '=', $uid)
+                    ->get();
+        }
 
         echo '<h3>Inbox</h3>
         <div class="panel-group scroll">';
@@ -79,7 +86,7 @@ class TicketsController extends Controller
                         <div class="col-lg-3">'.$date.'</div>
                     </div>
                 </div>
-                <div class="panel-body scroll">
+                <div class="panel-body scroll" id="msgScroll">
                     <div id="msgBody">';
         foreach($messages as $message){
                     echo '

@@ -357,6 +357,7 @@ $('#messageModal').on('click', '#sendTicket', function(){
 	});
 	$('#subject').val('');
 	$('#message').val('');
+	$('.iziModal-button-close').trigger('click');
 });
 
 //displays message from inbox
@@ -370,8 +371,10 @@ $('#inboxArea').on('click', '.readMessage', function(){
 		url: 'user/messages/'+tix_id+'/'+tix_sub+'/'+tix_date,
 		success: function(data){
 			$('#inboxArea').html(data);
+			$('#msgScroll').animate({ scrollTop: $('#msgScroll')[0].scrollHeight}, 500);
 		}
 	});
+	
 });
 
 //sends user back to the inbox after opening a message
@@ -407,4 +410,10 @@ $('#inboxArea').on('click', '#msgSendReply', function(){
 			$('#msgBody').append(data);
 		}
 	});
+	$('#msgReply').val('');
+	$('#msgScroll').animate({ scrollTop: $('#msgScroll')[0].scrollHeight}, 500);
+});
+
+$('#testScroll').ready(function(){
+	
 });
