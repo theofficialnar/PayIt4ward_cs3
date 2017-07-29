@@ -413,7 +413,3 @@ $('#inboxArea').on('click', '#msgSendReply', function(){
 	$('#msgReply').val('');
 	$('#msgScroll').animate({ scrollTop: $('#msgScroll')[0].scrollHeight}, 500);
 });
-
-$('#testScroll').ready(function(){
-	
-});

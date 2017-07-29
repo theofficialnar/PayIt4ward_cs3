@@ -91,6 +91,7 @@ class TicketsController extends Controller
         foreach($messages as $message){
                     echo '
                         <p>From: '.$message->name.'</p>
+                        <p>Date: '.$message->created_at.'</p>
                         <p>Message: '.$message->message.'</p>
                         <hr>';
         }

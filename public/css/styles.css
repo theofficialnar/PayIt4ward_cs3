@@ -8,6 +8,10 @@
 	height: 300px;
 }
 
+.hcenter {
+	margin: 0 auto;
+}
+
 main {
 	padding-top: 50px;
 }
@@ -22,14 +26,19 @@ nav {
 
 /*MAIN*/
 
-.banner {
-	height: 400px;
-	background: black;
-}
-
 .main_fill {
 	height: 700px;
 	background: #B497FC;
+}
+
+.full-height {
+	min-height: 100%;
+	height: 100%;
+}
+
+.emp_month {
+	border-radius: 20px;
+	box-shadow: 0 0 30px rgba(0%, 0%, 0%, 0.5);
 }
 
 
