@@ -108,7 +108,7 @@ class TicketsController extends Controller
         <button id="msgSendReply" data-tid="'.$id.'" class="btn btn-primary" style="width: 100%"><b>Send Reply</b></button>
         </div>
         <div class="col-lg-6">
-        <button class="btn btn-success" style="width: 100%"><b>Close Ticket</b></button>
+        <button class="btn btn-danger" style="width: 100%"><b>Delete Ticket</b></button>
         </div>
         ';
         
