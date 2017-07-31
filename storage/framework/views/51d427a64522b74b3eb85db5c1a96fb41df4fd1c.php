@@ -3,17 +3,17 @@
     <ul class="nav navbar-nav">
       <li><a href="/home">Home</a></li>
       <li><a href="/payroll">My Payroll</a></li>
-      <li><a href="#">My Account</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a id="messageModalTrigger" data-toggle="tooltip" data-placement="bottom" title="Messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
+      <li><a id="messageModalTrigger" data-toggle="tooltip" data-placement="bottom" title="Messages"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span></a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo e(Auth::user()->name); ?> <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <?php if(Auth::user()->role == 'admin'): ?>
-            <li><a href="admin_panel">Admin Panel</a></li>
-			<?php endif; ?>
-            <li><a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+          <?php if(Auth::user()->role == 'admin'): ?>
+            <li><a href="admin_panel"><span class="glyphicon glyphicon-briefcase"></span> Admin Panel</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Admin Settings</a></li>
+			    <?php endif; ?>
+            <li><a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                 <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
                     <?php echo e(csrf_field()); ?>
 

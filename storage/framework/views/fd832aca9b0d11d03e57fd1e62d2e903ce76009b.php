@@ -150,7 +150,10 @@
 <!-- modal displaying the payroll form -->
 <div id="payrollModal">
 	<div id="payrollFormContent"></div>
-	<button id="payrollSubmit">Submit</button>
+	<div class="text-center">
+		<button id="payrollSubmit" class="btn btn-primary" style="width: 20%"><span class="glyphicon glyphicon-tasks"></span> <b>Calculate</b></button>
+	</div>
+	
 	
 </div>
 <?php $__env->stopSection(); ?>
