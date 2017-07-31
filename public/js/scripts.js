@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 //Opens an Ajax-powered modal that dynamically displays the user's data
@@ -126,25 +126,27 @@ if ($('#payrollModal').length) {
 	});
 }
 $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
-	$('#payrollSubmit').show();
-	event.preventDefault();
-	$('#payrollModal').iziModal('open');
-	var uid = $(this).data('uid');
-	var token = $('#token').val();
-	// alert(token);
-	$.ajax({
-		type: 'POST',
-		url: '/admin_panel/user/payroll/' + uid,
-		data: {
-			_token: token
-		},
-		success: function (data, status) {
-			$('#payrollFormContent').html(data);
-		},
-		error: function () {
-			alert('An error was encountered during the database update!');
-		}
-	});
+	if(!$(this).hasClass('disabled')){
+		$('#payrollSubmit').show();
+		event.preventDefault();
+		$('#payrollModal').iziModal('open');
+		var uid = $(this).data('uid');
+		var token = $('#token').val();
+		// alert(token);
+		$.ajax({
+			type: 'POST',
+			url: '/admin_panel/user/payroll/' + uid,
+			data: {
+				_token: token
+			},
+			success: function (data, status) {
+				$('#payrollFormContent').html(data);
+			},
+			error: function () {
+				alert('An error was encountered during the database update!');
+			}
+		});
+	}
 });
 
 //contrib tester ajax
@@ -357,11 +359,11 @@ $('#messageModal').on('click', '#sendTicket', function(){
 		},
 		success: function(data){
 			alert('Ticket sent to Admin');
+			$('.iziModal-button-close').trigger('click');
 		}
 	});
 	$('#subject').val('');
 	$('#message').val('');
-	$('.iziModal-button-close').trigger('click');
 });
 
 //displays message from inbox
@@ -439,7 +441,7 @@ $('#inboxArea').on('click', '#msgDelete', function(){
 
 //activates navbar dropdown on hover
 $('ul.nav li.dropdown').hover(function() {
-  $(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
-}, function() {
-  $(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
+  		$(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
+	}, function() {
+  		$(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
 });

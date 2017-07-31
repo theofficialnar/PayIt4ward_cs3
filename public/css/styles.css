@@ -29,6 +29,10 @@ html, body {
 	padding: 0 0 95px;
 }
 
+#topPadding {
+	padding-top: 15px;
+}
+
 
 /*NAV*/
 
@@ -72,6 +76,20 @@ nav {
 	font-weight: bold;
 }
 
+.userActive {
+	font-weight: bold;
+	color: #11911A;
+}
+
+.userInactive {
+	font-weight: bold;
+	color: #AE1B1B;
+}
+
+.userOOO {
+	font-weight: bold;
+	color: #DD7404;
+}
 
 /*FOOTER*/
 

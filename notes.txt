@@ -1,6 +1,4 @@
 To do:
-- add delete function on msgs
-- block update payroll button for terminated and retired employees
 - set proper responsiveness
 - add website landing page
 - add logo on navbar

@@ -216,27 +216,27 @@ class PayrollsController extends Controller
                     <h3 class="text-center">Deductions</h3>
                     <hr>
                     <div>
-                        <p> <span class="payrollLabel">Absences:</span> Php <span id="ded_absences">'.$payroll->ded_absences.'</span></p>
-                        <p> <span class="payrollLabel">Lates:</span> Php <span id="ded_lates">'.$payroll->ded_lates.'</span></p>
-                        <p> <span class="payrollLabel">Philhealth:</span> Php <span id="ded_philhealth">'.$payroll->ded_philhealth.'</span></p>
-                        <p> <span class="payrollLabel">SSS:</span> Php <span id="ded_sss">'.$payroll->ded_sss.'</span></p>
-                        <p> <span class="payrollLabel">Pagibig:</span> Php <span id="ded_pagibig">'.$payroll->ded_pagibig.'</span></p>
-                        <p> <span class="payrollLabel">Tax:</span> Php <span id="ded_tax">'.$payroll->ded_tax.'</span></p>
+                        <p> <span class="payrollLabel">Absences:</span> Php <span id="ded_absences">'.number_format($payroll->ded_absences, 2, '.', ',').'</span></p>
+                        <p> <span class="payrollLabel">Lates:</span> Php <span id="ded_lates">'.number_format($payroll->ded_lates, 2, '.', ',').'</span></p>
+                        <p> <span class="payrollLabel">Philhealth:</span> Php <span id="ded_philhealth">'.number_format($payroll->ded_philhealth, 2, '.', ',').'</span></p>
+                        <p> <span class="payrollLabel">SSS:</span> Php <span id="ded_sss">'.number_format($payroll->ded_sss, 2, '.', ',').'</span></p>
+                        <p> <span class="payrollLabel">Pagibig:</span> Php <span id="ded_pagibig">'.number_format($payroll->ded_pagibig, 2, '.', ',').'</span></p>
+                        <p> <span class="payrollLabel">Tax:</span> Php <span id="ded_tax">'.number_format($payroll->ded_tax, 2, '.', ',').'</span></p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                         <h3 class="text-center">Bonuses</h3>
                         <hr>
                     <div>
-                        <p> <span class="payrollLabel">Overtime:</span> Php <span id="bon_overtime">'.$payroll->bon_overtime.'</span></p>
-                        <p> <span class="payrollLabel">Holiday:</span> Php <span id="bon_holiday">'.$payroll->bon_holiday.'</span></p>
-                        <p> <span class="payrollLabel">Night Differential:</span> Php <span id="bon_night_diff">'.$payroll->bon_night_diff.'</span></p>
+                        <p> <span class="payrollLabel">Overtime:</span> Php <span id="bon_overtime">'.number_format($payroll->bon_overtime, 2, '.', ',').'</span></p>
+                        <p> <span class="payrollLabel">Holiday:</span> Php <span id="bon_holiday">'.number_format($payroll->bon_holiday, 2, '.', ',').'</span></p>
+                        <p> <span class="payrollLabel">Night Differential:</span> Php <span id="bon_night_diff">'.number_format($payroll->bon_night_diff, 2, '.', ',').'</span></p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="text-center"><span class="payrollLabel">Total Salary:</span> Php <span id="month_salary">'.$payroll->salary.'</span></h1>
+                    <h1 class="text-center"><span class="payrollLabel">Total Salary:</span> Php <span id="month_salary">'.number_format($payroll->salary, 2, '.', ',').'</span></h1>
                 </div>
             </div>
         </div>';

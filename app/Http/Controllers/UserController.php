@@ -218,19 +218,23 @@ class UserController extends Controller
                 <td>'.$user->department.'</td>
                 <td>'.$user->position.'</td>';
                 if($user->status == 0){
-                    echo '<td>Active</td>';
+                    echo '<td class="userActive">Active</td>';
                 }
                 elseif($user->status == 1){
-                    echo '<td>On leave</td>';
+                    echo '<td class="userOOO">On Leave</td>';
                 }
                 elseif($user->status == 2){
-                    echo '<td>Retired</td>';
+                    echo '<td class="userInactive">Retired</td>';
                 }
                 else{
-                    echo '<td>Terminated</td>';
+                    echo '<td class="userInactive">Terminated</td>';
                 }
-                echo '<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="'.$user->id.'">Update Payroll</button></td>
-            </tr>';
+                if($user->status == 2 || $user->status == 3){
+                    echo '<td><button class="btn btn-xs btn-default payrollModalTrigger disabled" data-uid="'.$user->id.'">Update Payroll</button></td>';
+                }else{
+                    echo '<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="'.$user->id.'">Update Payroll</button></td>';
+                }
+            echo '</tr>';
         }
     }
 
@@ -244,6 +248,7 @@ class UserController extends Controller
         $upd_user->save();
     }
 
+    //Returns the payroll form
     function getPayrollForm($id){
         $pay_user = User::find($id);
         echo '

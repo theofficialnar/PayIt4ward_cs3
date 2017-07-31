@@ -103,14 +103,19 @@ class TicketsController extends Controller
 
         <div class="form-group">
             <textarea class="form-control" rows="4" id="msgReply" placeholder="Reply..." name="message" required></textarea>
-        </div>
-        <div class="col-lg-6">
-        <button id="msgSendReply" data-tid="'.$id.'" class="btn btn-primary" style="width: 100%"><b>Send Reply</b></button>
-        </div>
-        <div class="col-lg-6">
-        <button id="msgDelete" data-tid="'.$id.'" class="btn btn-danger" style="width: 100%"><b>Delete Ticket</b></button>
-        </div>
-        ';
+        </div>';
+        if(Auth::user()->role == 'admin'){
+            echo '<div class="col-lg-6">
+            <button id="msgSendReply" data-tid="'.$id.'" class="btn btn-primary" style="width: 100%"><b>Send Reply</b></button>
+            </div>
+            <div class="col-lg-6">
+            <button id="msgDelete" data-tid="'.$id.'" class="btn btn-danger" style="width: 100%"><b>Delete Ticket</b></button>
+            </div>';
+        }else{
+            echo '<div class="col-lg-12">
+            <button id="msgSendReply" data-tid="'.$id.'" class="btn btn-primary" style="width: 100%"><b>Send Reply</b></button>
+            </div>';
+        }
         
     }
 
@@ -131,8 +136,6 @@ class TicketsController extends Controller
         </div>
         <hr>';
     }
-
-    //Trigger ticket delete Modal
 
 
     //Deletes a ticket from DB

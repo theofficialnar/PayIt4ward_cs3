@@ -6,7 +6,7 @@
       <li><a href="#">My Account</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#" id="messageModalTrigger" data-toggle="tooltip" data-placement="bottom" title="Messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
+      <li><a id="messageModalTrigger" data-toggle="tooltip" data-placement="bottom" title="Messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo e(Auth::user()->name); ?> <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -48,4 +48,4 @@
 			<button id="sendTicket" class="btn btn-primary" style="width: 100%"><b>Send</b></button>
 		</div>
 	</div>
-</div>  
+</div>
