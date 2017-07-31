@@ -418,6 +418,25 @@ $('#inboxArea').on('click', '#msgSendReply', function(){
 	$('#msgScroll').animate({ scrollTop: $('#msgScroll')[0].scrollHeight}, 500);
 });
 
+//deletes message
+$('#inboxArea').on('click', '#msgDelete', function(){
+	var tix_id = $(this).data('tid');
+
+	$.ajax({
+		type: 'GET',
+		url: 'user/messages/delete/'+tix_id,
+		success: function(){
+			alert('Ticket #'+tix_id+' successfully deleted.');
+			setTimeout(function () {
+					window.location.reload();
+				},
+				0
+			);
+		}
+	});
+
+});
+
 //activates navbar dropdown on hover
 $('ul.nav li.dropdown').hover(function() {
   $(this).find('.dropdown-menu').stop(true, true).fadeIn(300);

@@ -63,3 +63,6 @@ Route::get('user/messages/{id}/{sub}/{date}', 'TicketsController@viewMessage');
 
 //Sends reply to an opened message
 Route::post('user/messages/reply', 'TicketsController@replyMessage');
+
+//Deletes ticket
+Route::get('user/messages/delete/{id}', 'TicketsController@deleteMessage');

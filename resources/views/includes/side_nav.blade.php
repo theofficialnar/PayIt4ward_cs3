@@ -47,4 +47,4 @@
 			<button id="sendTicket" class="btn btn-primary" style="width: 100%"><b>Send</b></button>
 		</div>
 	</div>
-</div>  
+</div>

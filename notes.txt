@@ -1,17 +1,8 @@
-Deductions
-SSS
-Philhealth
-Pag-ibig
-
-Bonuses
-Regular OT
-RDOT
-RD Holiday OT
-Holiday OT
-
-
-Hours absent
-Hours regular OT
-Hours RDOT
-Houts RD Holiday OT
-Hours regular Holiday OT
+To do:
+- add delete function on msgs
+- block update payroll button for terminated and retired employees
+- set proper responsiveness
+- add website landing page
+- add logo on navbar
+- update login design
+- add favicon

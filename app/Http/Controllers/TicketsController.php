@@ -108,12 +108,13 @@ class TicketsController extends Controller
         <button id="msgSendReply" data-tid="'.$id.'" class="btn btn-primary" style="width: 100%"><b>Send Reply</b></button>
         </div>
         <div class="col-lg-6">
-        <button class="btn btn-danger" style="width: 100%"><b>Delete Ticket</b></button>
+        <button id="msgDelete" data-tid="'.$id.'" class="btn btn-danger" style="width: 100%"><b>Delete Ticket</b></button>
         </div>
         ';
         
     }
 
+    //Saves message reply to db
     function replyMessage(Request $request){
         $user_name = Auth::user()->name;
         $new_reply = new messages;
@@ -130,4 +131,14 @@ class TicketsController extends Controller
         </div>
         <hr>';
     }
+
+    //Trigger ticket delete Modal
+
+
+    //Deletes a ticket from DB
+    function deleteMessage($id){
+        $del_ticket = tickets::find($id);
+        $del_ticket->delete();
+    }
+
 }
