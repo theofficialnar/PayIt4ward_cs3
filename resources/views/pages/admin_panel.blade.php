@@ -5,7 +5,7 @@
 @endsection
 
 @section('main_section')
-<div id="topPadding">
+<div class="topPadding">
 <!-- add users -->
 	<div class="well">
 		<div class="panel-group">

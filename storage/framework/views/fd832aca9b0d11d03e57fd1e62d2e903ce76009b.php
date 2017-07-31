@@ -3,7 +3,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_section'); ?>
-<div id="topPadding">
+<div class="topPadding">
 <!-- add users -->
 	<div class="well">
 		<div class="panel-group">

@@ -48,8 +48,7 @@ $('#userPanelDetails').on('click', '#saveUserEdit', function (event) {
 	var mar_stat = $('input[name=mar_stat]:checked', '#userUpdate').val();
 	var stat = $('input[name=stat]:checked', '#userUpdate').val();
 	var bank = $('#edit_bank').val();
-	var hrs_day = $('#edit_hrs_day').val();
-	var days_week = $('#edit_days_week').val();
+	var days_week = $('input[name=days_week]:checked', '#userUpdate').val();
 	var dependents = $('#edit_dependents').val();
 	// alert(token);
 
@@ -68,7 +67,6 @@ $('#userPanelDetails').on('click', '#saveUserEdit', function (event) {
 			mar_stat: mar_stat,
 			stat: stat,
 			bank: bank,
-			hrs_day: hrs_day,
 			days_week: days_week,
 			dependents: dependents
 		},

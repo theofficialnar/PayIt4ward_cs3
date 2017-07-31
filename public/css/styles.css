@@ -29,7 +29,7 @@ html, body {
 	padding: 0 0 95px;
 }
 
-#topPadding {
+.topPadding {
 	padding-top: 15px;
 }
 
@@ -89,6 +89,10 @@ nav {
 .userOOO {
 	font-weight: bold;
 	color: #DD7404;
+}
+
+.payrollUnderline {
+	text-decoration: underline;
 }
 
 /*FOOTER*/

@@ -1,4 +1,5 @@
 To do:
+- add update email validation
 - set proper responsiveness
 - add website landing page
 - add logo on navbar
