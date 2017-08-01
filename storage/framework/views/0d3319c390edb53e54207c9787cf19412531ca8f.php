@@ -11,7 +11,7 @@
         <ul class="dropdown-menu">
           <?php if(Auth::user()->role == 'admin'): ?>
             <li><a href="admin_panel"><span class="glyphicon glyphicon-briefcase"></span> Admin Panel</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Admin Settings</a></li>
+            <li><a href="admin_settings"><span class="glyphicon glyphicon-cog"></span> Admin Settings</a></li>
 			    <?php endif; ?>
             <li><a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                 <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">

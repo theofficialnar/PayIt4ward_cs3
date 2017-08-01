@@ -32,28 +32,34 @@ class TicketsController extends Controller
     //Displays received messages
     function messages(){
         $uid = Auth::id();
+        
         if(Auth::user()->role == 'admin'){
             $tickets = DB::table('tickets')
                 ->join('users', 'tickets.user_id', '=', 'users.id')
-                ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id')
+                ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id', 'tickets.read_by')
                 ->where('tickets.status', '=', '0')
                 ->get();
         }else{
             $tickets = DB::table('tickets')
                     ->join('users', 'tickets.user_id', '=', 'users.id')
-                    ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id')
+                    ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id', 'tickets.read_by')
                     ->where('tickets.user_id', '=', $uid)
                     ->get();
         }
 
         echo '<h3>Inbox</h3>
         <div class="panel-group scroll">';
+        // dd($tickets);
         foreach($tickets as $ticket){
             echo '
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-lg-9"><b>'.ucfirst($ticket->subject).'</b></div>
+                        <div class="col-lg-9"><b>'.ucfirst($ticket->subject).'</b>';
+                        if($ticket->read_by == NULL || $ticket->read_by != Auth::id()){
+                            echo '<button class="btn btn-warning btn-xs">New</button>';
+                        }
+                        echo '</div>
                         <div class="col-lg-3"><em>'.date('F d, Y',strtotime($ticket->created_at)).'</em></div>
                     </div>
                 </div>
@@ -68,6 +74,8 @@ class TicketsController extends Controller
 
     //Opens the selected message from the inbox
     function viewMessage($id, $sub, $date){
+        $upd_msg_status = tickets::find($id);
+        $upd_msg_status->read_by = 
         $messages = DB::table('messages')
                 ->join('tickets', 'messages.ticket_id', '=', 'tickets.id')
                 ->join('users', 'messages.user_id', '=', 'users.id')

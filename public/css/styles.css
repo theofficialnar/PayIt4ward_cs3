@@ -128,3 +128,8 @@ footer {
 	font-size: 13px;
 	font-style: italic;
 }
+
+/*Admin Settings*/
+.contrib_input {
+	width: 80px;
+}

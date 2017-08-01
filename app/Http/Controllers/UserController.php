@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\taxes;
+use App\sss_contribs;
+use App\philhealth_contribs;
 use DB;
 
 class UserController extends Controller
@@ -397,6 +400,14 @@ class UserController extends Controller
                 </div>
             </div>
         </div>';
+    }
+
+    //Returns the contribution table
+    function showTables(){
+        $tax_table = Taxes::all();
+        $sss_table = sss_contribs::all();
+        $phil_table = philhealth_contribs::all();
+        return view('/pages/admin_settings', compact('tax_table'));
     }
 
 

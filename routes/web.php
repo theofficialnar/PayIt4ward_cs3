@@ -66,3 +66,9 @@ Route::post('user/messages/reply', 'TicketsController@replyMessage');
 
 //Deletes ticket
 Route::get('user/messages/delete/{id}', 'TicketsController@deleteMessage');
+
+//Routes user to admin settings page
+Route::get('admin_settings', 'UserController@showTables');
+
+//Update SSS Table
+Route::post('admin_settings/tax', 'sss_contribsController@update');
