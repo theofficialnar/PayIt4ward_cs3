@@ -1,7 +1,7 @@
 To do:
 - add update email validation
 - add admin settings to change values of tax etc
-- set absences input to automatically convery days to hours
+- set absences input to automatically convert days to hours
 - set proper responsiveness
 - add website landing page
 - add logo on navbar

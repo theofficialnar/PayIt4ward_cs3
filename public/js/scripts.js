@@ -176,7 +176,7 @@ $('#payrollSubmit').click(function () {
 	var errorFlag = 0;
 	var token = $('#token').val();
 	var uid = $('#payrollUid').val();
-	var absences = $('#hrs_absent').val();
+	var absences = ($('#hrs_absent').val()) * 8; //multiplied by 8hrs
 	var lates = $('#hrs_late').val();
 	var rd = $('#hrs_rd').val();
 	var s_hol = $('#hrs_spec_holiday').val();

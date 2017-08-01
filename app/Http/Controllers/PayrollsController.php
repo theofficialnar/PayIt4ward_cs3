@@ -191,6 +191,7 @@ class PayrollsController extends Controller
         $new_payroll->save();
     }
 
+    //retrieves all available payroll dates to be used for the dropdown
     function payroll(){
         $uid = Auth::id();
         $payrolls = DB::table('payrolls')
@@ -201,6 +202,7 @@ class PayrollsController extends Controller
         return view('/pages/user_view_payroll', compact('payrolls'));
     }
 
+    //view a payroll according to selected date
     function viewPayroll(Request $request){
         $uid = Auth::id();
         $view_payroll = $request->payroll;

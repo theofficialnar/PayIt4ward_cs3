@@ -21546,3 +21546,37 @@ Stack trace:
 #51 C:\Users\Day4\Desktop\ezpay_cs3\public\index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #52 C:\Users\Day4\Desktop\ezpay_cs3\server.php(21): require_once('C:\\Users\\Day4\\D...')
 #53 {main}  
+[2017-08-01 04:28:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-08-01 04:28:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Throwable' not found' in /Users/nar/Documents/cs_3/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php:33
+Stack trace:
+#0 {main}  
+[2017-08-01 04:34:15] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "0.0.0.0" is not defined.' in /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php:579
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(204): Symfony\Component\Console\Application->find('0.0.0.0')
+#1 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2017-08-01 04:34:28] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "192.168.1.3" is not defined.' in /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php:579
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(204): Symfony\Component\Console\Application->find('192.168.1.3')
+#1 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2017-08-01 04:34:37] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "192.168.1.3" is not defined.' in /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php:579
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(204): Symfony\Component\Console\Application->find('192.168.1.3')
+#1 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2017-08-01 04:34:43] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "0.0.0.0" is not defined.' in /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php:579
+Stack trace:
+#0 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(204): Symfony\Component\Console\Application->find('0.0.0.0')
+#1 /Users/nar/Documents/cs_3/vendor/symfony/console/Application.php(130): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /Users/nar/Documents/cs_3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /Users/nar/Documents/cs_3/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  

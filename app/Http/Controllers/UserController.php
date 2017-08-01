@@ -302,7 +302,7 @@ class UserController extends Controller
             <div class="panel-heading"><h4 class="text-center">Deductions</h4></div>
             <div class="panel-body">
                 <div class="form-group col-lg-6">
-                    <label for="hrs_absent">Absences</label>
+                    <label for="hrs_absent">Absences (in days)</label>
                     <input type="number" id="hrs_absent" name="hrs_absent" class="form-control" value="0" min="0">
                 </div>
                 <div class="form-group col-lg-6">
