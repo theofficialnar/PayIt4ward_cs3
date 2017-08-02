@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #364156; border: none; z-index: 999">
   <div class="container">
     <ul class="nav navbar-nav">
-      <li><a href="/home">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="/payroll">My Payroll</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">

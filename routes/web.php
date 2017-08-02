@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@homePage')->middleware('auth');
+Route::get('/', 'HomeController@homePage')->middleware('auth');
 
 //Route to admin panel
 Route::get('/admin_panel', 'UserController@adminPanel')->middleware('auth');
