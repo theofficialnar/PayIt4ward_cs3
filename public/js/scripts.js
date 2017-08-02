@@ -447,11 +447,13 @@ $('ul.nav li.dropdown').hover(function() {
 });
 
 //login particle controller
-$('.canvas').particles({
-  maxParticles: 150,
-  size: 5,
-  speed: 1,
-  color: '#212d40',
-  minDist: 140,
-  connectParticles: true
-});
+if($('.canvas').length){
+	$('.canvas').particles({
+	  maxParticles: 150,
+	  size: 5,
+	  speed: 1,
+	  color: '#212d40',
+	  minDist: 140,
+	  connectParticles: true
+	});
+}
