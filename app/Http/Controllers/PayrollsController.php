@@ -213,29 +213,63 @@ class PayrollsController extends Controller
         // dd($payroll);
         echo '
         <div class="col-lg-6 col-lg-offset-3">
-            <div class="row text-center">
-                <div class="col-lg-6">
-                    <h3 class="text-center">Deductions</h3>
-                    <hr>
-                    <div>
-                        <p> <span class="payrollLabel">Absences:</span> Php <span id="ded_absences">'.number_format($payroll->ded_absences, 2, '.', ',').'</span></p>
-                        <p> <span class="payrollLabel">Lates:</span> Php <span id="ded_lates">'.number_format($payroll->ded_lates, 2, '.', ',').'</span></p>
-                        <p> <span class="payrollLabel">Philhealth:</span> Php <span id="ded_philhealth">'.number_format($payroll->ded_philhealth, 2, '.', ',').'</span></p>
-                        <p> <span class="payrollLabel">SSS:</span> Php <span id="ded_sss">'.number_format($payroll->ded_sss, 2, '.', ',').'</span></p>
-                        <p> <span class="payrollLabel">Pagibig:</span> Php <span id="ded_pagibig">'.number_format($payroll->ded_pagibig, 2, '.', ',').'</span></p>
-                        <p> <span class="payrollLabel">Tax:</span> Php <span id="ded_tax">'.number_format($payroll->ded_tax, 2, '.', ',').'</span></p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                        <h3 class="text-center">Bonuses</h3>
-                        <hr>
-                    <div>
-                        <p> <span class="payrollLabel">Overtime:</span> Php <span id="bon_overtime">'.number_format($payroll->bon_overtime, 2, '.', ',').'</span></p>
-                        <p> <span class="payrollLabel">Holiday:</span> Php <span id="bon_holiday">'.number_format($payroll->bon_holiday, 2, '.', ',').'</span></p>
-                        <p> <span class="payrollLabel">Night Differential:</span> Php <span id="bon_night_diff">'.number_format($payroll->bon_night_diff, 2, '.', ',').'</span></p>
-                    </div>
-                </div>
-            </div>
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th class="payrollWidth">Deduction</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Absences</td>
+                                <td>'.number_format($payroll->ded_absences, 2, '.', ',').'</td>
+                            </tr>
+                            <tr>
+                                <td>Lates</td>
+                                <td>'.number_format($payroll->ded_lates, 2, '.', ',').'</td>
+                            </tr>
+                            <tr>
+                                <td>Philhealth</td>
+                                <td>'.number_format($payroll->ded_philhealth, 2, '.', ',').'</td>
+                            </tr>
+                            <tr>
+                                <td>SSS</td>
+                                <td>'.number_format($payroll->ded_sss, 2, '.', ',').'</td>
+                            </tr>
+                            <tr>
+                                <td>Pagibig</td>
+                                <td>'.number_format($payroll->ded_pagibig, 2, '.', ',').'</td>
+                            </tr>
+                            <tr>
+                                <td>Tax</td>
+                                <td>'.number_format($payroll->ded_tax, 2, '.', ',').'</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th class="payrollWidth">Bonus</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Overtime</td>
+                                <td>'.number_format($payroll->bon_overtime, 2, '.', ',').'</td>
+                            </tr>
+                            <tr>
+                                <td>Holiday</td>
+                                <td>'.number_format($payroll->bon_holiday, 2, '.', ',').'</td>
+                            </tr>
+                            <tr>
+                                <td>Night Differential</td>
+                                <td>'.number_format($payroll->bon_night_diff, 2, '.', ',').'</td>
+                            </tr>
+                        </tbody>
+                    </table>
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h1 class="text-center"><span class="payrollLabel">Total Salary:</span> Php <span id="month_salary">'.number_format($payroll->salary, 2, '.', ',').'</span></h1>

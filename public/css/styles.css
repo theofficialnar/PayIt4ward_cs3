@@ -95,6 +95,10 @@ nav {
 	text-decoration: underline;
 }
 
+.payrollWidth {
+	width: 345px;
+}
+
 /*FOOTER*/
 
 footer {

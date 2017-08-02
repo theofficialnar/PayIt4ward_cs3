@@ -36,13 +36,13 @@ class TicketsController extends Controller
         if(Auth::user()->role == 'admin'){
             $tickets = DB::table('tickets')
                 ->join('users', 'tickets.user_id', '=', 'users.id')
-                ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id', 'tickets.read_by')
+                ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id')
                 ->where('tickets.status', '=', '0')
                 ->get();
         }else{
             $tickets = DB::table('tickets')
                     ->join('users', 'tickets.user_id', '=', 'users.id')
-                    ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id', 'tickets.read_by')
+                    ->select('users.name', 'tickets.subject', 'tickets.created_at', 'tickets.id')
                     ->where('tickets.user_id', '=', $uid)
                     ->get();
         }
@@ -55,11 +55,7 @@ class TicketsController extends Controller
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-lg-9"><b>'.ucfirst($ticket->subject).'</b>';
-                        if($ticket->read_by == NULL || $ticket->read_by != Auth::id()){
-                            echo '<button class="btn btn-warning btn-xs">New</button>';
-                        }
-                        echo '</div>
+                        <div class="col-lg-9"><b>'.ucfirst($ticket->subject).'</b></div>
                         <div class="col-lg-3"><em>'.date('F d, Y',strtotime($ticket->created_at)).'</em></div>
                     </div>
                 </div>
