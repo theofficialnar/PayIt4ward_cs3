@@ -41,8 +41,8 @@
 		</div>
 	</div>
 	<hr>
-	<div>
-		<div class="col-lg-7">
+	<div class="row">
+		<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
 			<div class="well">
 				<h1 class="text-center">Company News</h1>
 				<hr>
@@ -67,7 +67,7 @@
 			
 		</div>
 
-		<div class="col-lg-5">
+		<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
 			<div class="well col-lg-12">
 				<h1 class="text-center">Employee of the Month</h1>
 				<hr>

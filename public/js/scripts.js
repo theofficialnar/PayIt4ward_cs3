@@ -323,9 +323,11 @@ $('#testsubmit').click(function () {
 });
 
 //trigger message modal to pop up and pull up any new messages
-$('#messageModal').iziModal({
+if($('#messageModal').length){
+	$('#messageModal').iziModal({
 	padding: '15px'
-});
+	});
+}
 $('.navbar').on('click', '#messageModalTrigger', function (event) {
 	event.preventDefault();
 	$('#messageModal').iziModal('open');
@@ -442,4 +444,14 @@ $('ul.nav li.dropdown').hover(function() {
   		$(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
 	}, function() {
   		$(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
+});
+
+//login particle controller
+$('.canvas').particles({
+  maxParticles: 150,
+  size: 5,
+  speed: 1,
+  color: '#212d40',
+  minDist: 140,
+  connectParticles: true
 });

@@ -137,3 +137,56 @@ footer {
 .contrib_input {
 	width: 80px;
 }
+
+/*Login*/
+canvas {
+	position: absolute;
+	z-index: -9;
+}
+
+#login_footer_wrapper {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#login_body {
+	background: url(../assets/images/bg.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	filter: blur(10px);
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 100vh;
+	z-index: -10;
+}
+
+#logo_wrapper {
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	transform: translate(-50%, -30%);
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    
+}
