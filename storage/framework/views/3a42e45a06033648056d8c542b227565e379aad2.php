@@ -1,3 +1,7 @@
+<?php $__env->startSection('title'); ?>
+    Payit4ward | Log in
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('main_section'); ?>
 <div class="container-fluid">
     <div class="row">

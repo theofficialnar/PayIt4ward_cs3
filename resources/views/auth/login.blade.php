@@ -1,5 +1,9 @@
 @extends('../layouts/login_master')
 
+@section('title')
+    Payit4ward | Log in
+@endsection
+
 @section('main_section')
 <div class="container-fluid">
     <div class="row">

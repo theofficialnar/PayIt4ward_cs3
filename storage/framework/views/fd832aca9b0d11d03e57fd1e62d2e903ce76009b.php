@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-	Admin Panel
+	Payit4ward | Admin Panel
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_section'); ?>
@@ -158,5 +158,15 @@
 	
 	
 </div>
+
+
+<div id="errUserPanel"></div>
+
+
+<div id="succUpdateUser"></div>
+
+
+<div id="succUpdatePayroll"></div>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

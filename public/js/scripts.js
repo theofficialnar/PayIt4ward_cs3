@@ -11,6 +11,34 @@ if ($('#userPanel').length) {
 		padding: '15',
 		fullscreen: true
 	});
+
+	$('#errUserPanel').iziModal({
+		title: 'Error connecting to database!',
+		subtitle: 'There was an error during the database query, please try again.',
+		icon: 'glyphicon glyphicon-alert',
+		timeout: '5000',
+		timeoutProgressbar: true,
+		headerColor: '#F63939'
+	});
+
+	$('#succUpdateUser').iziModal({
+		title: 'User information successfully updated!',
+		icon: 'glyphicon glyphicon-saved',
+		timeout: '5000',
+		timeoutProgressbar: true,
+		headerColor: '#00AF66',
+		onClosed: function(){ window.location.reload(); }
+	});
+
+	$('#succUpdatePayroll').iziModal({
+		title: 'New payroll updated and successfully saved!',
+		subtitle: 'New payroll is now viewable on My Payrolls',
+		icon: 'glyphicon glyphicon-saved',
+		timeout: '5000',
+		timeoutProgressbar: true,
+		headerColor: '#00AF66',
+		onClosed: function(){ window.location.reload(); }
+	});
 }
 $('#usersViewBody').on('click', '.openUserPanel', function (event) {
 	event.preventDefault();
@@ -29,7 +57,7 @@ $('#usersViewBody').on('click', '.openUserPanel', function (event) {
 			$('#userPanelDetails').html(data);
 		},
 		error: function () {
-			alert('Error connecting to database!');
+			$('#errUserPanel').iziModal('open');
 		}
 	});
 });
@@ -71,15 +99,10 @@ $('#userPanelDetails').on('click', '#saveUserEdit', function (event) {
 			dependents: dependents
 		},
 		success: function (data, status) {
-			alert('User ' + name + '\'s has been successfully updated!');
-			setTimeout(function () {
-					window.location.reload();
-				},
-				0
-			);
+			$('#succUpdateUser').iziModal('open');
 		},
 		error: function (error) {
-			alert('An error was encountered during the database update!');
+			$('#errUserPanel').iziModal('open');
 		}
 	});
 
@@ -103,10 +126,10 @@ $('#userPanelDetails').on('click', '#saveUserAcctEdit', function (event) {
 			password: pw
 		},
 		success: function (data, status) {
-			alert('User ' + name + '\'s account information has been successfully updated!');
+			$('#succUpdateUser').iziModal('open');
 		},
 		error: function () {
-			alert('An error was encountered during the database update!');
+			$('#errUserPanel').iziModal('open');
 		}
 	});
 
@@ -141,7 +164,7 @@ $('#usersViewBody').on('click', '.payrollModalTrigger', function (event) {
 				$('#payrollFormContent').html(data);
 			},
 			error: function () {
-				alert('An error was encountered during the database update!');
+				$('#errUserPanel').iziModal('open');
 			}
 		});
 	}
@@ -252,6 +275,9 @@ $('#payrollSubmit').click(function () {
 			},
 			success: function (data) {
 				$('#payrollFormContent').html(data);
+			},
+			error: function (){
+				$('#errUserPanel').iziModal('open');
 			}
 		});
 		$(this).hide();
@@ -260,6 +286,7 @@ $('#payrollSubmit').click(function () {
 
 //saves all the data indicated in the preview to the payroll db
 $('#payrollFormContent').on('click', '#savePayroll', function () {
+	$('#payrollModal').iziModal('close');
 	var token = $('#token').val();
 	var absences = $('#ded_absences').html();
 	var lates = $('#ded_lates').html();
@@ -290,12 +317,10 @@ $('#payrollFormContent').on('click', '#savePayroll', function () {
 			salary: salary
 		},
 		success: function () {
-			alert('Posted');
-			setTimeout(function () {
-					window.location.reload();
-				},
-				0
-			);
+			$('#succUpdatePayroll').iziModal('open');
+		},
+		error: function(){
+			$('#errUserPanel').iziModal('open');
 		}
 	});
 });

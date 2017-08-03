@@ -1,7 +1,7 @@
 @extends('../layouts/master')
 
 @section('title')
-	Admin Panel
+	Payit4ward | Admin Panel
 @endsection
 
 @section('main_section')
@@ -158,4 +158,14 @@
 	
 	{{--<button id="valTest">Contrib Check</button>--}}
 </div>
+
+{{-- openUserPanel error modal --}}
+<div id="errUserPanel"></div>
+
+{{-- user data update modal --}}
+<div id="succUpdateUser"></div>
+
+{{-- payroll update success modal --}}
+<div id="succUpdatePayroll"></div>
+
 @endsection
