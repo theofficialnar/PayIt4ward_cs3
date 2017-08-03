@@ -51,6 +51,16 @@ nav {
 	font-weight: bolder;
 }
 
+.navbar-toggle {
+	background-color: #364156;
+	z-index: 9;
+}
+
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+	background-color: #364156;
+}
+
 
 /*MAIN*/
 

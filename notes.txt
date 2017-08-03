@@ -1,9 +1,5 @@
 To do:
 - add update email validation
-- add admin settings to change values of tax etc
-- set proper responsiveness
 - add website landing page
-- add logo on navbar
-- update login design
 - add favicon
 - fix mobile view navbar

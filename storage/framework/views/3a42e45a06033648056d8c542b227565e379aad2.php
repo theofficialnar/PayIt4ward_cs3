@@ -26,7 +26,7 @@
                         <div class="form-group<?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
                             <div class="input-group col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
 
                                 <?php if($errors->has('password')): ?>
                                     <span class="help-block">
