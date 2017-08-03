@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo e(URL::asset('css/styles.css')); ?>">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.0/css/iziModal.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Changa+One" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo e(URL::asset('css/bootstrap-collapse-sidebar.css')); ?>">
 </head>
 <body>
@@ -17,7 +18,7 @@
 		<div id="forkCont">
 			<?php echo $__env->make('../includes/fork', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 		</div>
-		
+
 		<main class="container">
 			<?php echo $__env->yieldContent('main_section'); ?>
 		</main>

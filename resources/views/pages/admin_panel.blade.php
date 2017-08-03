@@ -12,7 +12,7 @@
 		  <div class="panel panel-default">
 		    <div class="panel-heading">
 		      <h4 class="panel-title">
-		        <a data-toggle="collapse" href="#collapse1"><h2 class="text-center"><b>Add New User</b></h2></a>
+		        <a data-toggle="collapse" href="#collapse1"><h2 class="text-center cfont"><b>Add New User</b></h2></a>
 		      </h4>
 		    </div>
 		    <div id="collapse1" class="panel-collapse collapse">
@@ -94,7 +94,7 @@
 
 <!-- users list -->
 	<div class="well">
-		<h2 class="text-center"><b>USERS</b></h2>
+		<h2 class="text-center cfont"><b>USERS</b></h2>
 		<hr>
 		<div class="table-responsive">
 			<table class="table table-striped">

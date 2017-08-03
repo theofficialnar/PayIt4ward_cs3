@@ -1,3 +1,7 @@
+.cfont {
+	font-family: 'Changa One', cursive;
+}
+
 .vcenter {
 	display: flex;
 	align-items: center;
