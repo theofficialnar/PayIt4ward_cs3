@@ -27,6 +27,9 @@ if ($('#userPanel').length) {
 		timeout: '5000',
 		timeoutProgressbar: true,
 		headerColor: '#00AF66',
+		transitionIn: 'flipInX',
+		transitionOut: 'flipOutX',
+		top: 50,
 		onClosed: function(){ window.location.reload(); }
 	});
 
@@ -37,6 +40,8 @@ if ($('#userPanel').length) {
 		timeout: '5000',
 		timeoutProgressbar: true,
 		headerColor: '#00AF66',
+		transitionIn: 'bounceInDown',
+		transitionOut: 'bounceOutDown',
 		onClosed: function(){ window.location.reload(); }
 	});
 }
