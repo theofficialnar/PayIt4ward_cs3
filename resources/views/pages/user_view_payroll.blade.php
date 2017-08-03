@@ -1,7 +1,7 @@
 @extends('../layouts/master')
 
 @section('title')
-    View Payroll
+    Payit4ward | View Payroll
 @endsection
 
 @section('main_section')

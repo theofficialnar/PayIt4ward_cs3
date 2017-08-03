@@ -129,7 +129,7 @@ class PayrollsController extends Controller
 
     	echo '
         <div class="vcenter" style="height: 100vh">
-            <div class="well col-lg-6 col-lg-offset-3">
+            <div class="well col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                 <input type="hidden" id="payID" value="'.$uid.'">
                 <table class="table table-condensed table-hover">
                     <thead>
@@ -192,7 +192,7 @@ class PayrollsController extends Controller
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h1 class="text-center"><span class="payrollLabel">Total Salary:</span> Php <span id="month_salary">'.number_format($monthly_salary, 2, '.', ',').'</span></h1>
-                        <button id="savePayroll" class="btn btn-success" style="width: 45%"><span class="glyphicon glyphicon-floppy-save"></span> Save & Update Payroll</button>
+                        <button id="savePayroll" class="btn btn-success"><span class="glyphicon glyphicon-floppy-save"></span> Save & Update Payroll</button>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-    View Payroll
+    Payit4ward | View Payroll
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_section'); ?>

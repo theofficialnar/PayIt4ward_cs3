@@ -1,7 +1,7 @@
 @extends('../layouts/master')
 
 @section('title')
-	Home
+	Payit4ward | Home
 @endsection
 
 @section('main_section')

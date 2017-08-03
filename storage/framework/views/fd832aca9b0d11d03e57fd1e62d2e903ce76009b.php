@@ -153,7 +153,7 @@
 <div id="payrollModal">
 	<div id="payrollFormContent"></div>
 	<div class="text-center">
-		<button id="payrollSubmit" class="btn btn-primary" style="width: 20%"><span class="glyphicon glyphicon-tasks"></span> <b>Calculate</b></button>
+		<button id="payrollSubmit" class="btn btn-primary"><span class="glyphicon glyphicon-tasks"></span> <b>Calculate</b></button>
 	</div>
 	
 	

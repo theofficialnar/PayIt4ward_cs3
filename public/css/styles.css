@@ -61,6 +61,10 @@ nav {
 	background-color: #364156;
 }
 
+#messageModalTrigger {
+	cursor: pointer;
+}
+
 
 /*MAIN*/
 
@@ -107,6 +111,14 @@ nav {
 
 .payrollWidth {
 	width: 345px;
+}
+
+#payrollSubmit {
+	width: 20%;
+}
+
+#savePayroll {
+	width: 45%;
 }
 
 /*FOOTER*/
@@ -183,7 +195,13 @@ canvas {
 
 /* xs < 768 */
 @media screen and (max-width: 767px) {
+	#payrollSubmit {
+		width: 50%;
+	}
 
+	#savePayroll {
+		width: 70%;
+	}
 }
 
 /* sm */

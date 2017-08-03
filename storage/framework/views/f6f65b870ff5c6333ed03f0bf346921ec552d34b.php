@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-	Home
+	Payit4ward | Home
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_section'); ?>

@@ -1,5 +1,17 @@
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
+
+    if ($(window).width() < 768) {
+    	$('#messageModalTrigger').html('Messages');
+  	}else{
+    	$('#messageModalTrigger').html('<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>');
+    	//activates navbar dropdown on hover
+		$('ul.nav li.dropdown').hover(function() {
+		  		$(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
+			}, function() {
+		  		$(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
+		});
+ 	}
 });
 
 //Opens an Ajax-powered modal that dynamically displays the user's data
@@ -533,12 +545,7 @@ $('#inboxArea').on('click', '#msgDelete', function(){
 	});
 });
 
-//activates navbar dropdown on hover
-$('ul.nav li.dropdown').hover(function() {
-  		$(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
-	}, function() {
-  		$(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
-});
+
 
 //login particle controller
 if($('.canvas').length){
@@ -551,3 +558,17 @@ if($('.canvas').length){
 	  connectParticles: true
 	});
 }
+
+$(window).resize(function() {
+  	if ($(window).width() < 768) {
+    	$('#messageModalTrigger').html('Messages');
+  	}else{
+    	$('#messageModalTrigger').html('<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>');
+    	//activates navbar dropdown on hover
+		$('ul.nav li.dropdown').hover(function() {
+		  		$(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
+			}, function() {
+		  		$(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
+		});
+ 	}
+});
