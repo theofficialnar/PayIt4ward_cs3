@@ -25,8 +25,15 @@
 				</div>
 			</div>
 	    </div>
-		<div id="showPayroll" class="row"></div>
+		<div id="showPayroll" class="row">
+			<div class="text-center">
+				<img src="{{ url('assets/images/placeholder.png') }}" alt="div_tmp_photo" class="img-responsive" style="display: inline-block; max-width: 60%">
+			</div>
+		</div>
   	</div>
 </div>
+
+{{-- payroll error modal --}}
+<div id="errPayroll"></div>
   
 @endsection

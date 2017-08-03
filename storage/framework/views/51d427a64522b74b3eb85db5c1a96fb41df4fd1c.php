@@ -60,3 +60,15 @@
 		</div>
 	</div>
 </div>
+
+
+<div id="errTicketFail"></div>
+
+
+<div id="succTicketSent"></div>
+
+
+<div id="errMsgDel"></div>
+
+
+<div id="succMsgDel"></div>

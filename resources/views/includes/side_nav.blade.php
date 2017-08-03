@@ -59,3 +59,15 @@
 		</div>
 	</div>
 </div>
+
+{{-- ticket failed error modal --}}
+<div id="errTicketFail"></div>
+
+{{-- ticket sent modal --}}
+<div id="succTicketSent"></div>
+
+{{-- ticket delete fail modal --}}
+<div id="errMsgDel"></div>
+
+{{-- ticket delete success modal --}}
+<div id="succMsgDel"></div>

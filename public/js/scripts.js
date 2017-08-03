@@ -331,6 +331,18 @@ $('#payrollFormContent').on('click', '#savePayroll', function () {
 });
 
 //displays the selected payroll
+if($('#errPayroll').length){
+	$('#errPayroll').iziModal({
+		title: 'Error connecting to database!',
+		subtitle: 'There was an error during the database query, please try again.',
+		icon: 'glyphicon glyphicon-alert',
+		timeout: '5000',
+		timeoutProgressbar: true,
+		headerColor: '#F63939',
+		transitionIn: 'fadeInDown',
+		transitionOut: 'fadeOutUp'
+	});
+}
 $('#testsubmit').click(function () {
 	var payroll = $('#payrollSelect').find(':selected').val();
 	var token = $('#token').val();
@@ -338,7 +350,7 @@ $('#testsubmit').click(function () {
 
 	$.ajax({
 		type: 'POST',
-		url: '/payroll/view',
+		url: '/payroll/view/',
 		data: {
 			_token: token,
 			payroll: payroll
@@ -347,7 +359,7 @@ $('#testsubmit').click(function () {
 			$('#showPayroll').html(data);
 		},
 		error: function () {
-			alert('An error was encountered while pulling up the record.');
+			$('#errPayroll').iziModal('open');
 		}
 	});
 });
@@ -375,6 +387,56 @@ $('.navbar').on('click', '#messageModalTrigger', function (event) {
 });
 
 //uploads ticket to db
+if($('#errTicketFail').length){
+	$('#errTicketFail').iziModal({
+		title: 'Message was not sent!',
+		subtitle: 'An error was encountered. Please try again later.',
+		icon: 'glyphicon glyphicon-alert',
+		timeout: '5000',
+		timeoutProgressbar: true,
+		headerColor: '#F63939',
+		transitionIn: 'fadeInDown',
+		transitionOut: 'fadeOutUp',
+		onOpening: function(){ $('#messageModal').iziModal('close'); }
+	});
+
+	$('#succTicketSent').iziModal({
+		title: 'Ticket sent!',
+		subtitle: 'Please wait for an admin to view and address your ticket.',
+		icon: 'glyphicon glyphicon-send',
+		timeout: '5000',
+		timeoutProgressbar: true,
+		headerColor: '#00AF66',
+		transitionIn: 'bounceInDown',
+		transitionOut: 'bounceOutDown',
+		onOpening: function(){ $('#messageModal').iziModal('close'); }
+	});
+
+	$('#errMsgDel').iziModal({
+		title: 'Message was not deleted!',
+		subtitle: 'An error was encountered. Please try again later.',
+		icon: 'glyphicon glyphicon-alert',
+		timeout: '5000',
+		timeoutProgressbar: true,
+		headerColor: '#F63939',
+		transitionIn: 'fadeInDown',
+		transitionOut: 'fadeOutUp',
+		onOpening: function(){ $('#messageModal').iziModal('close'); }
+	});
+
+	$('#succMsgDel').iziModal({
+		title: 'Message was successfully deleted!',
+		subtitle: 'You\'re now one step closers to a more cleaner inbox.',
+		icon: 'glyphicon glyphicon-trash',
+		timeout: '5000',
+		timeoutProgressbar: true,
+		headerColor: '#00AF66',
+		transitionIn: 'bounceInDown',
+		transitionOut: 'bounceOutDown',
+		onOpening: function(){ $('#messageModal').iziModal('close'); },
+		onClosed: function(){ window.location.reload(); }
+	});
+}
 $('#messageModal').on('click', '#sendTicket', function(){
 	var subject = $('#subject').val();
 	var message = $('#message').val();
@@ -388,8 +450,10 @@ $('#messageModal').on('click', '#sendTicket', function(){
 			message: message
 		},
 		success: function(data){
-			alert('Ticket sent to Admin');
-			$('.iziModal-button-close').trigger('click');
+			$('#succTicketSent').iziModal('open');
+		},
+		error: function(){
+			$('#errTicketFail').iziModal('open');
 		}
 	});
 	$('#subject').val('');
@@ -444,6 +508,9 @@ $('#inboxArea').on('click', '#msgSendReply', function(){
 		},
 		success: function(data){
 			$('#msgBody').append(data);
+		},
+		error: function(){
+			$('#errTicketFail').iziModal('open');
 		}
 	});
 	$('#msgReply').val('');
@@ -458,15 +525,12 @@ $('#inboxArea').on('click', '#msgDelete', function(){
 		type: 'GET',
 		url: 'user/messages/delete/'+tix_id,
 		success: function(){
-			alert('Ticket #'+tix_id+' successfully deleted.');
-			setTimeout(function () {
-					window.location.reload();
-				},
-				0
-			);
+			$('#succMsgDel').iziModal('open');
+		},
+		error: function(){
+			$('#errMsgDel').iziModal('open');
 		}
 	});
-
 });
 
 //activates navbar dropdown on hover
