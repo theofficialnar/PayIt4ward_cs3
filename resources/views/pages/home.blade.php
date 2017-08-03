@@ -4,7 +4,7 @@
 	Payit4ward | Home
 @endsection
 
-@section('main_section')
+@section('main_section')	
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">

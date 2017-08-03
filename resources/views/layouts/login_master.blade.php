@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.0/css/iziModal.min.css">
 </head>
 <body style="position: relative">
+	@include('../includes/fork')
 	<div id="login_body"></div>
 	<div id="logo_wrapper" class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
     	<img src="{{url('assets/images/payit4ward.png')}}" class="img-responsive hcenter">

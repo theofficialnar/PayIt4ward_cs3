@@ -2,7 +2,7 @@
 	Payit4ward | Home
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('main_section'); ?>
+<?php $__env->startSection('main_section'); ?>	
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">

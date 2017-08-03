@@ -65,6 +65,12 @@ nav {
 	cursor: pointer;
 }
 
+#forkCont {
+	position: fixed;
+	top: 50px;
+	z-index: 999;
+}
+
 
 /*MAIN*/
 
@@ -201,6 +207,10 @@ canvas {
 
 	#savePayroll {
 		width: 70%;
+	}
+
+	#forkCont {
+		top: 0;
 	}
 }
 

@@ -12,7 +12,12 @@
 </head>
 <body>
 	<div id="wrapper">
-	<?php echo $__env->make('../includes/side_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<?php echo $__env->make('../includes/side_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div id="forkCont">
+			<?php echo $__env->make('../includes/fork', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+		
 		<main class="container">
 			<?php echo $__env->yieldContent('main_section'); ?>
 		</main>
@@ -24,6 +29,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.0/js/iziModal.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="<?php echo e(URL::asset('js/scripts.js')); ?>"></script>
 
 </body>
