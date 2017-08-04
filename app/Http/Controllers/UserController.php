@@ -11,10 +11,30 @@ use DB;
 
 class UserController extends Controller
 {   
-    //view the admin panel
-    function adminPanel(){
-    	$users = DB::table('users')->paginate(15);
-    	return view('/pages/admin_panel', compact('users'));
+
+    //controls users displayed on the list
+    function filterUsers(Request $request){
+        if(!empty($request)){
+            $selected = $request->selected;
+            if($selected == 0){
+                $users = DB::table('users')->paginate(15);
+            }elseif($selected == 1){
+                $users = DB::table('users')
+                        ->where('status', '=', '0')
+                        ->orWhere('status', '=', '1')
+                        ->paginate(15);
+            }else{
+                $users = DB::table('users')
+                        ->where('status', '=', '2')
+                        ->orWhere('status', '=', '3')
+                        ->paginate(15);
+            }
+            return view('/pages/admin_panel', compact('users', 'selected'));
+        }else{
+            $users = DB::table('users')->paginate(15);
+    	    return view('/pages/admin_panel', compact('users'));
+        }
+        
     }
 
     //add new user function

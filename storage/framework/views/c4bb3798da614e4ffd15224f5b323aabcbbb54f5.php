@@ -2,12 +2,15 @@
 <html>
 <head>
 	<title><?php echo $__env->yieldContent('title'); ?></title>
+	<link rel="shortcut icon" href="<?php echo e(url('favicon.ico')); ?>" type="image/x-icon">
+	<link rel="icon" href="<?php echo e(url('favicon.ico')); ?>" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo e(URL::asset('css/styles.css')); ?>">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.0/css/iziModal.min.css">
 </head>
 <body style="position: relative">
+	<?php echo $__env->make('../includes/fork', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<div id="login_body"></div>
 	<div id="logo_wrapper" class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
     	<img src="<?php echo e(url('assets/images/payit4ward.png')); ?>" class="img-responsive hcenter">

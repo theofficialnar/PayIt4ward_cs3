@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>@yield('title')</title>
-	<link rel="shortcut icon" href="{{ url('favicon.icon') }}" type="image/x-icon">
-	<link rel="icon" href="{{ url('favicon.icon') }}" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ url('favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url('favicon.ico') }}" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles.css') }}">

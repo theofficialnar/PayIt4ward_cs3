@@ -11,7 +11,7 @@ $(document).ready(function(){
 			}, function() {
 		  		$(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
 		});
- 	}
+	 }
 });
 
 //Opens an Ajax-powered modal that dynamically displays the user's data
@@ -545,8 +545,6 @@ $('#inboxArea').on('click', '#msgDelete', function(){
 	});
 });
 
-
-
 //login particle controller
 if($('.canvas').length){
 	$('.canvas').particles({
@@ -559,6 +557,7 @@ if($('.canvas').length){
 	});
 }
 
+//changes some elements on the navbar
 $(window).resize(function() {
   	if ($(window).width() < 768) {
     	$('#messageModalTrigger').html('Messages');

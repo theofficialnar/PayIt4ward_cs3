@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-    View Payroll
+    Payit4ward | View Payroll
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_section'); ?>
@@ -23,9 +23,16 @@
 				</div>
 			</div>
 	    </div>
-		<div id="showPayroll" class="row"></div>
+		<div id="showPayroll" class="row">
+			<div class="text-center">
+				<img src="<?php echo e(url('assets/images/placeholder.png')); ?>" alt="div_tmp_photo" class="img-responsive" style="display: inline-block; max-width: 60%">
+			</div>
+		</div>
   	</div>
 </div>
+
+
+<div id="errPayroll"></div>
   
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

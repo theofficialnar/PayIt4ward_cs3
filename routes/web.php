@@ -16,7 +16,10 @@ Auth::routes();
 Route::get('/', 'HomeController@homePage')->middleware('auth');
 
 //Route to admin panel
-Route::get('/admin_panel', 'UserController@adminPanel')->middleware('auth');
+// Route::get('/admin_panel', 'UserController@adminPanel')->middleware('auth');
+
+//Filter's users displayed
+Route::get('/admin_panel', 'UserController@filterUsers')->middleware('auth');
 
 //Route to add new user
 Route::post('/admin_panel/add_user', 'UserController@addUser')->middleware('auth');

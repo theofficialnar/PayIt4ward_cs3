@@ -145,8 +145,13 @@ footer {
 
 /*ADMIN PANEL*/
 
-.openUserPanel {
+.openUserPanel,
+#usrFilterTrigger {
 	cursor: pointer;
+}
+
+#usrFilterTrigger:hover {
+	text-decoration: underline;
 }
 
 /*TICKET*/

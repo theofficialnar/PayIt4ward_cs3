@@ -1,8 +1,8 @@
 <?php $__env->startSection('title'); ?>
-	Home
+	Payit4ward | Home
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('main_section'); ?>
+<?php $__env->startSection('main_section'); ?>	
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -42,7 +42,7 @@
 	<div class="row">
 		<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
 			<div class="well">
-				<h1 class="text-center">Company News</h1>
+				<h1 class="text-center cfont">Company News</h1>
 				<hr>
 				<img src="<?php echo e(URL('assets/images/news-photo.jpeg')); ?>" alt="cafe" class="img-responsive hcenter">
 				<h3 class="text-center">The Lounge will be serving your favourite cuppa soon!</h3>
@@ -67,14 +67,14 @@
 
 		<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
 			<div class="well col-lg-12">
-				<h1 class="text-center">Employee of the Month</h1>
+				<h1 class="text-center cfont">Employee of the Month</h1>
 				<hr>
 				<img src="<?php echo e(URL('assets/images/emp.jpg')); ?>" alt="emp" class="img-responsive emp_month text-center hcenter">
 				<h3 class="text-center">John Wilder</h3>
 				<p class="text-center">Lead Designer</p>
 			</div>
 			<div class="well col-lg-12 text-center">
-				<h1>Weather Forecast</h1>
+				<h1 class="text-center cfont">Weather Forecast</h1>
 				<hr>
 				<div style="margin: 0 auto; width: 60%; min-width: 150px; position: relative; "><script type="text/javascript" src="https://weatherfor.us/static/js/minion/minion.js"></script><script type="text/javascript">w4uminion.run({"location":"alabang","txt_color":"#000000","unit":"metric"});</script></div>
 			</div>

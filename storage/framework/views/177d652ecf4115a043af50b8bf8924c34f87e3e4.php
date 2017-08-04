@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-	Admin Panel
+	Payit4ward | Admin Panel
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('main_section'); ?>
@@ -10,7 +10,7 @@
 		  <div class="panel panel-default">
 		    <div class="panel-heading">
 		      <h4 class="panel-title">
-		        <a data-toggle="collapse" href="#collapse1"><h2 class="text-center"><b>Add New User</b></h2></a>
+		        <a data-toggle="collapse" href="#collapse1"><h2 class="text-center cfont"><b>Add New User</b></h2></a>
 		      </h4>
 		    </div>
 		    <div id="collapse1" class="panel-collapse collapse">
@@ -93,49 +93,23 @@
 
 <!-- users list -->
 	<div class="well">
-		<h2 class="text-center"><b>USERS</b></h2>
+		<h2 class="text-center cfont"><b>USERS</b></h2>
 		<hr>
-		<div class="table-responsive">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Department</th>
-						<th>Position</th>
-						<th>Status</th>
-						<th>Actions</th>
-						<th><input type="hidden" value="<?php echo e(csrf_token()); ?>" id="token"></th>
-					</tr>
-				</thead>
-				<tbody id="usersViewBody">
-				<?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-					<tr>
-						<td><a data-uid="<?php echo e($user->id); ?>" class="openUserPanel" href="#tabUserInfo"> <?php echo e($user->name); ?></a></td>
-						<td><?php echo e($user->department); ?></td>
-						<td><?php echo e($user->position); ?></td>
-						<?php if($user->status == 0): ?>
-							<td class="userActive">Active</td>
-						<?php elseif($user->status == 1): ?>
-							<td class="userOOO">On Leave</td>
-						<?php elseif($user->status == 2): ?>
-							<td class="userInactive">Retired</td>
-						<?php else: ?>
-							<td class="userInactive">Terminated</td>
-						<?php endif; ?>
-						<?php if($user->status == 2 || $user->status == 3): ?>
-							<td><button class="btn btn-xs btn-default payrollModalTrigger disabled" data-uid="<?php echo e($user->id); ?>">Update Payroll</button></td>
-						<?php else: ?>
-							<td><button class="btn btn-xs btn-default payrollModalTrigger" data-uid="<?php echo e($user->id); ?>">Update Payroll</button></td>
-						<?php endif; ?>
-					</tr>
-				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-				</tbody>
-			</table>
+		<div class="row">
+			<div id="usrFilter" class="collapse col-lg-4 col-lg-offset-4">
+				<form action="/admin_panel" method="get">
+					<div class="form-group">
+						<label for="userFilter">Filter by employee status:</label>
+						<select id="userFilter" onchange="this.form.submit()" name="selected" class="form-control">
+							<option <?php if($selected == 0): ?> selected <?php endif; ?> value="0">All</option>
+							<option <?php if($selected == 1): ?> selected <?php endif; ?> value="1">Active / On Leave</option>
+							<option <?php if($selected == 2): ?> selected <?php endif; ?> value="2">Retired / Terminated</option>
+						</select>
+					</div>
+				</form>
+			</div>
 		</div>
-		<div class="text-center">
-			<?php echo e($users->links()); ?>
-
-		</div>
+		<?php echo $__env->make('../includes/users_list', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	</div>
 </div>
 
@@ -153,10 +127,20 @@
 <div id="payrollModal">
 	<div id="payrollFormContent"></div>
 	<div class="text-center">
-		<button id="payrollSubmit" class="btn btn-primary" style="width: 20%"><span class="glyphicon glyphicon-tasks"></span> <b>Calculate</b></button>
+		<button id="payrollSubmit" class="btn btn-primary"><span class="glyphicon glyphicon-tasks"></span> <b>Calculate</b></button>
 	</div>
 	
 	
 </div>
+
+
+<div id="errUserPanel"></div>
+
+
+<div id="succUpdateUser"></div>
+
+
+<div id="succUpdatePayroll"></div>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('../layouts/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
